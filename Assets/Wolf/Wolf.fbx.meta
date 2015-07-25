@@ -1,0 +1,710 @@
+fileFormatVersion: 2
+guid: 9688397ee8bcd504392647ead1482650
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: wolf:chest
+    100004: wolf:head
+    100006: wolf:head1
+    100008: wolf:hip
+    100010: wolf:jaw
+    100012: wolf:jaw1
+    100014: wolf:left_arm1
+    100016: wolf:left_arm2
+    100018: wolf:left_ear
+    100020: wolf:left_ear1
+    100022: wolf:left_hand1
+    100024: wolf:left_hand2
+    100026: wolf:left_leg
+    100028: wolf:left_leg1
+    100030: wolf:left_leg2
+    100032: wolf:left_leg3
+    100034: wolf:left_leg4
+    100036: wolf:left_shoulder
+    100038: wolf:mesh
+    100040: wolf:neck
+    100042: wolf:neck1
+    100044: wolf:right_arm1
+    100046: wolf:right_arm2
+    100048: wolf:right_ear
+    100050: wolf:right_ear1
+    100052: wolf:right_hand1
+    100054: wolf:right_hand2
+    100056: wolf:right_leg
+    100058: wolf:right_leg1
+    100060: wolf:right_leg2
+    100062: wolf:right_leg3
+    100064: wolf:right_leg4
+    100066: wolf:right_shoulder
+    100068: wolf:spine
+    100070: wolf:spine1
+    100072: wolf:tail
+    100074: wolf:tail1
+    100076: wolf:tail2
+    100078: wolf:tail3
+    100080: wolf:tail4
+    100082: wolf:tail5
+    400000: //RootNode
+    400002: wolf:chest
+    400004: wolf:head
+    400006: wolf:head1
+    400008: wolf:hip
+    400010: wolf:jaw
+    400012: wolf:jaw1
+    400014: wolf:left_arm1
+    400016: wolf:left_arm2
+    400018: wolf:left_ear
+    400020: wolf:left_ear1
+    400022: wolf:left_hand1
+    400024: wolf:left_hand2
+    400026: wolf:left_leg
+    400028: wolf:left_leg1
+    400030: wolf:left_leg2
+    400032: wolf:left_leg3
+    400034: wolf:left_leg4
+    400036: wolf:left_shoulder
+    400038: wolf:mesh
+    400040: wolf:neck
+    400042: wolf:neck1
+    400044: wolf:right_arm1
+    400046: wolf:right_arm2
+    400048: wolf:right_ear
+    400050: wolf:right_ear1
+    400052: wolf:right_hand1
+    400054: wolf:right_hand2
+    400056: wolf:right_leg
+    400058: wolf:right_leg1
+    400060: wolf:right_leg2
+    400062: wolf:right_leg3
+    400064: wolf:right_leg4
+    400066: wolf:right_shoulder
+    400068: wolf:spine
+    400070: wolf:spine1
+    400072: wolf:tail
+    400074: wolf:tail1
+    400076: wolf:tail2
+    400078: wolf:tail3
+    400080: wolf:tail4
+    400082: wolf:tail5
+    4300000: wolf:mesh
+    7400000: wolf_run
+    7400002: wolf_death
+    7400004: wolf_idle
+    7400006: wolf_idle2
+    7400008: wolf_attack
+    9500000: //RootNode
+    11100000: //RootNode
+    13700000: wolf:mesh
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: wolf_run
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 13
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: wolf:mesh
+        weight: 1
+      - path: wolf:spine
+        weight: 1
+      - path: wolf:spine/wolf:hip
+        weight: 1
+      - path: wolf:spine/wolf:hip/wolf:left_leg
+        weight: 1
+      - path: wolf:spine/wolf:hip/wolf:left_leg/wolf:left_leg1
+        weight: 1
+      - path: wolf:spine/wolf:hip/wolf:left_leg/wolf:left_leg1/wolf:left_leg2
+        weight: 1
+      - path: wolf:spine/wolf:hip/wolf:left_leg/wolf:left_leg1/wolf:left_leg2/wolf:left_leg3
+        weight: 1
+      - path: wolf:spine/wolf:hip/wolf:left_leg/wolf:left_leg1/wolf:left_leg2/wolf:left_leg3/wolf:left_leg4
+        weight: 1
+      - path: wolf:spine/wolf:hip/wolf:right_leg
+        weight: 1
+      - path: wolf:spine/wolf:hip/wolf:right_leg/wolf:right_leg1
+        weight: 1
+      - path: wolf:spine/wolf:hip/wolf:right_leg/wolf:right_leg1/wolf:right_leg2
+        weight: 1
+      - path: wolf:spine/wolf:hip/wolf:right_leg/wolf:right_leg1/wolf:right_leg2/wolf:right_leg3
+        weight: 1
+      - path: wolf:spine/wolf:hip/wolf:right_leg/wolf:right_leg1/wolf:right_leg2/wolf:right_leg3/wolf:right_leg4
+        weight: 1
+      - path: wolf:spine/wolf:hip/wolf:tail
+        weight: 1
+      - path: wolf:spine/wolf:hip/wolf:tail/wolf:tail1
+        weight: 1
+      - path: wolf:spine/wolf:hip/wolf:tail/wolf:tail1/wolf:tail2
+        weight: 1
+      - path: wolf:spine/wolf:hip/wolf:tail/wolf:tail1/wolf:tail2/wolf:tail3
+        weight: 1
+      - path: wolf:spine/wolf:hip/wolf:tail/wolf:tail1/wolf:tail2/wolf:tail3/wolf:tail4
+        weight: 1
+      - path: wolf:spine/wolf:hip/wolf:tail/wolf:tail1/wolf:tail2/wolf:tail3/wolf:tail4/wolf:tail5
+        weight: 1
+      - path: wolf:spine/wolf:spine1
+        weight: 1
+      - path: wolf:spine/wolf:spine1/wolf:chest
+        weight: 1
+      - path: wolf:spine/wolf:spine1/wolf:chest/wolf:left_shoulder
+        weight: 1
+      - path: wolf:spine/wolf:spine1/wolf:chest/wolf:left_shoulder/wolf:left_arm1
+        weight: 1
+      - path: wolf:spine/wolf:spine1/wolf:chest/wolf:left_shoulder/wolf:left_arm1/wolf:left_arm2
+        weight: 1
+      - path: wolf:spine/wolf:spine1/wolf:chest/wolf:left_shoulder/wolf:left_arm1/wolf:left_arm2/wolf:left_hand1
+        weight: 1
+      - path: wolf:spine/wolf:spine1/wolf:chest/wolf:left_shoulder/wolf:left_arm1/wolf:left_arm2/wolf:left_hand1/wolf:left_hand2
+        weight: 1
+      - path: wolf:spine/wolf:spine1/wolf:chest/wolf:neck
+        weight: 1
+      - path: wolf:spine/wolf:spine1/wolf:chest/wolf:neck/wolf:neck1
+        weight: 1
+      - path: wolf:spine/wolf:spine1/wolf:chest/wolf:neck/wolf:neck1/wolf:head
+        weight: 1
+      - path: wolf:spine/wolf:spine1/wolf:chest/wolf:neck/wolf:neck1/wolf:head/wolf:head1
+        weight: 1
+      - path: wolf:spine/wolf:spine1/wolf:chest/wolf:neck/wolf:neck1/wolf:head/wolf:jaw
+        weight: 1
+      - path: wolf:spine/wolf:spine1/wolf:chest/wolf:neck/wolf:neck1/wolf:head/wolf:jaw/wolf:jaw1
+        weight: 1
+      - path: wolf:spine/wolf:spine1/wolf:chest/wolf:neck/wolf:neck1/wolf:head/wolf:left_ear
+        weight: 1
+      - path: wolf:spine/wolf:spine1/wolf:chest/wolf:neck/wolf:neck1/wolf:head/wolf:left_ear/wolf:left_ear1
+        weight: 1
+      - path: wolf:spine/wolf:spine1/wolf:chest/wolf:neck/wolf:neck1/wolf:head/wolf:right_ear
+        weight: 1
+      - path: wolf:spine/wolf:spine1/wolf:chest/wolf:neck/wolf:neck1/wolf:head/wolf:right_ear/wolf:right_ear1
+        weight: 1
+      - path: wolf:spine/wolf:spine1/wolf:chest/wolf:right_shoulder
+        weight: 1
+      - path: wolf:spine/wolf:spine1/wolf:chest/wolf:right_shoulder/wolf:right_arm1
+        weight: 1
+      - path: wolf:spine/wolf:spine1/wolf:chest/wolf:right_shoulder/wolf:right_arm1/wolf:right_arm2
+        weight: 1
+      - path: wolf:spine/wolf:spine1/wolf:chest/wolf:right_shoulder/wolf:right_arm1/wolf:right_arm2/wolf:right_hand1
+        weight: 1
+      - path: wolf:spine/wolf:spine1/wolf:chest/wolf:right_shoulder/wolf:right_arm1/wolf:right_arm2/wolf:right_hand1/wolf:right_hand2
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: wolf_death
+      takeName: Take 001
+      firstFrame: 15
+      lastFrame: 41
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: wolf:mesh
+        weight: 1
+      - path: wolf:spine
+        weight: 1
+      - path: wolf:spine/wolf:hip
+        weight: 1
+      - path: wolf:spine/wolf:hip/wolf:left_leg
+        weight: 1
+      - path: wolf:spine/wolf:hip/wolf:left_leg/wolf:left_leg1
+        weight: 1
+      - path: wolf:spine/wolf:hip/wolf:left_leg/wolf:left_leg1/wolf:left_leg2
+        weight: 1
+      - path: wolf:spine/wolf:hip/wolf:left_leg/wolf:left_leg1/wolf:left_leg2/wolf:left_leg3
+        weight: 1
+      - path: wolf:spine/wolf:hip/wolf:left_leg/wolf:left_leg1/wolf:left_leg2/wolf:left_leg3/wolf:left_leg4
+        weight: 1
+      - path: wolf:spine/wolf:hip/wolf:right_leg
+        weight: 1
+      - path: wolf:spine/wolf:hip/wolf:right_leg/wolf:right_leg1
+        weight: 1
+      - path: wolf:spine/wolf:hip/wolf:right_leg/wolf:right_leg1/wolf:right_leg2
+        weight: 1
+      - path: wolf:spine/wolf:hip/wolf:right_leg/wolf:right_leg1/wolf:right_leg2/wolf:right_leg3
+        weight: 1
+      - path: wolf:spine/wolf:hip/wolf:right_leg/wolf:right_leg1/wolf:right_leg2/wolf:right_leg3/wolf:right_leg4
+        weight: 1
+      - path: wolf:spine/wolf:hip/wolf:tail
+        weight: 1
+      - path: wolf:spine/wolf:hip/wolf:tail/wolf:tail1
+        weight: 1
+      - path: wolf:spine/wolf:hip/wolf:tail/wolf:tail1/wolf:tail2
+        weight: 1
+      - path: wolf:spine/wolf:hip/wolf:tail/wolf:tail1/wolf:tail2/wolf:tail3
+        weight: 1
+      - path: wolf:spine/wolf:hip/wolf:tail/wolf:tail1/wolf:tail2/wolf:tail3/wolf:tail4
+        weight: 1
+      - path: wolf:spine/wolf:hip/wolf:tail/wolf:tail1/wolf:tail2/wolf:tail3/wolf:tail4/wolf:tail5
+        weight: 1
+      - path: wolf:spine/wolf:spine1
+        weight: 1
+      - path: wolf:spine/wolf:spine1/wolf:chest
+        weight: 1
+      - path: wolf:spine/wolf:spine1/wolf:chest/wolf:left_shoulder
+        weight: 1
+      - path: wolf:spine/wolf:spine1/wolf:chest/wolf:left_shoulder/wolf:left_arm1
+        weight: 1
+      - path: wolf:spine/wolf:spine1/wolf:chest/wolf:left_shoulder/wolf:left_arm1/wolf:left_arm2
+        weight: 1
+      - path: wolf:spine/wolf:spine1/wolf:chest/wolf:left_shoulder/wolf:left_arm1/wolf:left_arm2/wolf:left_hand1
+        weight: 1
+      - path: wolf:spine/wolf:spine1/wolf:chest/wolf:left_shoulder/wolf:left_arm1/wolf:left_arm2/wolf:left_hand1/wolf:left_hand2
+        weight: 1
+      - path: wolf:spine/wolf:spine1/wolf:chest/wolf:neck
+        weight: 1
+      - path: wolf:spine/wolf:spine1/wolf:chest/wolf:neck/wolf:neck1
+        weight: 1
+      - path: wolf:spine/wolf:spine1/wolf:chest/wolf:neck/wolf:neck1/wolf:head
+        weight: 1
+      - path: wolf:spine/wolf:spine1/wolf:chest/wolf:neck/wolf:neck1/wolf:head/wolf:head1
+        weight: 1
+      - path: wolf:spine/wolf:spine1/wolf:chest/wolf:neck/wolf:neck1/wolf:head/wolf:jaw
+        weight: 1
+      - path: wolf:spine/wolf:spine1/wolf:chest/wolf:neck/wolf:neck1/wolf:head/wolf:jaw/wolf:jaw1
+        weight: 1
+      - path: wolf:spine/wolf:spine1/wolf:chest/wolf:neck/wolf:neck1/wolf:head/wolf:left_ear
+        weight: 1
+      - path: wolf:spine/wolf:spine1/wolf:chest/wolf:neck/wolf:neck1/wolf:head/wolf:left_ear/wolf:left_ear1
+        weight: 1
+      - path: wolf:spine/wolf:spine1/wolf:chest/wolf:neck/wolf:neck1/wolf:head/wolf:right_ear
+        weight: 1
+      - path: wolf:spine/wolf:spine1/wolf:chest/wolf:neck/wolf:neck1/wolf:head/wolf:right_ear/wolf:right_ear1
+        weight: 1
+      - path: wolf:spine/wolf:spine1/wolf:chest/wolf:right_shoulder
+        weight: 1
+      - path: wolf:spine/wolf:spine1/wolf:chest/wolf:right_shoulder/wolf:right_arm1
+        weight: 1
+      - path: wolf:spine/wolf:spine1/wolf:chest/wolf:right_shoulder/wolf:right_arm1/wolf:right_arm2
+        weight: 1
+      - path: wolf:spine/wolf:spine1/wolf:chest/wolf:right_shoulder/wolf:right_arm1/wolf:right_arm2/wolf:right_hand1
+        weight: 1
+      - path: wolf:spine/wolf:spine1/wolf:chest/wolf:right_shoulder/wolf:right_arm1/wolf:right_arm2/wolf:right_hand1/wolf:right_hand2
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: wolf_idle
+      takeName: Take 001
+      firstFrame: 43
+      lastFrame: 118
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 1
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: wolf:mesh
+        weight: 1
+      - path: wolf:spine
+        weight: 1
+      - path: wolf:spine/wolf:hip
+        weight: 1
+      - path: wolf:spine/wolf:hip/wolf:left_leg
+        weight: 1
+      - path: wolf:spine/wolf:hip/wolf:left_leg/wolf:left_leg1
+        weight: 1
+      - path: wolf:spine/wolf:hip/wolf:left_leg/wolf:left_leg1/wolf:left_leg2
+        weight: 1
+      - path: wolf:spine/wolf:hip/wolf:left_leg/wolf:left_leg1/wolf:left_leg2/wolf:left_leg3
+        weight: 1
+      - path: wolf:spine/wolf:hip/wolf:left_leg/wolf:left_leg1/wolf:left_leg2/wolf:left_leg3/wolf:left_leg4
+        weight: 1
+      - path: wolf:spine/wolf:hip/wolf:right_leg
+        weight: 1
+      - path: wolf:spine/wolf:hip/wolf:right_leg/wolf:right_leg1
+        weight: 1
+      - path: wolf:spine/wolf:hip/wolf:right_leg/wolf:right_leg1/wolf:right_leg2
+        weight: 1
+      - path: wolf:spine/wolf:hip/wolf:right_leg/wolf:right_leg1/wolf:right_leg2/wolf:right_leg3
+        weight: 1
+      - path: wolf:spine/wolf:hip/wolf:right_leg/wolf:right_leg1/wolf:right_leg2/wolf:right_leg3/wolf:right_leg4
+        weight: 1
+      - path: wolf:spine/wolf:hip/wolf:tail
+        weight: 1
+      - path: wolf:spine/wolf:hip/wolf:tail/wolf:tail1
+        weight: 1
+      - path: wolf:spine/wolf:hip/wolf:tail/wolf:tail1/wolf:tail2
+        weight: 1
+      - path: wolf:spine/wolf:hip/wolf:tail/wolf:tail1/wolf:tail2/wolf:tail3
+        weight: 1
+      - path: wolf:spine/wolf:hip/wolf:tail/wolf:tail1/wolf:tail2/wolf:tail3/wolf:tail4
+        weight: 1
+      - path: wolf:spine/wolf:hip/wolf:tail/wolf:tail1/wolf:tail2/wolf:tail3/wolf:tail4/wolf:tail5
+        weight: 1
+      - path: wolf:spine/wolf:spine1
+        weight: 1
+      - path: wolf:spine/wolf:spine1/wolf:chest
+        weight: 1
+      - path: wolf:spine/wolf:spine1/wolf:chest/wolf:left_shoulder
+        weight: 1
+      - path: wolf:spine/wolf:spine1/wolf:chest/wolf:left_shoulder/wolf:left_arm1
+        weight: 1
+      - path: wolf:spine/wolf:spine1/wolf:chest/wolf:left_shoulder/wolf:left_arm1/wolf:left_arm2
+        weight: 1
+      - path: wolf:spine/wolf:spine1/wolf:chest/wolf:left_shoulder/wolf:left_arm1/wolf:left_arm2/wolf:left_hand1
+        weight: 1
+      - path: wolf:spine/wolf:spine1/wolf:chest/wolf:left_shoulder/wolf:left_arm1/wolf:left_arm2/wolf:left_hand1/wolf:left_hand2
+        weight: 1
+      - path: wolf:spine/wolf:spine1/wolf:chest/wolf:neck
+        weight: 1
+      - path: wolf:spine/wolf:spine1/wolf:chest/wolf:neck/wolf:neck1
+        weight: 1
+      - path: wolf:spine/wolf:spine1/wolf:chest/wolf:neck/wolf:neck1/wolf:head
+        weight: 1
+      - path: wolf:spine/wolf:spine1/wolf:chest/wolf:neck/wolf:neck1/wolf:head/wolf:head1
+        weight: 1
+      - path: wolf:spine/wolf:spine1/wolf:chest/wolf:neck/wolf:neck1/wolf:head/wolf:jaw
+        weight: 1
+      - path: wolf:spine/wolf:spine1/wolf:chest/wolf:neck/wolf:neck1/wolf:head/wolf:jaw/wolf:jaw1
+        weight: 1
+      - path: wolf:spine/wolf:spine1/wolf:chest/wolf:neck/wolf:neck1/wolf:head/wolf:left_ear
+        weight: 1
+      - path: wolf:spine/wolf:spine1/wolf:chest/wolf:neck/wolf:neck1/wolf:head/wolf:left_ear/wolf:left_ear1
+        weight: 1
+      - path: wolf:spine/wolf:spine1/wolf:chest/wolf:neck/wolf:neck1/wolf:head/wolf:right_ear
+        weight: 1
+      - path: wolf:spine/wolf:spine1/wolf:chest/wolf:neck/wolf:neck1/wolf:head/wolf:right_ear/wolf:right_ear1
+        weight: 1
+      - path: wolf:spine/wolf:spine1/wolf:chest/wolf:right_shoulder
+        weight: 1
+      - path: wolf:spine/wolf:spine1/wolf:chest/wolf:right_shoulder/wolf:right_arm1
+        weight: 1
+      - path: wolf:spine/wolf:spine1/wolf:chest/wolf:right_shoulder/wolf:right_arm1/wolf:right_arm2
+        weight: 1
+      - path: wolf:spine/wolf:spine1/wolf:chest/wolf:right_shoulder/wolf:right_arm1/wolf:right_arm2/wolf:right_hand1
+        weight: 1
+      - path: wolf:spine/wolf:spine1/wolf:chest/wolf:right_shoulder/wolf:right_arm1/wolf:right_arm2/wolf:right_hand1/wolf:right_hand2
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: wolf_idle2
+      takeName: Take 001
+      firstFrame: 120
+      lastFrame: 229
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: wolf:mesh
+        weight: 1
+      - path: wolf:spine
+        weight: 1
+      - path: wolf:spine/wolf:hip
+        weight: 1
+      - path: wolf:spine/wolf:hip/wolf:left_leg
+        weight: 1
+      - path: wolf:spine/wolf:hip/wolf:left_leg/wolf:left_leg1
+        weight: 1
+      - path: wolf:spine/wolf:hip/wolf:left_leg/wolf:left_leg1/wolf:left_leg2
+        weight: 1
+      - path: wolf:spine/wolf:hip/wolf:left_leg/wolf:left_leg1/wolf:left_leg2/wolf:left_leg3
+        weight: 1
+      - path: wolf:spine/wolf:hip/wolf:left_leg/wolf:left_leg1/wolf:left_leg2/wolf:left_leg3/wolf:left_leg4
+        weight: 1
+      - path: wolf:spine/wolf:hip/wolf:right_leg
+        weight: 1
+      - path: wolf:spine/wolf:hip/wolf:right_leg/wolf:right_leg1
+        weight: 1
+      - path: wolf:spine/wolf:hip/wolf:right_leg/wolf:right_leg1/wolf:right_leg2
+        weight: 1
+      - path: wolf:spine/wolf:hip/wolf:right_leg/wolf:right_leg1/wolf:right_leg2/wolf:right_leg3
+        weight: 1
+      - path: wolf:spine/wolf:hip/wolf:right_leg/wolf:right_leg1/wolf:right_leg2/wolf:right_leg3/wolf:right_leg4
+        weight: 1
+      - path: wolf:spine/wolf:hip/wolf:tail
+        weight: 1
+      - path: wolf:spine/wolf:hip/wolf:tail/wolf:tail1
+        weight: 1
+      - path: wolf:spine/wolf:hip/wolf:tail/wolf:tail1/wolf:tail2
+        weight: 1
+      - path: wolf:spine/wolf:hip/wolf:tail/wolf:tail1/wolf:tail2/wolf:tail3
+        weight: 1
+      - path: wolf:spine/wolf:hip/wolf:tail/wolf:tail1/wolf:tail2/wolf:tail3/wolf:tail4
+        weight: 1
+      - path: wolf:spine/wolf:hip/wolf:tail/wolf:tail1/wolf:tail2/wolf:tail3/wolf:tail4/wolf:tail5
+        weight: 1
+      - path: wolf:spine/wolf:spine1
+        weight: 1
+      - path: wolf:spine/wolf:spine1/wolf:chest
+        weight: 1
+      - path: wolf:spine/wolf:spine1/wolf:chest/wolf:left_shoulder
+        weight: 1
+      - path: wolf:spine/wolf:spine1/wolf:chest/wolf:left_shoulder/wolf:left_arm1
+        weight: 1
+      - path: wolf:spine/wolf:spine1/wolf:chest/wolf:left_shoulder/wolf:left_arm1/wolf:left_arm2
+        weight: 1
+      - path: wolf:spine/wolf:spine1/wolf:chest/wolf:left_shoulder/wolf:left_arm1/wolf:left_arm2/wolf:left_hand1
+        weight: 1
+      - path: wolf:spine/wolf:spine1/wolf:chest/wolf:left_shoulder/wolf:left_arm1/wolf:left_arm2/wolf:left_hand1/wolf:left_hand2
+        weight: 1
+      - path: wolf:spine/wolf:spine1/wolf:chest/wolf:neck
+        weight: 1
+      - path: wolf:spine/wolf:spine1/wolf:chest/wolf:neck/wolf:neck1
+        weight: 1
+      - path: wolf:spine/wolf:spine1/wolf:chest/wolf:neck/wolf:neck1/wolf:head
+        weight: 1
+      - path: wolf:spine/wolf:spine1/wolf:chest/wolf:neck/wolf:neck1/wolf:head/wolf:head1
+        weight: 1
+      - path: wolf:spine/wolf:spine1/wolf:chest/wolf:neck/wolf:neck1/wolf:head/wolf:jaw
+        weight: 1
+      - path: wolf:spine/wolf:spine1/wolf:chest/wolf:neck/wolf:neck1/wolf:head/wolf:jaw/wolf:jaw1
+        weight: 1
+      - path: wolf:spine/wolf:spine1/wolf:chest/wolf:neck/wolf:neck1/wolf:head/wolf:left_ear
+        weight: 1
+      - path: wolf:spine/wolf:spine1/wolf:chest/wolf:neck/wolf:neck1/wolf:head/wolf:left_ear/wolf:left_ear1
+        weight: 1
+      - path: wolf:spine/wolf:spine1/wolf:chest/wolf:neck/wolf:neck1/wolf:head/wolf:right_ear
+        weight: 1
+      - path: wolf:spine/wolf:spine1/wolf:chest/wolf:neck/wolf:neck1/wolf:head/wolf:right_ear/wolf:right_ear1
+        weight: 1
+      - path: wolf:spine/wolf:spine1/wolf:chest/wolf:right_shoulder
+        weight: 1
+      - path: wolf:spine/wolf:spine1/wolf:chest/wolf:right_shoulder/wolf:right_arm1
+        weight: 1
+      - path: wolf:spine/wolf:spine1/wolf:chest/wolf:right_shoulder/wolf:right_arm1/wolf:right_arm2
+        weight: 1
+      - path: wolf:spine/wolf:spine1/wolf:chest/wolf:right_shoulder/wolf:right_arm1/wolf:right_arm2/wolf:right_hand1
+        weight: 1
+      - path: wolf:spine/wolf:spine1/wolf:chest/wolf:right_shoulder/wolf:right_arm1/wolf:right_arm2/wolf:right_hand1/wolf:right_hand2
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: wolf_attack
+      takeName: Take 001
+      firstFrame: 231
+      lastFrame: 250
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: wolf:mesh
+        weight: 1
+      - path: wolf:spine
+        weight: 1
+      - path: wolf:spine/wolf:hip
+        weight: 1
+      - path: wolf:spine/wolf:hip/wolf:left_leg
+        weight: 1
+      - path: wolf:spine/wolf:hip/wolf:left_leg/wolf:left_leg1
+        weight: 1
+      - path: wolf:spine/wolf:hip/wolf:left_leg/wolf:left_leg1/wolf:left_leg2
+        weight: 1
+      - path: wolf:spine/wolf:hip/wolf:left_leg/wolf:left_leg1/wolf:left_leg2/wolf:left_leg3
+        weight: 1
+      - path: wolf:spine/wolf:hip/wolf:left_leg/wolf:left_leg1/wolf:left_leg2/wolf:left_leg3/wolf:left_leg4
+        weight: 1
+      - path: wolf:spine/wolf:hip/wolf:right_leg
+        weight: 1
+      - path: wolf:spine/wolf:hip/wolf:right_leg/wolf:right_leg1
+        weight: 1
+      - path: wolf:spine/wolf:hip/wolf:right_leg/wolf:right_leg1/wolf:right_leg2
+        weight: 1
+      - path: wolf:spine/wolf:hip/wolf:right_leg/wolf:right_leg1/wolf:right_leg2/wolf:right_leg3
+        weight: 1
+      - path: wolf:spine/wolf:hip/wolf:right_leg/wolf:right_leg1/wolf:right_leg2/wolf:right_leg3/wolf:right_leg4
+        weight: 1
+      - path: wolf:spine/wolf:hip/wolf:tail
+        weight: 1
+      - path: wolf:spine/wolf:hip/wolf:tail/wolf:tail1
+        weight: 1
+      - path: wolf:spine/wolf:hip/wolf:tail/wolf:tail1/wolf:tail2
+        weight: 1
+      - path: wolf:spine/wolf:hip/wolf:tail/wolf:tail1/wolf:tail2/wolf:tail3
+        weight: 1
+      - path: wolf:spine/wolf:hip/wolf:tail/wolf:tail1/wolf:tail2/wolf:tail3/wolf:tail4
+        weight: 1
+      - path: wolf:spine/wolf:hip/wolf:tail/wolf:tail1/wolf:tail2/wolf:tail3/wolf:tail4/wolf:tail5
+        weight: 1
+      - path: wolf:spine/wolf:spine1
+        weight: 1
+      - path: wolf:spine/wolf:spine1/wolf:chest
+        weight: 1
+      - path: wolf:spine/wolf:spine1/wolf:chest/wolf:left_shoulder
+        weight: 1
+      - path: wolf:spine/wolf:spine1/wolf:chest/wolf:left_shoulder/wolf:left_arm1
+        weight: 1
+      - path: wolf:spine/wolf:spine1/wolf:chest/wolf:left_shoulder/wolf:left_arm1/wolf:left_arm2
+        weight: 1
+      - path: wolf:spine/wolf:spine1/wolf:chest/wolf:left_shoulder/wolf:left_arm1/wolf:left_arm2/wolf:left_hand1
+        weight: 1
+      - path: wolf:spine/wolf:spine1/wolf:chest/wolf:left_shoulder/wolf:left_arm1/wolf:left_arm2/wolf:left_hand1/wolf:left_hand2
+        weight: 1
+      - path: wolf:spine/wolf:spine1/wolf:chest/wolf:neck
+        weight: 1
+      - path: wolf:spine/wolf:spine1/wolf:chest/wolf:neck/wolf:neck1
+        weight: 1
+      - path: wolf:spine/wolf:spine1/wolf:chest/wolf:neck/wolf:neck1/wolf:head
+        weight: 1
+      - path: wolf:spine/wolf:spine1/wolf:chest/wolf:neck/wolf:neck1/wolf:head/wolf:head1
+        weight: 1
+      - path: wolf:spine/wolf:spine1/wolf:chest/wolf:neck/wolf:neck1/wolf:head/wolf:jaw
+        weight: 1
+      - path: wolf:spine/wolf:spine1/wolf:chest/wolf:neck/wolf:neck1/wolf:head/wolf:jaw/wolf:jaw1
+        weight: 1
+      - path: wolf:spine/wolf:spine1/wolf:chest/wolf:neck/wolf:neck1/wolf:head/wolf:left_ear
+        weight: 1
+      - path: wolf:spine/wolf:spine1/wolf:chest/wolf:neck/wolf:neck1/wolf:head/wolf:left_ear/wolf:left_ear1
+        weight: 1
+      - path: wolf:spine/wolf:spine1/wolf:chest/wolf:neck/wolf:neck1/wolf:head/wolf:right_ear
+        weight: 1
+      - path: wolf:spine/wolf:spine1/wolf:chest/wolf:neck/wolf:neck1/wolf:head/wolf:right_ear/wolf:right_ear1
+        weight: 1
+      - path: wolf:spine/wolf:spine1/wolf:chest/wolf:right_shoulder
+        weight: 1
+      - path: wolf:spine/wolf:spine1/wolf:chest/wolf:right_shoulder/wolf:right_arm1
+        weight: 1
+      - path: wolf:spine/wolf:spine1/wolf:chest/wolf:right_shoulder/wolf:right_arm1/wolf:right_arm2
+        weight: 1
+      - path: wolf:spine/wolf:spine1/wolf:chest/wolf:right_shoulder/wolf:right_arm1/wolf:right_arm2/wolf:right_hand1
+        weight: 1
+      - path: wolf:spine/wolf:spine1/wolf:chest/wolf:right_shoulder/wolf:right_arm1/wolf:right_arm2/wolf:right_hand1/wolf:right_hand2
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

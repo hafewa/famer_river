@@ -1,0 +1,603 @@
+fileFormatVersion: 2
+guid: a744b43048901734e80557d8a1129cef
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: chest
+    100002: //RootNode
+    100004: Chicken_mesh
+    100006: head
+    100008: head1
+    100010: left_foot
+    100012: left_leg1
+    100014: left_leg2
+    100016: left_nail1
+    100018: left_nail2
+    100020: left_nail3
+    100022: left_nail4
+    100024: left_nail5
+    100026: left_nail6
+    100028: left_nail7
+    100030: left_nail8
+    100032: left_nail9
+    100034: nail10
+    100036: nail11
+    100038: nail8
+    100040: nail9
+    100042: neck1
+    100044: neck2
+    100046: right_foot
+    100048: right_leg1
+    100050: right_leg2
+    100052: right_nail1
+    100054: right_nail2
+    100056: right_nail3
+    100058: right_nail4
+    100060: right_nail5
+    100062: right_nail6
+    100064: right_nail7
+    100066: right_nail8
+    100068: right_nail9
+    100070: root
+    100072: tail1
+    100074: tail2
+    400000: chest
+    400002: //RootNode
+    400004: Chicken_mesh
+    400006: head
+    400008: head1
+    400010: left_foot
+    400012: left_leg1
+    400014: left_leg2
+    400016: left_nail1
+    400018: left_nail2
+    400020: left_nail3
+    400022: left_nail4
+    400024: left_nail5
+    400026: left_nail6
+    400028: left_nail7
+    400030: left_nail8
+    400032: left_nail9
+    400034: nail10
+    400036: nail11
+    400038: nail8
+    400040: nail9
+    400042: neck1
+    400044: neck2
+    400046: right_foot
+    400048: right_leg1
+    400050: right_leg2
+    400052: right_nail1
+    400054: right_nail2
+    400056: right_nail3
+    400058: right_nail4
+    400060: right_nail5
+    400062: right_nail6
+    400064: right_nail7
+    400066: right_nail8
+    400068: right_nail9
+    400070: root
+    400072: tail1
+    400074: tail2
+    2300000: Chicken_mesh
+    3300000: Chicken_mesh
+    4300000: Chicken_mesh
+    7400000: Chicken_Walk
+    7400002: Chicken_Idle1
+    7400004: Chicken_Idle2
+    7400006: Chicken_Death
+    7400008: Chicken_Walk //// root
+    7400010: Chicken_Idle1 //// root
+    7400012: Chicken_Idle2 //// root
+    7400014: Chicken_Death //// root
+    9500000: //RootNode
+    11100000: //RootNode
+    11100002: chest
+    11100004: Chicken_mesh
+    11100006: head
+    11100008: head1
+    11100010: left_foot
+    11100012: left_leg1
+    11100014: left_leg2
+    11100016: left_nail1
+    11100018: left_nail2
+    11100020: left_nail3
+    11100022: left_nail4
+    11100024: left_nail5
+    11100026: left_nail6
+    11100028: left_nail7
+    11100030: left_nail8
+    11100032: left_nail9
+    11100034: nail10
+    11100036: nail11
+    11100038: nail8
+    11100040: nail9
+    11100042: neck1
+    11100044: neck2
+    11100046: right_foot
+    11100048: right_leg1
+    11100050: right_leg2
+    11100052: right_nail1
+    11100054: right_nail2
+    11100056: right_nail3
+    11100058: right_nail4
+    11100060: right_nail5
+    11100062: right_nail6
+    11100064: right_nail7
+    11100066: right_nail8
+    11100068: right_nail9
+    11100070: root
+    11100072: tail1
+    11100074: tail2
+    13700000: Chicken_mesh
+    13700002: root
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 0
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 2
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Chicken_Walk
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 30
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Chicken_mesh
+        weight: 1
+      - path: root
+        weight: 1
+      - path: root/chest
+        weight: 1
+      - path: root/chest/neck1
+        weight: 1
+      - path: root/chest/neck1/neck2
+        weight: 1
+      - path: root/chest/neck1/neck2/head
+        weight: 1
+      - path: root/chest/neck1/neck2/head/head1
+        weight: 1
+      - path: root/left_leg1
+        weight: 1
+      - path: root/left_leg1/left_leg2
+        weight: 1
+      - path: root/left_leg1/left_leg2/left_foot
+        weight: 1
+      - path: root/left_leg1/left_leg2/left_foot/left_nail1
+        weight: 1
+      - path: root/left_leg1/left_leg2/left_foot/left_nail1/left_nail2
+        weight: 1
+      - path: root/left_leg1/left_leg2/left_foot/left_nail1/left_nail2/left_nail3
+        weight: 1
+      - path: root/left_leg1/left_leg2/left_foot/left_nail4
+        weight: 1
+      - path: root/left_leg1/left_leg2/left_foot/left_nail4/left_nail5
+        weight: 1
+      - path: root/left_leg1/left_leg2/left_foot/left_nail4/left_nail5/left_nail6
+        weight: 1
+      - path: root/left_leg1/left_leg2/left_foot/left_nail7
+        weight: 1
+      - path: root/left_leg1/left_leg2/left_foot/left_nail7/left_nail8
+        weight: 1
+      - path: root/left_leg1/left_leg2/left_foot/left_nail7/left_nail8/left_nail9
+        weight: 1
+      - path: root/left_leg1/left_leg2/left_foot/nail10
+        weight: 1
+      - path: root/left_leg1/left_leg2/left_foot/nail10/nail11
+        weight: 1
+      - path: root/right_leg1
+        weight: 1
+      - path: root/right_leg1/right_leg2
+        weight: 1
+      - path: root/right_leg1/right_leg2/right_foot
+        weight: 1
+      - path: root/right_leg1/right_leg2/right_foot/nail8
+        weight: 1
+      - path: root/right_leg1/right_leg2/right_foot/nail8/nail9
+        weight: 1
+      - path: root/right_leg1/right_leg2/right_foot/right_nail1
+        weight: 1
+      - path: root/right_leg1/right_leg2/right_foot/right_nail1/right_nail2
+        weight: 1
+      - path: root/right_leg1/right_leg2/right_foot/right_nail1/right_nail2/right_nail3
+        weight: 1
+      - path: root/right_leg1/right_leg2/right_foot/right_nail4
+        weight: 1
+      - path: root/right_leg1/right_leg2/right_foot/right_nail4/right_nail5
+        weight: 1
+      - path: root/right_leg1/right_leg2/right_foot/right_nail4/right_nail5/right_nail6
+        weight: 1
+      - path: root/right_leg1/right_leg2/right_foot/right_nail7
+        weight: 1
+      - path: root/right_leg1/right_leg2/right_foot/right_nail7/right_nail8
+        weight: 1
+      - path: root/right_leg1/right_leg2/right_foot/right_nail7/right_nail8/right_nail9
+        weight: 1
+      - path: root/tail1
+        weight: 1
+      - path: root/tail1/tail2
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Chicken_Idle1
+      takeName: Take 001
+      firstFrame: 35
+      lastFrame: 150
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Chicken_mesh
+        weight: 1
+      - path: root
+        weight: 1
+      - path: root/chest
+        weight: 1
+      - path: root/chest/neck1
+        weight: 1
+      - path: root/chest/neck1/neck2
+        weight: 1
+      - path: root/chest/neck1/neck2/head
+        weight: 1
+      - path: root/chest/neck1/neck2/head/head1
+        weight: 1
+      - path: root/left_leg1
+        weight: 1
+      - path: root/left_leg1/left_leg2
+        weight: 1
+      - path: root/left_leg1/left_leg2/left_foot
+        weight: 1
+      - path: root/left_leg1/left_leg2/left_foot/left_nail1
+        weight: 1
+      - path: root/left_leg1/left_leg2/left_foot/left_nail1/left_nail2
+        weight: 1
+      - path: root/left_leg1/left_leg2/left_foot/left_nail1/left_nail2/left_nail3
+        weight: 1
+      - path: root/left_leg1/left_leg2/left_foot/left_nail4
+        weight: 1
+      - path: root/left_leg1/left_leg2/left_foot/left_nail4/left_nail5
+        weight: 1
+      - path: root/left_leg1/left_leg2/left_foot/left_nail4/left_nail5/left_nail6
+        weight: 1
+      - path: root/left_leg1/left_leg2/left_foot/left_nail7
+        weight: 1
+      - path: root/left_leg1/left_leg2/left_foot/left_nail7/left_nail8
+        weight: 1
+      - path: root/left_leg1/left_leg2/left_foot/left_nail7/left_nail8/left_nail9
+        weight: 1
+      - path: root/left_leg1/left_leg2/left_foot/nail10
+        weight: 1
+      - path: root/left_leg1/left_leg2/left_foot/nail10/nail11
+        weight: 1
+      - path: root/right_leg1
+        weight: 1
+      - path: root/right_leg1/right_leg2
+        weight: 1
+      - path: root/right_leg1/right_leg2/right_foot
+        weight: 1
+      - path: root/right_leg1/right_leg2/right_foot/nail8
+        weight: 1
+      - path: root/right_leg1/right_leg2/right_foot/nail8/nail9
+        weight: 1
+      - path: root/right_leg1/right_leg2/right_foot/right_nail1
+        weight: 1
+      - path: root/right_leg1/right_leg2/right_foot/right_nail1/right_nail2
+        weight: 1
+      - path: root/right_leg1/right_leg2/right_foot/right_nail1/right_nail2/right_nail3
+        weight: 1
+      - path: root/right_leg1/right_leg2/right_foot/right_nail4
+        weight: 1
+      - path: root/right_leg1/right_leg2/right_foot/right_nail4/right_nail5
+        weight: 1
+      - path: root/right_leg1/right_leg2/right_foot/right_nail4/right_nail5/right_nail6
+        weight: 1
+      - path: root/right_leg1/right_leg2/right_foot/right_nail7
+        weight: 1
+      - path: root/right_leg1/right_leg2/right_foot/right_nail7/right_nail8
+        weight: 1
+      - path: root/right_leg1/right_leg2/right_foot/right_nail7/right_nail8/right_nail9
+        weight: 1
+      - path: root/tail1
+        weight: 1
+      - path: root/tail1/tail2
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Chicken_Idle2
+      takeName: Take 001
+      firstFrame: 155
+      lastFrame: 300
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Chicken_mesh
+        weight: 1
+      - path: root
+        weight: 1
+      - path: root/chest
+        weight: 1
+      - path: root/chest/neck1
+        weight: 1
+      - path: root/chest/neck1/neck2
+        weight: 1
+      - path: root/chest/neck1/neck2/head
+        weight: 1
+      - path: root/chest/neck1/neck2/head/head1
+        weight: 1
+      - path: root/left_leg1
+        weight: 1
+      - path: root/left_leg1/left_leg2
+        weight: 1
+      - path: root/left_leg1/left_leg2/left_foot
+        weight: 1
+      - path: root/left_leg1/left_leg2/left_foot/left_nail1
+        weight: 1
+      - path: root/left_leg1/left_leg2/left_foot/left_nail1/left_nail2
+        weight: 1
+      - path: root/left_leg1/left_leg2/left_foot/left_nail1/left_nail2/left_nail3
+        weight: 1
+      - path: root/left_leg1/left_leg2/left_foot/left_nail4
+        weight: 1
+      - path: root/left_leg1/left_leg2/left_foot/left_nail4/left_nail5
+        weight: 1
+      - path: root/left_leg1/left_leg2/left_foot/left_nail4/left_nail5/left_nail6
+        weight: 1
+      - path: root/left_leg1/left_leg2/left_foot/left_nail7
+        weight: 1
+      - path: root/left_leg1/left_leg2/left_foot/left_nail7/left_nail8
+        weight: 1
+      - path: root/left_leg1/left_leg2/left_foot/left_nail7/left_nail8/left_nail9
+        weight: 1
+      - path: root/left_leg1/left_leg2/left_foot/nail10
+        weight: 1
+      - path: root/left_leg1/left_leg2/left_foot/nail10/nail11
+        weight: 1
+      - path: root/right_leg1
+        weight: 1
+      - path: root/right_leg1/right_leg2
+        weight: 1
+      - path: root/right_leg1/right_leg2/right_foot
+        weight: 1
+      - path: root/right_leg1/right_leg2/right_foot/nail8
+        weight: 1
+      - path: root/right_leg1/right_leg2/right_foot/nail8/nail9
+        weight: 1
+      - path: root/right_leg1/right_leg2/right_foot/right_nail1
+        weight: 1
+      - path: root/right_leg1/right_leg2/right_foot/right_nail1/right_nail2
+        weight: 1
+      - path: root/right_leg1/right_leg2/right_foot/right_nail1/right_nail2/right_nail3
+        weight: 1
+      - path: root/right_leg1/right_leg2/right_foot/right_nail4
+        weight: 1
+      - path: root/right_leg1/right_leg2/right_foot/right_nail4/right_nail5
+        weight: 1
+      - path: root/right_leg1/right_leg2/right_foot/right_nail4/right_nail5/right_nail6
+        weight: 1
+      - path: root/right_leg1/right_leg2/right_foot/right_nail7
+        weight: 1
+      - path: root/right_leg1/right_leg2/right_foot/right_nail7/right_nail8
+        weight: 1
+      - path: root/right_leg1/right_leg2/right_foot/right_nail7/right_nail8/right_nail9
+        weight: 1
+      - path: root/tail1
+        weight: 1
+      - path: root/tail1/tail2
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Chicken_Death
+      takeName: Take 001
+      firstFrame: 305
+      lastFrame: 350
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Chicken_mesh
+        weight: 1
+      - path: root
+        weight: 1
+      - path: root/chest
+        weight: 1
+      - path: root/chest/neck1
+        weight: 1
+      - path: root/chest/neck1/neck2
+        weight: 1
+      - path: root/chest/neck1/neck2/head
+        weight: 1
+      - path: root/chest/neck1/neck2/head/head1
+        weight: 1
+      - path: root/left_leg1
+        weight: 1
+      - path: root/left_leg1/left_leg2
+        weight: 1
+      - path: root/left_leg1/left_leg2/left_foot
+        weight: 1
+      - path: root/left_leg1/left_leg2/left_foot/left_nail1
+        weight: 1
+      - path: root/left_leg1/left_leg2/left_foot/left_nail1/left_nail2
+        weight: 1
+      - path: root/left_leg1/left_leg2/left_foot/left_nail1/left_nail2/left_nail3
+        weight: 1
+      - path: root/left_leg1/left_leg2/left_foot/left_nail4
+        weight: 1
+      - path: root/left_leg1/left_leg2/left_foot/left_nail4/left_nail5
+        weight: 1
+      - path: root/left_leg1/left_leg2/left_foot/left_nail4/left_nail5/left_nail6
+        weight: 1
+      - path: root/left_leg1/left_leg2/left_foot/left_nail7
+        weight: 1
+      - path: root/left_leg1/left_leg2/left_foot/left_nail7/left_nail8
+        weight: 1
+      - path: root/left_leg1/left_leg2/left_foot/left_nail7/left_nail8/left_nail9
+        weight: 1
+      - path: root/left_leg1/left_leg2/left_foot/nail10
+        weight: 1
+      - path: root/left_leg1/left_leg2/left_foot/nail10/nail11
+        weight: 1
+      - path: root/right_leg1
+        weight: 1
+      - path: root/right_leg1/right_leg2
+        weight: 1
+      - path: root/right_leg1/right_leg2/right_foot
+        weight: 1
+      - path: root/right_leg1/right_leg2/right_foot/nail8
+        weight: 1
+      - path: root/right_leg1/right_leg2/right_foot/nail8/nail9
+        weight: 1
+      - path: root/right_leg1/right_leg2/right_foot/right_nail1
+        weight: 1
+      - path: root/right_leg1/right_leg2/right_foot/right_nail1/right_nail2
+        weight: 1
+      - path: root/right_leg1/right_leg2/right_foot/right_nail1/right_nail2/right_nail3
+        weight: 1
+      - path: root/right_leg1/right_leg2/right_foot/right_nail4
+        weight: 1
+      - path: root/right_leg1/right_leg2/right_foot/right_nail4/right_nail5
+        weight: 1
+      - path: root/right_leg1/right_leg2/right_foot/right_nail4/right_nail5/right_nail6
+        weight: 1
+      - path: root/right_leg1/right_leg2/right_foot/right_nail7
+        weight: 1
+      - path: root/right_leg1/right_leg2/right_foot/right_nail7/right_nail8
+        weight: 1
+      - path: root/right_leg1/right_leg2/right_foot/right_nail7/right_nail8/right_nail9
+        weight: 1
+      - path: root/tail1
+        weight: 1
+      - path: root/tail1/tail2
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 1
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: root
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
