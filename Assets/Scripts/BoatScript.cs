@@ -6,6 +6,7 @@ public class BoatScript : MonoBehaviour {
   public float speed;
   public Transform target;
   public bool moving;  
+  public static bool objectInBoat;  
 
   void OnEnable(){
     PlayerScript.OnBoatLaunch += BoatMovement;
