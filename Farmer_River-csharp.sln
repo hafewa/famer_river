@@ -1,0 +1,33 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{E1D0C6AD-79BB-90B7-697D-8FE3FCD22B99}") = "Farmer_River", "Assembly-CSharp-firstpass-vs.csproj", "{580382CD-40C7-A5B4-3E0B-615EA2F8AC23}"
+EndProject
+Project("{E1D0C6AD-79BB-90B7-697D-8FE3FCD22B99}") = "Farmer_River", "Assembly-CSharp-vs.csproj", "{FCFD803A-B9ED-5856-595E-D348C9DB5B54}"
+EndProject
+Project("{E1D0C6AD-79BB-90B7-697D-8FE3FCD22B99}") = "Farmer_River", "Assembly-CSharp-Editor-vs.csproj", "{EB38B139-4F83-C9A9-9E0C-F95734622FE4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{580382CD-40C7-A5B4-3E0B-615EA2F8AC23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{580382CD-40C7-A5B4-3E0B-615EA2F8AC23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{580382CD-40C7-A5B4-3E0B-615EA2F8AC23}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{580382CD-40C7-A5B4-3E0B-615EA2F8AC23}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FCFD803A-B9ED-5856-595E-D348C9DB5B54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCFD803A-B9ED-5856-595E-D348C9DB5B54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCFD803A-B9ED-5856-595E-D348C9DB5B54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCFD803A-B9ED-5856-595E-D348C9DB5B54}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB38B139-4F83-C9A9-9E0C-F95734622FE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB38B139-4F83-C9A9-9E0C-F95734622FE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB38B139-4F83-C9A9-9E0C-F95734622FE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB38B139-4F83-C9A9-9E0C-F95734622FE4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	
+EndGlobal
