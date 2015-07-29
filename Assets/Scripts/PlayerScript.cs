@@ -73,6 +73,53 @@ public class PlayerScript : MonoBehaviour {
         break;
     }
   }
+
+  public void OnCollisionStay(Collision other){
+    switch(other.gameObject.tag){
+    case "Wolf":
+      touchingWolf = true;
+      if(!WolfScript.inBoat){ 
+        Debug.Log("Wolf (not in boat) Collider");
+        myText.text = "Press \"w\" to place the wolf in the boat";
+      } else {
+        myText.text = "Press \"r\" to remove from boat";
+        Debug.Log("Wolf -- in boat -- Collider");
+      }
+      break;
+    case "Chicken":
+      touchingChx = true;
+      if(!ChickenScript.inBoat){
+        Debug.Log("Chicken Collider");        
+        myText.text = "Press \"c\" to place the chicken in the boat";
+      }else {
+        myText.text = "Press \"r\" to remove from boat";
+      }
+      break;
+    case "Cabbage":
+      touchingCab = true;
+      if(!CabbageScript.inBoat){
+        Debug.Log("Cabbage Collider");
+        myText.text = "Press \"g\" to place the cabbage in the boat"; 
+      } else {
+        myText.text = "Press \"r\" to remove from boat";          
+      }
+      break;
+    case "River_Wall":
+      Debug.Log("River Collider");
+      if(!inBoat)
+        myText.text = "The water is too deep to cross";
+      break;
+    case "Boat":
+      Debug.Log("Boat Collider");
+      inBoat = true;
+      beStill = true;
+      myText.text = "Push off?";
+      break;
+    default: 
+      Debug.Log("No collider identity");      
+      break;
+    }
+  }
  
   public void OnCollisionExit(Collision other){
     myText.text = ""; 
