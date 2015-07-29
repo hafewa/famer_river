@@ -11,8 +11,4 @@ public class Animal : MonoBehaviour {
     Debug.Log("my state = "+my_state);
   }
 
-  public virtual void PlaceInBoat(){
-//    gameObject.transform.position = myMarkInBoat.transform.position;
-  }
-
 }

@@ -3,21 +3,36 @@ using System.Collections;
 
 public class CabbageScript : Animal {
 
-  public static GameObject myMarkInBoat;
+  public Vector3 myMarkInBoat;
+  public Vector3 myMarkOnWestBank;
+  public Vector3 myMarkOnEastBank;
+  public static bool inBoat;
+	
+  void OnEnable(){
+    PlayerScript.OnPress_G += PlaceInBoat;
+  }
+
+  void OnDisable(){
+    PlayerScript.OnPress_G -= PlaceInBoat;
+  }
 
 	// Use this for initialization
 	void Start () {
-    myMarkInBoat = GameObject.FindWithTag("cab_mark_in_boat");
+    myMarkOnWestBank = GameObject.FindWithTag("cab_mark_west" ).transform.position;
+    myMarkOnEastBank = gameObject.transform.position;
+    myMarkInBoat = GameObject.FindWithTag("cab_mark_in_boat").transform.position;
     base.GetMyState();	
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	}
 
-  public static void PlaceInBoat(){
-    
-    gameObject.transform.position = myMarkInBoat.transform.position;
+  public void PlaceInBoat(){
+    gameObject.transform.position = myMarkInBoat;
   }
 
+  public void PlaceOnEast(){
+    gameObject.transform.position = myMarkOnEastBank;
+  }
+  
+  public void PlaceOnWest(){
+    gameObject.transform.position = myMarkOnWestBank;
+  }
 }

@@ -9,33 +9,52 @@ public class PlayerScript : MonoBehaviour {
   public static bool beStill;
   public delegate void BoatEvent();
   public static event BoatEvent OnBoatLaunch;
-//  public delegate void PlaceInBoat(string name);
-//  public static event PlaceInBoat OnPlace; 
-  public delegate void ChxToBoat();
-  public static event ChxToBoat OnChxToBoat;
-  public delegate void WolfToBoat();
-  public static event WolfToBoat OnWolfToBoat;
-  public delegate void CabToBoat();
-  public static event CabToBoat OnCabToBoat;
+  public delegate void BoatLandEvent();
+  public static event BoatLandEvent OnBoatLand;
+  public delegate void Press_C();
+  public static event Press_C OnPress_C;
+  public delegate void Press_W();
+  public static event Press_W OnPress_W;
+  public delegate void Press_G();
+  public static event Press_G OnPress_G;
+  private bool touchingWolf;
+  private bool touchingChx;
+  private bool touchingCab;
 
   public void OnCollisionEnter(Collision other){
     switch(other.gameObject.tag){
-      case "Wolf": 
-        Debug.Log("Wolf Collider");
-        myText.text = "Press \"w\" to place the wolf in the boat";
+      case "Wolf":
+      touchingWolf = true;
+        if(!WolfScript.inBoat){ 
+          Debug.Log("Wolf (not in boat) Collider");
+          myText.text = "Press \"w\" to place the wolf in the boat";
+        } else {
+          myText.text = "Press \"r\" to remove from boat";
+          Debug.Log("Wolf -- in boat -- Collider");
+        }
         break;
       case "Chicken":
-        Debug.Log("Chicken Collider");        
-        myText.text = "Press \"c\" to place the chicken in the boat";
+      touchingChx = true;
+        if(!ChickenScript.inBoat){
+          Debug.Log("Chicken Collider");        
+          myText.text = "Press \"c\" to place the chicken in the boat";
+        }else {
+          myText.text = "Press \"r\" to remove from boat";
+        }
         break;
       case "Cabbage":
-        Debug.Log("Cabbage Collider");
-        myText.text = "Press \"g\" to place the cabbage in the boat"; 
+      touchingCab = true;
+        if(!CabbageScript.inBoat){
+          Debug.Log("Cabbage Collider");
+          myText.text = "Press \"g\" to place the cabbage in the boat"; 
+        } else {
+          myText.text = "Press \"r\" to remove from boat";          
+        }
         break;
       case "River_Wall":
         Debug.Log("River Collider");
         if(!inBoat)
-          myText.text = "The water is too deep to cross on foot";
+          myText.text = "The water is too deep to cross";
         break;
       case "Boat":
         Debug.Log("Boat Collider");
@@ -54,31 +73,17 @@ public class PlayerScript : MonoBehaviour {
     if(other.gameObject.tag == "Boat"){
       inBoat = false;
     }
-      
   }
   void Update(){
-    if(Input.GetKeyUp("w")){
-      OnWolfToBoat(); 
+    if(Input.GetKeyUp("w") && touchingWolf){
+      OnPress_W(); 
     }
-    else if (Input.GetKeyUp("c")) {
-      OnChxToBoat();
+    else if (Input.GetKeyUp("c") && touchingChx) {
+      OnPress_C();
     }
-    else if (Input.GetKeyUp("g")) {
-      OnCabToBoat();
+    else if (Input.GetKeyUp("g") && touchingCab) {
+      OnPress_G();
     }
-
-  } 
- 
-  public void ChxToBoat(){
-
-  }
-
-  public void WolfToBoat(){
-
-  }
-
-  public void CabToBoat(){
-
   } 
 
   //Boat launch script subscribes to this event. 
@@ -86,4 +91,11 @@ public class PlayerScript : MonoBehaviour {
     OnBoatLaunch();
     Debug.Log("Boat launch");
   }
+
+  public void BoatLand(){
+    OnBoatLand();
+    Debug.Log("Boat land");
+  }
+
+
 }

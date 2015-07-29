@@ -3,6 +3,8 @@ using System.Collections;
 
 public class BoatScript : MonoBehaviour {
 
+
+  public enum MyState{EastBank, WestBank, Traveling, Tipped};
   public float speed;
   public Transform target;
   public bool moving;  
@@ -10,18 +12,23 @@ public class BoatScript : MonoBehaviour {
 
   void OnEnable(){
     PlayerScript.OnBoatLaunch += BoatMovement;
+   // PlayerScript.OnInBoat += PlayerInBoat;
   }
 
   void OnDisable(){
     PlayerScript.OnBoatLaunch -= BoatMovement;
+   // PlayerScript.OnInBoat -= PlayerInBoat;   
   }
 
 
   public void BoatMovement(){
     moving = true;
-    //movetowards 
+    //movetowards other shore 
   }
-
+  
+  public void PlayerInBoat(){
+    Debug.Log("Boat responds to player in boat event,as does river");
+  }
 
 	// Use this for initialization
 	void Start () {
