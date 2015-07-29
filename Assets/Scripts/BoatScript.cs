@@ -1,10 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+public enum BoatState{EastBank, WestBank, Traveling, Tipped};
+
 public class BoatScript : MonoBehaviour {
 
 
-  public enum MyState{EastBank, WestBank, Traveling, Tipped};
+
+  public static BoatState boat_state;
   public float speed;
   public Transform target;
   public bool moving;  
@@ -32,7 +35,7 @@ public class BoatScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
+    boat_state = BoatState.EastBank;
 	}
 	
 	// Update is called once per frame

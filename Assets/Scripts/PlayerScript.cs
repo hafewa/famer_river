@@ -17,6 +17,12 @@ public class PlayerScript : MonoBehaviour {
   public static event Press_W OnPress_W;
   public delegate void Press_G();
   public static event Press_G OnPress_G;
+  public delegate void Press_RW();
+  public static event Press_RW OnPress_RW;
+  public delegate void Press_RC();
+  public static event Press_RC OnPress_RC;
+  public delegate void Press_RG();
+  public static event Press_RG OnPress_RG;
   private bool touchingWolf;
   private bool touchingChx;
   private bool touchingCab;
@@ -73,6 +79,9 @@ public class PlayerScript : MonoBehaviour {
     if(other.gameObject.tag == "Boat"){
       inBoat = false;
     }
+    touchingCab = false;
+    touchingChx = false;
+    touchingWolf = false;
   }
   void Update(){
     if(Input.GetKeyUp("w") && touchingWolf){
@@ -83,6 +92,15 @@ public class PlayerScript : MonoBehaviour {
     }
     else if (Input.GetKeyUp("g") && touchingCab) {
       OnPress_G();
+    }
+    else if (Input.GetKeyUp("r") && touchingWolf) {
+      OnPress_RW();
+    }
+    else if (Input.GetKeyUp("r") && touchingChx) {
+      OnPress_RC();
+    }
+    else if (Input.GetKeyUp("r") && touchingCab) {
+      OnPress_RG();
     }
   } 
 

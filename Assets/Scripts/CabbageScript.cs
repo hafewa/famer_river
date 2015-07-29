@@ -10,10 +10,12 @@ public class CabbageScript : Animal {
 	
   void OnEnable(){
     PlayerScript.OnPress_G += PlaceInBoat;
+    PlayerScript.OnPress_RG += PlaceOnShore;
   }
 
   void OnDisable(){
     PlayerScript.OnPress_G -= PlaceInBoat;
+    PlayerScript.OnPress_RG -= PlaceOnShore;
   }
 
 	// Use this for initialization
@@ -26,13 +28,15 @@ public class CabbageScript : Animal {
 
   public void PlaceInBoat(){
     gameObject.transform.position = myMarkInBoat;
+    inBoat = true;
   }
 
-  public void PlaceOnEast(){
-    gameObject.transform.position = myMarkOnEastBank;
-  }
-  
-  public void PlaceOnWest(){
-    gameObject.transform.position = myMarkOnWestBank;
+  public void PlaceOnShore(){
+    inBoat = false;
+    if (BoatScript.boat_state == BoatState.EastBank) {
+      gameObject.transform.position = myMarkOnEastBank;
+    } else if (BoatScript.boat_state == BoatState.WestBank) {
+      gameObject.transform.position = myMarkOnWestBank;
+    }
   }
 }

@@ -10,10 +10,12 @@ public class ChickenScript : Animal {
 
   void OnEnable(){
     PlayerScript.OnPress_C += PlaceInBoat;
+    PlayerScript.OnPress_RC += PlaceOnShore;
   }
   
   void OnDisable(){
     PlayerScript.OnPress_C -= PlaceInBoat;
+    PlayerScript.OnPress_RC -= PlaceOnShore;
   }
 
   void Start(){
@@ -25,12 +27,15 @@ public class ChickenScript : Animal {
 
   public void PlaceInBoat(){
     gameObject.transform.position = myMarkInBoat;
+    inBoat = true;
   }
-  public void PlaceOnEast(){
-    gameObject.transform.position = myMarkOnEastBank;
-  }
-  
-  public void PlaceOnWest(){
-    gameObject.transform.position = myMarkOnWestBank;
+
+  public void PlaceOnShore(){
+    inBoat = false;
+    if (BoatScript.boat_state == BoatState.EastBank) {
+      gameObject.transform.position = myMarkOnEastBank;
+    } else if (BoatScript.boat_state == BoatState.WestBank) {
+      gameObject.transform.position = myMarkOnWestBank;
+    }
   }
 }
