@@ -155,8 +155,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
 						    m_RigidBody.AddForce (desiredMove * SlopeMultiplier (), ForceMode.Impulse);
 					    }
 				    }
-			  }
-
+			}
+			
             if (m_IsGrounded)
             {
                 m_RigidBody.drag = 5f;
@@ -183,7 +183,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 }
             }
             m_Jump = false;
-        }
+		
+		}
 
 
         private float SlopeMultiplier()

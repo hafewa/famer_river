@@ -5,13 +5,13 @@ public class RiverWallScript : MonoBehaviour {
 
 
   void OnEnable(){
-    PlayerScript.OnBoatLaunch += hideWall;
-    PlayerScript.OnBoatLand += erectWall;
+    PlayerScript.OnPlayerLaunchBoat += hideWall;
+    BoatScript.OnBoatLand += erectWall;
   }
 
 	void OnDisable () {
-	  PlayerScript.OnBoatLaunch -= hideWall;
-    PlayerScript.OnBoatLand -= erectWall;
+	  PlayerScript.OnPlayerLaunchBoat -= hideWall;
+    BoatScript.OnBoatLand -= erectWall;
 	}
   
   public void hideWall(){

@@ -14,16 +14,24 @@ public class BoatScript : MonoBehaviour {
   public Transform target;
   public bool moving;  
   public static bool objectInBoat;  
+  public delegate void BoatLandEvent();
+  public static event BoatLandEvent OnBoatLand;
 
-  void OnTriggerEnter(Collider other){
+	
+	void OnTriggerEnter(Collider other){
     switch (other.gameObject.tag) {
-    case "Eastbank":
+    case "EastbankBoatSpot":
 	  Debug.Log ("Arrived on EastBank");
       boat_state = BoatState.EastBank;
       otherBank = BoatState.WestBank;
+			PlayerScript.beStill = false;
+
+			moving = false;
       break;
-    case "WestBank":
+    case "WestBankBoatSpot":
 	  Debug.Log ("Arrived on WestBank");
+	  moving = false;
+	  OnBoatLand();
       boat_state = BoatState.WestBank;
       otherBank = BoatState.EastBank;
       break;
@@ -34,20 +42,16 @@ public class BoatScript : MonoBehaviour {
   }
 
   void OnEnable(){
-    PlayerScript.OnBoatLaunch += BoatMovement;
+    PlayerScript.OnPlayerLaunchBoat += BoatMovement;
   }
 
   void OnDisable(){
-    PlayerScript.OnBoatLaunch -= BoatMovement;
+    PlayerScript.OnPlayerLaunchBoat -= BoatMovement;
   }
 
 
   public void BoatMovement(){
     moving = true;
-    //movetowards other shore 
-    //while (boat_state != otherBank) {
-
-    //}
   }
   
   public void PlayerInBoat(){

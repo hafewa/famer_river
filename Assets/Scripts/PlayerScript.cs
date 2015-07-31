@@ -9,10 +9,8 @@ public class PlayerScript : MonoBehaviour {
   public static bool inBoat;
   public static bool beStill;
   public static bool noMouse;
-  public delegate void BoatEvent();
-  public static event BoatEvent OnBoatLaunch;
-  public delegate void BoatLandEvent();
-  public static event BoatLandEvent OnBoatLand;
+
+
   public delegate void Press_C();
   public static event Press_C OnPress_C;
   public delegate void Press_W();
@@ -20,9 +18,6 @@ public class PlayerScript : MonoBehaviour {
 
   public delegate void Press_G();
   public static event Press_G OnPress_G;
-
-  public delegate void ClickAction();
-  public static event ClickAction OnClicked;
   
   public delegate void Press_B();
   public static event Press_B OnPress_B;
@@ -33,7 +28,9 @@ public class PlayerScript : MonoBehaviour {
   public static event Press_RC OnPress_RC;
   public delegate void Press_RG();
   public static event Press_RG OnPress_RG;
-  private bool touchingWolf;
+	public delegate void PlayerBoatEvent();
+	public static event PlayerBoatEvent OnPlayerLaunchBoat;
+	private bool touchingWolf;
   private bool touchingChx;
   private bool touchingCab;
   private bool touchingBoat;
@@ -49,6 +46,17 @@ public class PlayerScript : MonoBehaviour {
   private Quaternion _lookRotation;
   private Vector3 _direction;
   
+	void OnEnable(){
+		BoatScript.OnBoatLand += DismountBoat;
+	}
+
+	void OnDisable(){
+		BoatScript.OnBoatLand -= DismountBoat;
+	}
+
+	/// <summary>
+	/// Singleton for player. 
+	/// </summary>
 	public static PlayerScript instance = null;
 
 	public static PlayerScript GetInstance()
@@ -196,12 +204,18 @@ public class PlayerScript : MonoBehaviour {
     if (Input.GetKeyUp ("w") && touchingWolf) {
       myText.text = "";
       OnPress_W (); 
+	  OnPress_RC();
+			OnPress_RG();
     } else if (Input.GetKeyUp ("c") && touchingChx) {
       myText.text = "";
       OnPress_C ();
+			OnPress_RG();
+			OnPress_RW();
     } else if (Input.GetKeyUp ("g") && touchingCab) {
       myText.text = "";
       OnPress_G ();
+			OnPress_RW();
+			OnPress_RC();
     } else if (Input.GetKeyUp ("r") && touchingWolf) {
       myText.text = "";
       OnPress_RW ();
@@ -220,9 +234,9 @@ public class PlayerScript : MonoBehaviour {
     } else if (Input.GetKeyUp ("p") && inBoat) {
 	  myText.text = "";
 	  noMouse = false;
-      if(OnBoatLaunch != null){
-        OnBoatLaunch();
-      }
+		if(OnPlayerLaunchBoat != null){
+			OnPlayerLaunchBoat();
+		}
     }
   } 
 
@@ -234,9 +248,10 @@ public class PlayerScript : MonoBehaviour {
   }
 
   public void DismountBoat(){
+		inBoat = false;
     beStill = false; 
-	noMouse = true;
     startDismounting = true;
     GetComponent<CapsuleCollider> ().isTrigger = false;
-  }
+	transform.parent = null;
+	}
 }
