@@ -50,7 +50,11 @@
      <Compile Include="Assets\Scripts\BoatScript.cs" />
      <Compile Include="Assets\Scripts\CabbageScript.cs" />
      <Compile Include="Assets\Scripts\ChickenScript.cs" />
+     <Compile Include="Assets\Scripts\FirstPersonController.cs" />
+     <Compile Include="Assets\Scripts\HeadBob.cs" />
+     <Compile Include="Assets\Scripts\MouseLook.cs" />
      <Compile Include="Assets\Scripts\PlayerScript.cs" />
+     <Compile Include="Assets\Scripts\RigidbodyFirstPersonController.cs" />
      <Compile Include="Assets\Scripts\RiverWallScript.cs" />
      <Compile Include="Assets\Scripts\WolfScript.cs" />
      <None Include="Assets\Forest Grounds - Terrain Texture Pack\Readme.txt" />

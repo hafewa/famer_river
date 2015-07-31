@@ -22,15 +22,25 @@ public class WolfScript : Animal {
     myMarkInBoat = GameObject.FindWithTag("wolf_mark_in_boat").transform.position;
 		myMarkOnEastBank = gameObject.transform.position;
 		myMarkOnWestBank = GameObject.FindWithTag("wolf_mark_west").transform.position;
+
     base.GetMyState();
+  }
+
+  void Update(){
+    if (inBoat) {
+      myMarkInBoat = GameObject.FindWithTag ("wolf_mark_in_boat").transform.position;
+      //gameObject.transform.position = myMarkInBoat;
+    }
   }
 
   public void PlaceInBoat(){
     gameObject.transform.position = myMarkInBoat;
+    gameObject.transform.parent = GameObject.FindWithTag ("Boat").transform;
     inBoat = true;
   }
   
   public void PlaceOnShore(){
+    gameObject.transform.parent = null;
     inBoat = false;
     if (BoatScript.boat_state == BoatState.EastBank) {
       gameObject.transform.position = myMarkOnEastBank;

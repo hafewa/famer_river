@@ -15,12 +15,14 @@ public class RiverWallScript : MonoBehaviour {
 	}
   
   public void hideWall(){
-    gameObject.SetActive(false);
+    //GetComponent<MeshCollider> ().isTrigger = true;
+	gameObject.SetActive (false);
     Debug.Log("Wall is hidden");
   }
 
   public void erectWall(){
-    gameObject.SetActive(true);
+    //GetComponent<MeshCollider> ().isTrigger = false;
+	gameObject.SetActive (false);
     Debug.Log("Wall is UP");
   }
   	

@@ -26,13 +26,22 @@ public class CabbageScript : Animal {
     base.GetMyState();	
 	}
 
+  void Update(){
+    if (inBoat) {
+      myMarkInBoat = GameObject.FindWithTag ("cab_mark_in_boat").transform.position;
+      //gameObject.transform.position = myMarkInBoat;
+    }
+  }
+
   public void PlaceInBoat(){
     gameObject.transform.position = myMarkInBoat;
+    gameObject.transform.parent = GameObject.FindWithTag ("Boat").transform;
     inBoat = true;
   }
 
   public void PlaceOnShore(){
     inBoat = false;
+    gameObject.transform.parent = null;
     if (BoatScript.boat_state == BoatState.EastBank) {
       gameObject.transform.position = myMarkOnEastBank;
     } else if (BoatScript.boat_state == BoatState.WestBank) {

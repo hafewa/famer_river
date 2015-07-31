@@ -1,14 +1,17 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/PlayerScript.cs">
     <Files>
-      <File FileName="Assets/Scripts/WolfScript.cs" Line="24" Column="4" />
-      <File FileName="Assets/Scripts/CabbageScript.cs" Line="41" Column="53" />
+      <File FileName="Assets/Scripts/WolfScript.cs" Line="25" Column="5" />
+      <File FileName="Assets/Scripts/CabbageScript.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Animal.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/BoatScript.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/ChickenScript.cs" Line="31" Column="53" />
-      <File FileName="Assets/Scripts/PlayerScript.cs" Line="18" Column="14" />
-      <File FileName="Assets/Scripts/RiverWallScript.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/BoatScript.cs" Line="67" Column="15" />
+      <File FileName="Assets/Scripts/ChickenScript.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/PlayerScript.cs" Line="116" Column="76" />
+      <File FileName="Assets/Scripts/RiverWallScript.cs" Line="18" Column="1" />
+      <File FileName="Assets/Standard Assets/Characters/FirstPersonCharacter/FirstPersonCharacterGuidelines.txt" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/RigidbodyFirstPersonController.cs" Line="158" Column="6" />
+      <File FileName="Assets/Scripts/MouseLook.cs" Line="50" Column="8" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
