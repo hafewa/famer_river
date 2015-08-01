@@ -18,21 +18,21 @@ public class GameManager_FailureChecker : MonoBehaviour {
 	
 	void CheckFailure(){
 		if (ChickenScript.my_state == ChickenScript.MyState.EastBank && WolfScript.my_state == WolfScript.MyState.EastBank && PlayerScript.inBoat) {
-			OnFailMet ("You left the chicken alone with the wolf.");
+			OnFailMet ("You left the chicken alone with the wolf");
 		} else if (ChickenScript.my_state == ChickenScript.MyState.WestBank && WolfScript.my_state == WolfScript.MyState.WestBank && PlayerScript.inBoat) {
-			OnFailMet ("You left the chicken alone with the wolf.");
+			OnFailMet ("You left the chicken alone with the wolf");
 		} else if (ChickenScript.my_state == ChickenScript.MyState.WestBank && CabbageScript.my_state == CabbageScript.MyState.WestBank && PlayerScript.inBoat) {
-			OnFailMet ("You left the cabbage alone with the chicken.");
+			OnFailMet ("You left the cabbage alone with the chicken");
 		} else if (ChickenScript.my_state == ChickenScript.MyState.EastBank && CabbageScript.my_state == CabbageScript.MyState.EastBank && PlayerScript.inBoat) {
-			OnFailMet("You left the cabbage alone with the chicken.");
+			OnFailMet("You left the cabbage alone with the chicken");
 		}
 
 		if (ChickenScript.my_state == ChickenScript.MyState.EastBank && WolfScript.my_state == WolfScript.MyState.EastBank 
 			&& ChickenScript.my_state == ChickenScript.MyState.EastBank && CabbageScript.my_state == CabbageScript.MyState.EastBank && PlayerScript.inBoat) {
-			OnFailMet ("The chicken may eat the cabbage, but it is more likely that the wolf will eat the chicken.");
+			OnFailMet ("The wolf will eat the chicken in your absence.\nOr the chicken will eat the cabbage.");
 		} else if (ChickenScript.my_state == ChickenScript.MyState.WestBank && WolfScript.my_state == WolfScript.MyState.WestBank 
 			&& ChickenScript.my_state == ChickenScript.MyState.WestBank && CabbageScript.my_state == CabbageScript.MyState.WestBank && PlayerScript.inBoat) {
-			OnFailMet("The chicken may eat the cabbage, but it is more likely that the wolf will eat the chicken.");
+			OnFailMet("The wolf will eat the chicken in your absence.\nOr the chicken will eat the cabbage.");
 		}
 
 	}

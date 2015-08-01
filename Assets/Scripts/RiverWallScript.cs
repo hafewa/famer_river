@@ -20,7 +20,7 @@ public class RiverWallScript : MonoBehaviour {
     Debug.Log("Wall is hidden");
   }
 
-  public void erectWall(){
+  public void erectWall(string bank){
     //GetComponent<MeshCollider> ().isTrigger = false;
 	gameObject.SetActive (false);
     Debug.Log("Wall is UP");

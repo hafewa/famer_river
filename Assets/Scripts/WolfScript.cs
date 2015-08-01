@@ -14,11 +14,13 @@ public class WolfScript : Animal {
   void OnEnable(){
     PlayerScript.OnPress_W += PlaceInBoat;
     PlayerScript.OnPress_RW += PlaceOnShore;
+		BoatScript.OnBoatLand += CheckBank;
   }
 
   void OnDisable(){
     PlayerScript.OnPress_W -= PlaceInBoat;
     PlayerScript.OnPress_RW -= PlaceOnShore;
+		BoatScript.OnBoatLand -= CheckBank;
   }
 
   void Start(){
@@ -40,6 +42,7 @@ public class WolfScript : Animal {
     gameObject.transform.position = myMarkInBoat;
     gameObject.transform.parent = GameObject.FindWithTag ("Boat").transform;
     inBoat = true;
+		my_state = MyState.InBoat;
   }
   
   public void PlaceOnShore(){
@@ -47,8 +50,20 @@ public class WolfScript : Animal {
     inBoat = false;
     if (BoatScript.boat_state == BoatState.EastBank) {
       gameObject.transform.position = myMarkOnEastBank;
+			my_state = MyState.EastBank;
     } else if (BoatScript.boat_state == BoatState.WestBank) {
       gameObject.transform.position = myMarkOnWestBank;
+			my_state = MyState.WestBank;
     }
   }
+
+  	public void CheckBank(string bank){
+		if (bank == "west") {
+			my_state = MyState.WestBank;
+		} else if( bank == "east") {
+			my_state =MyState.EastBank;
+		}
+	}
+
+
 }

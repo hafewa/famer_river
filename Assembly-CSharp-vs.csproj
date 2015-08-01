@@ -57,6 +57,8 @@
      <Compile Include="Assets\Scripts\PlayerScript.cs" />
      <Compile Include="Assets\Scripts\RigidbodyFirstPersonController.cs" />
      <Compile Include="Assets\Scripts\RiverWallScript.cs" />
+     <Compile Include="Assets\Scripts\UI_Buttons.cs" />
+     <Compile Include="Assets\Scripts\UI_Master.cs" />
      <Compile Include="Assets\Scripts\WolfScript.cs" />
      <None Include="Assets\Forest Grounds - Terrain Texture Pack\Readme.txt" />
      <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Simple.shader" />

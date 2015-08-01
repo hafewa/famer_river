@@ -14,24 +14,26 @@ public class BoatScript : MonoBehaviour {
   public Transform target;
   public static bool moving;  
   public static bool objectInBoat;  
-  public delegate void BoatLandEvent();
+  public delegate void BoatLandEvent(string bank);
   public static event BoatLandEvent OnBoatLand;
+		
 
-	
 	void OnTriggerEnter(Collider other){
     switch (other.gameObject.tag) {
-    case "EastbankBoatSpot":
+    case "EastBankBoatSpot":
 	  Debug.Log ("Arrived on EastBank");
       boat_state = BoatState.EastBank;
       otherBank = BoatState.WestBank;
-			PlayerScript.beStill = false;
-
-			moving = false;
+	  PlayerScript.beStill = false;
+	  moving = false;
+			//all of the animals subscribe to this event
+	  OnBoatLand("east");
       break;
     case "WestBankBoatSpot":
 	  Debug.Log ("Arrived on WestBank");
 	  moving = false;
-	  OnBoatLand();
+	  //all of the animals subscribe to this event
+	  OnBoatLand("east");
       boat_state = BoatState.WestBank;
       otherBank = BoatState.EastBank;
       break;

@@ -6,6 +6,7 @@ using UnityStandardAssets.Characters.FirstPerson;
 public class PlayerScript : MonoBehaviour {
   
   public Text myText;
+  public Text myEndText;
   public static bool inBoat;
   public static bool beStill;
   public static bool noMouse;
@@ -49,12 +50,13 @@ public class PlayerScript : MonoBehaviour {
 	void OnEnable(){
 		BoatScript.OnBoatLand += DismountBoat;
 		GameManager_FailureChecker.OnFailMet += EndScreen;
+		UI_Master.OnRestart += ResetPlayerFunctionality;
 	}
 
 	void OnDisable(){
 		BoatScript.OnBoatLand -= DismountBoat;
 		GameManager_FailureChecker.OnFailMet -= EndScreen;
-
+		UI_Master.OnRestart -= ResetPlayerFunctionality;
 	}
 
 	/// <summary>
@@ -203,7 +205,6 @@ public class PlayerScript : MonoBehaviour {
       transform.rotation = Quaternion.Slerp(transform.rotation, _lookRotation, Time.deltaTime * RotationSpeed);
     }
 
-
     if (Input.GetKeyUp ("w") && touchingWolf) {
       myText.text = "";
       OnPress_W (); 
@@ -235,38 +236,46 @@ public class PlayerScript : MonoBehaviour {
       }
       MountBoat ();
     } else if (Input.GetKeyUp ("p") && inBoat) {
-	  myText.text = "";
-	  noMouse = false;
-		if(OnPlayerLaunchBoat != null){
-			OnPlayerLaunchBoat();
-		}
-    }
+	    myText.text = "";
+	    noMouse = false;
+        if(OnPlayerLaunchBoat != null){
+			    OnPlayerLaunchBoat();
+		    }
+      }
   } 
 
   public void MountBoat(){
     beStill = true;
-	noMouse = true;
+	  noMouse = true;
     startMounting = true;
     GetComponent<CapsuleCollider> ().isTrigger = true;
   }
 
-  public void DismountBoat(){
-		inBoat = false;
+  public void DismountBoat(string bank){
+    Debug.Log ("DISMOUNT FIRED");
+	  inBoat = false;
     beStill = false; 
     startDismounting = true;
     GetComponent<CapsuleCollider> ().isTrigger = false;
-	transform.parent = null;
+	  transform.parent = null;
+	  transform.position = new Vector3(transform.position.x, transform.position.y +5, transform.position.z);
 	}
 
 	public void EndScreen(string failString){
 
-		myText.text = failString;
+		myEndText.text = failString;
 		BoatScript.moving = false;
-		//while (GameObject.FindGameObjectWithTag ("Darkness_Warshing_Panel").GetComponent<CanvasGroup> ().alpha < 1) {
-			GameObject.FindGameObjectWithTag ("Darkness_Warshing_Panel").GetComponent<CanvasGroup> ().alpha += 0.001f;
-		//}
+		GameObject.FindGameObjectWithTag ("Darkness_Warshing_Panel").GetComponent<CanvasGroup> ().alpha += 0.05f;
+		myEndText.GetComponent<CanvasGroup> ().alpha += 0.01f;
 
 	}
 
-
+	public void ResetPlayerFunctionality(){
+		inBoat = false;
+		beStill = false; 
+		startDismounting = true;
+		GetComponent<CapsuleCollider> ().isTrigger = false;
+		transform.parent = null;
+		noMouse = false;
+	}
 }
