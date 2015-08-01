@@ -51,6 +51,7 @@
      <Compile Include="Assets\Scripts\CabbageScript.cs" />
      <Compile Include="Assets\Scripts\ChickenScript.cs" />
      <Compile Include="Assets\Scripts\FirstPersonController.cs" />
+     <Compile Include="Assets\Scripts\GameManager_FailureChecker.cs" />
      <Compile Include="Assets\Scripts\HeadBob.cs" />
      <Compile Include="Assets\Scripts\MouseLook.cs" />
      <Compile Include="Assets\Scripts\PlayerScript.cs" />

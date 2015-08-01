@@ -7,6 +7,8 @@ public class CabbageScript : Animal {
   public Vector3 myMarkOnWestBank;
   public Vector3 myMarkOnEastBank;
   public static bool inBoat;
+  public enum MyState{EastBank, WestBank, InBoat, Dead};
+  public static MyState my_state;
 	
   void OnEnable(){
     PlayerScript.OnPress_G += PlaceInBoat;
@@ -23,6 +25,7 @@ public class CabbageScript : Animal {
     myMarkOnWestBank = GameObject.FindWithTag("cab_mark_west" ).transform.position;
     myMarkOnEastBank = gameObject.transform.position;
     myMarkInBoat = GameObject.FindWithTag("cab_mark_in_boat").transform.position;
+	my_state = MyState.EastBank;
     base.GetMyState();	
 	}
 

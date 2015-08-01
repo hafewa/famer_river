@@ -48,10 +48,13 @@ public class PlayerScript : MonoBehaviour {
   
 	void OnEnable(){
 		BoatScript.OnBoatLand += DismountBoat;
+		GameManager_FailureChecker.OnFailMet += EndScreen;
 	}
 
 	void OnDisable(){
 		BoatScript.OnBoatLand -= DismountBoat;
+		GameManager_FailureChecker.OnFailMet -= EndScreen;
+
 	}
 
 	/// <summary>
@@ -254,4 +257,16 @@ public class PlayerScript : MonoBehaviour {
     GetComponent<CapsuleCollider> ().isTrigger = false;
 	transform.parent = null;
 	}
+
+	public void EndScreen(string failString){
+
+		myText.text = failString;
+		BoatScript.moving = false;
+		//while (GameObject.FindGameObjectWithTag ("Darkness_Warshing_Panel").GetComponent<CanvasGroup> ().alpha < 1) {
+			GameObject.FindGameObjectWithTag ("Darkness_Warshing_Panel").GetComponent<CanvasGroup> ().alpha += 0.001f;
+		//}
+
+	}
+
+
 }

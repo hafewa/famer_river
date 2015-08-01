@@ -7,6 +7,9 @@ public class WolfScript : Animal {
 	public static bool inBoat;
 	public Vector3 myMarkOnEastBank;
 	public Vector3 myMarkOnWestBank;
+	public enum MyState{EastBank, WestBank, InBoat, Dead};
+	public static MyState my_state;
+	
 
   void OnEnable(){
     PlayerScript.OnPress_W += PlaceInBoat;
@@ -22,7 +25,7 @@ public class WolfScript : Animal {
     myMarkInBoat = GameObject.FindWithTag("wolf_mark_in_boat").transform.position;
 		myMarkOnEastBank = gameObject.transform.position;
 		myMarkOnWestBank = GameObject.FindWithTag("wolf_mark_west").transform.position;
-
+		my_state = MyState.EastBank;
     base.GetMyState();
   }
 

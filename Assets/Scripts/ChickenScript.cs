@@ -7,6 +7,8 @@ public class ChickenScript : Animal {
 	public Vector3 myMarkOnEastBank;
 	public Vector3 myMarkOnWestBank; 
 	public static bool inBoat;
+	public enum MyState{EastBank, WestBank, InBoat, Dead};
+	public static MyState my_state;
 
   void OnEnable(){
     PlayerScript.OnPress_C += PlaceInBoat;
@@ -19,6 +21,7 @@ public class ChickenScript : Animal {
   }
 
   void Start(){
+	my_state = MyState.EastBank;
     myMarkOnEastBank = gameObject.transform.position;
     myMarkOnWestBank = GameObject.FindWithTag("chx_mark_west").transform.position;
     myMarkInBoat = GameObject.FindWithTag("chx_mark_in_boat").transform.position;

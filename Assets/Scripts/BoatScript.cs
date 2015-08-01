@@ -12,7 +12,7 @@ public class BoatScript : MonoBehaviour {
   public static BoatState otherBank;
   public float speed =5.0f;
   public Transform target;
-  public bool moving;  
+  public static bool moving;  
   public static bool objectInBoat;  
   public delegate void BoatLandEvent();
   public static event BoatLandEvent OnBoatLand;
