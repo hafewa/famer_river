@@ -16,5 +16,4 @@ public abstract class UI_Master : MonoBehaviour {
 		Application.Quit ();
 	}
 
-
 }

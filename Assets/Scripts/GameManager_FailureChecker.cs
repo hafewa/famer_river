@@ -7,6 +7,8 @@ public class GameManager_FailureChecker : MonoBehaviour {
 
 	public delegate void FailureEvent(string failStringy);
 	public static event FailureEvent OnFailMet;
+	public delegate void SuccessEvent(string succString);
+	public static event SuccessEvent OnSuccess;
 
 	//We check for failure only when the boat is half way across the river.
 //	void OnTriggerEnter(){
@@ -14,9 +16,13 @@ public class GameManager_FailureChecker : MonoBehaviour {
 //	}
 	void OnTriggerStay(){
 		CheckFailure ();
+
 	}
 	
 	void CheckFailure(){
+
+		Debug.Log ("cabbage state = " + CabbageScript.my_state.ToString () + "wolf state " + WolfScript.my_state.ToString () + " chx state " + ChickenScript.my_state.ToString () + " player state " + PlayerScript.my_state.ToString());
+
 		if (ChickenScript.my_state == ChickenScript.MyState.EastBank && WolfScript.my_state == WolfScript.MyState.EastBank && PlayerScript.inBoat) {
 			OnFailMet ("You left the chicken alone with the wolf");
 		} else if (ChickenScript.my_state == ChickenScript.MyState.WestBank && WolfScript.my_state == WolfScript.MyState.WestBank && PlayerScript.inBoat) {
@@ -28,18 +34,21 @@ public class GameManager_FailureChecker : MonoBehaviour {
 		}
 
 		if (ChickenScript.my_state == ChickenScript.MyState.EastBank && WolfScript.my_state == WolfScript.MyState.EastBank 
-			&& ChickenScript.my_state == ChickenScript.MyState.EastBank && CabbageScript.my_state == CabbageScript.MyState.EastBank && PlayerScript.inBoat) {
-			OnFailMet ("The wolf will eat the chicken in your absence.\nOr the chicken will eat the cabbage.");
+			&& CabbageScript.my_state == CabbageScript.MyState.EastBank && PlayerScript.inBoat) {
+			OnFailMet ("The wolf will eat the chicken. Or the chicken will eat the cabbage. No bueno.");
 		} else if (ChickenScript.my_state == ChickenScript.MyState.WestBank && WolfScript.my_state == WolfScript.MyState.WestBank 
-			&& ChickenScript.my_state == ChickenScript.MyState.WestBank && CabbageScript.my_state == CabbageScript.MyState.WestBank && PlayerScript.inBoat) {
-			OnFailMet("The wolf will eat the chicken in your absence.\nOr the chicken will eat the cabbage.");
+			&& CabbageScript.my_state == CabbageScript.MyState.WestBank && PlayerScript.inBoat) {
+			OnFailMet("The wolf will eat the chicken. Or the chicken will eat the cabbage. No bueno.");
 		}
 
 	}
 
 	//call this script when boat encounters WestBank. 
-	public void CheckSuccess(){
-
+	public static void CheckSuccess(){
+		if (ChickenScript.my_state == ChickenScript.MyState.WestBank && WolfScript.my_state == WolfScript.MyState.WestBank 
+			&& CabbageScript.my_state == CabbageScript.MyState.WestBank && PlayerScript.my_state == PlayerScript.MyState.WestBank) {
+			OnSuccess("Success"); 
+		}
 
 	}
 
@@ -51,6 +60,6 @@ public class GameManager_FailureChecker : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+		//CheckSuccess ();
 	}
 }

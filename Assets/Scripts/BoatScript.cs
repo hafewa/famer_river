@@ -5,13 +5,13 @@ public enum BoatState{EastBank, WestBank, Traveling, Tipped};
 
 public class BoatScript : MonoBehaviour {
 
-
+  
   public GameObject EastBankLandingSpot;
   public GameObject WestBankLandingSpot;
   public static BoatState boat_state;
   public static BoatState otherBank;
-  public float speed =5.0f;
-  public Transform target;
+  private float speed = 7.0f;
+  //public Transform target;
   public static bool moving;  
   public static bool objectInBoat;  
   public delegate void BoatLandEvent(string bank);
@@ -21,21 +21,28 @@ public class BoatScript : MonoBehaviour {
 	void OnTriggerEnter(Collider other){
     switch (other.gameObject.tag) {
     case "EastBankBoatSpot":
+	  moving = false;
 	  Debug.Log ("Arrived on EastBank");
       boat_state = BoatState.EastBank;
-      otherBank = BoatState.WestBank;
 	  PlayerScript.beStill = false;
-	  moving = false;
+	  
 			//all of the animals subscribe to this event
+	  
+	  otherBank = BoatState.WestBank;
 	  OnBoatLand("east");
+	  Debug.Log ("cabbage state = " + CabbageScript.my_state.ToString () + "wolf state " + WolfScript.my_state.ToString () + " chx state " + ChickenScript.my_state.ToString () + " player state " + PlayerScript.my_state.ToString());
+	  GameManager_FailureChecker.CheckSuccess();
       break;
     case "WestBankBoatSpot":
+	  boat_state = BoatState.WestBank;
 	  Debug.Log ("Arrived on WestBank");
 	  moving = false;
+	  PlayerScript.beStill = false;
 	  //all of the animals subscribe to this event
-	  OnBoatLand("east");
-      boat_state = BoatState.WestBank;
       otherBank = BoatState.EastBank;
+	  OnBoatLand("west");
+	  Debug.Log ("cabbage state = " + CabbageScript.my_state.ToString () + "wolf state " + WolfScript.my_state.ToString () + " chx state " + ChickenScript.my_state.ToString () + " player state " + PlayerScript.my_state.ToString());
+	  GameManager_FailureChecker.CheckSuccess();
       break;
 
     default: 

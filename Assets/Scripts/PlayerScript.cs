@@ -11,6 +11,9 @@ public class PlayerScript : MonoBehaviour {
   public static bool beStill;
   public static bool noMouse;
 
+  public enum MyState{EastBank, WestBank, InBoat};
+  public static MyState my_state;
+
 
   public delegate void Press_C();
   public static event Press_C OnPress_C;
@@ -31,6 +34,8 @@ public class PlayerScript : MonoBehaviour {
   public static event Press_RG OnPress_RG;
 	public delegate void PlayerBoatEvent();
 	public static event PlayerBoatEvent OnPlayerLaunchBoat;
+	public delegate void ResetEvent();
+	public static event ResetEvent OnReset;
 	private bool touchingWolf;
   private bool touchingChx;
   private bool touchingCab;
@@ -51,12 +56,15 @@ public class PlayerScript : MonoBehaviour {
 		BoatScript.OnBoatLand += DismountBoat;
 		GameManager_FailureChecker.OnFailMet += EndScreen;
 		UI_Master.OnRestart += ResetPlayerFunctionality;
+		GameManager_FailureChecker.OnSuccess += DisplaySuccessMessage;
 	}
 
 	void OnDisable(){
 		BoatScript.OnBoatLand -= DismountBoat;
 		GameManager_FailureChecker.OnFailMet -= EndScreen;
 		UI_Master.OnRestart -= ResetPlayerFunctionality;
+		GameManager_FailureChecker.OnSuccess += DisplaySuccessMessage;
+
 	}
 
 	/// <summary>
@@ -126,7 +134,7 @@ public class PlayerScript : MonoBehaviour {
     case "PlayerInBoatSpot":
       startMounting = false;
       inBoat = true;
-      myText.text = "Press \"p\" to push off. \"b\" to step out of the boat";
+      myText.text = "Press \"p\" to push off. \"d\" to step out of the boat";
       transform.parent = GameObject.FindGameObjectWithTag("Boat").transform;
       break;
     default:
@@ -206,42 +214,46 @@ public class PlayerScript : MonoBehaviour {
     }
 
     if (Input.GetKeyUp ("w") && touchingWolf) {
-      myText.text = "";
-      OnPress_W (); 
-	  OnPress_RC();
-			OnPress_RG();
-    } else if (Input.GetKeyUp ("c") && touchingChx) {
-      myText.text = "";
-      OnPress_C ();
-			OnPress_RG();
-			OnPress_RW();
-    } else if (Input.GetKeyUp ("g") && touchingCab) {
-      myText.text = "";
-      OnPress_G ();
-			OnPress_RW();
-			OnPress_RC();
-    } else if (Input.GetKeyUp ("r") && touchingWolf) {
-      myText.text = "";
-      OnPress_RW ();
-    } else if (Input.GetKeyUp ("r") && touchingChx) {
-      myText.text = "";
-      OnPress_RC ();
-    } else if (Input.GetKeyUp ("r") && touchingCab) {
-      myText.text = "";
-      OnPress_RG ();
-    } else if (Input.GetKeyUp ("b") && touchingBoat) {
-      myText.text = "";
-      if(OnPress_B != null){
-        OnPress_B ();
-      }
-      MountBoat ();
-    } else if (Input.GetKeyUp ("p") && inBoat) {
-	    myText.text = "";
-	    noMouse = false;
-        if(OnPlayerLaunchBoat != null){
-			    OnPlayerLaunchBoat();
-		    }
-      }
+			myText.text = "";
+			OnPress_W (); 
+			OnPress_RC ();
+			OnPress_RG ();
+		} else if (Input.GetKeyUp ("c") && touchingChx) {
+			myText.text = "";
+			OnPress_C ();
+			OnPress_RG ();
+			OnPress_RW ();
+		} else if (Input.GetKeyUp ("g") && touchingCab) {
+			myText.text = "";
+			OnPress_G ();
+			OnPress_RW ();
+			OnPress_RC ();
+		} else if (Input.GetKeyUp ("r") && touchingWolf) {
+			myText.text = "";
+			OnPress_RW ();
+		} else if (Input.GetKeyUp ("r") && touchingChx) {
+			myText.text = "";
+			OnPress_RC ();
+		} else if (Input.GetKeyUp ("r") && touchingCab) {
+			myText.text = "";
+			OnPress_RG ();
+		} else if (Input.GetKeyUp ("b") && touchingBoat) {
+			myText.text = "";
+			if (OnPress_B != null) {
+				OnPress_B ();
+			}
+			MountBoat ();
+		} else if (Input.GetKeyUp ("p") && inBoat) {
+			myText.text = "";
+			noMouse = false;
+			if (OnPlayerLaunchBoat != null) {
+				OnPlayerLaunchBoat ();
+			}
+		} else if (Input.GetKeyUp ("d") && inBoat) {
+			//if(BoatScript.
+			DismountBoat("");
+		}
+	
   } 
 
   public void MountBoat(){
@@ -249,16 +261,13 @@ public class PlayerScript : MonoBehaviour {
 	  noMouse = true;
     startMounting = true;
     GetComponent<CapsuleCollider> ().isTrigger = true;
+		my_state = MyState.InBoat;
   }
 
   public void DismountBoat(string bank){
     Debug.Log ("DISMOUNT FIRED");
-	  inBoat = false;
-    beStill = false; 
-    startDismounting = true;
-    GetComponent<CapsuleCollider> ().isTrigger = false;
-	  transform.parent = null;
-	  transform.position = new Vector3(transform.position.x, transform.position.y +5, transform.position.z);
+	  ResetPlayerFunctionality ();
+	  transform.position = new Vector3(transform.position.x+5, transform.position.y +5, transform.position.z);
 	}
 
 	public void EndScreen(string failString){
@@ -277,5 +286,18 @@ public class PlayerScript : MonoBehaviour {
 		GetComponent<CapsuleCollider> ().isTrigger = false;
 		transform.parent = null;
 		noMouse = false;
+		if (BoatScript.boat_state == BoatState.EastBank) {
+			my_state = MyState.EastBank;
+		} else if (BoatScript.boat_state == BoatState.WestBank) {
+			my_state = MyState.WestBank;
+		}
 	}
+
+	public void DisplaySuccessMessage(string succMessage){
+		myEndText.text = succMessage;
+		GameObject.FindGameObjectWithTag ("Darkness_Warshing_Panel").GetComponent<CanvasGroup> ().alpha += 0.05f;
+		myEndText.GetComponent<CanvasGroup> ().alpha += 0.01f;
+	}
+
+
 }

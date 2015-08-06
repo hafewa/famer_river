@@ -1,20 +1,21 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/PlayerScript.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/BoatScript.cs">
     <Files>
-      <File FileName="Assets/Scripts/WolfScript.cs" Line="55" Column="56" />
-      <File FileName="Assets/Scripts/CabbageScript.cs" Line="53" Column="32" />
-      <File FileName="Assets/Scripts/Animal.cs" Line="12" Column="7" />
-      <File FileName="Assets/Scripts/BoatScript.cs" Line="35" Column="48" />
-      <File FileName="Assets/Scripts/ChickenScript.cs" Line="56" Column="32" />
-      <File FileName="Assets/Scripts/PlayerScript.cs" Line="260" Column="2" />
-      <File FileName="Assets/Scripts/RiverWallScript.cs" Line="23" Column="36" />
+      <File FileName="Assets/Scripts/WolfScript.cs" Line="65" Column="4" />
+      <File FileName="Assets/Scripts/CabbageScript.cs" Line="64" Column="4" />
+      <File FileName="Assets/Scripts/Animal.cs" Line="7" Column="1" />
+      <File FileName="Assets/Scripts/BoatScript.cs" Line="13" Column="26" />
+      <File FileName="Assets/Scripts/ChickenScript.cs" Line="62" Column="4" />
+      <File FileName="Assets/Scripts/PlayerScript.cs" Line="270" Column="59" />
+      <File FileName="Assets/Scripts/RiverWallScript.cs" Line="18" Column="1" />
       <File FileName="Assets/Standard Assets/Characters/FirstPersonCharacter/FirstPersonCharacterGuidelines.txt" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/RigidbodyFirstPersonController.cs" Line="158" Column="5" />
-      <File FileName="Assets/Scripts/MouseLook.cs" Line="34" Column="38" />
-      <File FileName="Assets/Scripts/GameManager_FailureChecker.cs" Line="21" Column="56" />
-      <File FileName="Assets/Scripts/UI_Master.cs" Line="11" Column="16" />
-      <File FileName="Assets/Scripts/UI_Buttons.cs" Line="7" Column="2" />
+      <File FileName="Assets/Scripts/RigidbodyFirstPersonController.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/MouseLook.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/GameManager_FailureChecker.cs" Line="63" Column="5" />
+      <File FileName="Assets/Scripts/UI_Master.cs" Line="18" Column="1" />
+      <File FileName="Assets/Scripts/UI_Buttons.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/UI_Intro.cs" Line="21" Column="79" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
