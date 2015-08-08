@@ -10,7 +10,7 @@ public class BoatScript : MonoBehaviour {
   public GameObject WestBankLandingSpot;
   public static BoatState boat_state;
   public static BoatState otherBank;
-  private float speed = 7.0f;
+  private float speed = 4.0f;
   //public Transform target;
   public static bool moving;  
   public static bool objectInBoat;  

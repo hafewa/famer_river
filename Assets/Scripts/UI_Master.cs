@@ -15,5 +15,4 @@ public abstract class UI_Master : MonoBehaviour {
 	public virtual void ExitToDesktop(){
 		Application.Quit ();
 	}
-
 }
