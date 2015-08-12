@@ -55,9 +55,13 @@ public class ChickenScript : Animal {
 			if (BoatScript.boat_state == BoatState.EastBank) {
 				gameObject.transform.position = myMarkOnEastBank;
 				my_state = MyState.EastBank;
+				//Debug.Log ("cabbage state = " +  CabbageScript.my_state.ToString () + "wolf state " + WolfScript.my_state.ToString () + " chx state " + ChickenScript.my_state.ToString () + " player state " + PlayerScript.my_state.ToString() + "boat state" + BoatScript.boat_state.ToString());
+
 			} else if (BoatScript.boat_state == BoatState.WestBank) {
 				gameObject.transform.position = myMarkOnWestBank;
 				my_state = MyState.WestBank;
+				//Debug.Log ("cabbage state = " +  CabbageScript.my_state.ToString () + "wolf state " + WolfScript.my_state.ToString () + " chx state " + ChickenScript.my_state.ToString () + " player state " + PlayerScript.my_state.ToString() + "boat state" + BoatScript.boat_state.ToString());
+
 			}
 		}
   }
@@ -66,13 +70,15 @@ public class ChickenScript : Animal {
 		if (bank == "west") {
 
 			if(inBoat){
-				my_state = MyState.WestBank;
+				//my_state = MyState.WestBank;
 				PlaceOnShore();
+
 			}
 		} else if( bank == "east") {
 			if(inBoat){
-				my_state =MyState.EastBank;
+				//my_state =MyState.EastBank;
 				PlaceOnShore();
+
 			}
 		}
 	}

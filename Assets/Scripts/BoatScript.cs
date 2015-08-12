@@ -21,29 +21,28 @@ public class BoatScript : MonoBehaviour {
 	void OnTriggerEnter(Collider other){
     switch (other.gameObject.tag) {
     case "EastBankBoatSpot":
-	  moving = false;
-	  Debug.Log ("Arrived on EastBank");
-      boat_state = BoatState.EastBank;
-	  PlayerScript.beStill = false;
+			boat_state = BoatState.EastBank;
+	//		Debug.Log ("Arrived on EastBank");
+ 	  moving = false;
+      
+	  PlayerScript.beStill = false;	  
+	  otherBank = BoatState.WestBank;	  
 	  
-			//all of the animals subscribe to this event
-	  
-	  otherBank = BoatState.WestBank;
 	  OnBoatLand("east");
-	  Debug.Log ("cabbage state = " + CabbageScript.my_state.ToString () + "wolf state " + WolfScript.my_state.ToString () + " chx state " + ChickenScript.my_state.ToString () + " player state " + PlayerScript.my_state.ToString());
-	  GameManager_FailureChecker.CheckSuccess();
+	  //GameManager_FailureChecker.CheckSuccess();
       break;
     case "WestBankBoatSpot":
 	  boat_state = BoatState.WestBank;
-	  Debug.Log ("Arrived on WestBank");
+	//  Debug.Log ("Arrived on WestBank");
 	  moving = false;
 	  PlayerScript.beStill = false;
+    	otherBank = BoatState.EastBank;
 	  //all of the animals subscribe to this event
-      otherBank = BoatState.EastBank;
+	  
 	  OnBoatLand("west");
-	  Debug.Log ("cabbage state = " + CabbageScript.my_state.ToString () + "wolf state " + WolfScript.my_state.ToString () + " chx state " + ChickenScript.my_state.ToString () + " player state " + PlayerScript.my_state.ToString());
 	  GameManager_FailureChecker.CheckSuccess();
-      break;
+
+	  break;
 
     default: 
       break;
@@ -64,11 +63,17 @@ public class BoatScript : MonoBehaviour {
   }
   
   public void PlayerInBoat(){
-    Debug.Log("Boat responds to player in boat event,as does river");
+   // Debug.Log("Boat responds to player in boat event,as does river");
   }
 
 	// Use this for initialization
 	void Start () {
+
+#if UNITY_EDITOR
+		speed = 20;
+		#endif
+
+
     boat_state = BoatState.EastBank;
     otherBank = BoatState.WestBank;
 	}

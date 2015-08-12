@@ -7,7 +7,7 @@ public class GameManager_FailureChecker : MonoBehaviour {
 
 	public delegate void FailureEvent(string failStringy);
 	public static event FailureEvent OnFailMet;
-	public delegate void SuccessEvent(string succString);
+	public delegate void SuccessEvent();
 	public static event SuccessEvent OnSuccess;
 
 	//We check for failure only when the boat is half way across the river.
@@ -21,7 +21,7 @@ public class GameManager_FailureChecker : MonoBehaviour {
 	
 	void CheckFailure(){
 
-		Debug.Log ("cabbage state = " + CabbageScript.my_state.ToString () + "wolf state " + WolfScript.my_state.ToString () + " chx state " + ChickenScript.my_state.ToString () + " player state " + PlayerScript.my_state.ToString());
+		//Debug.Log ("cabbage state = " + CabbageScript.my_state.ToString () + "wolf state " + WolfScript.my_state.ToString () + " chx state " + ChickenScript.my_state.ToString () + " player state " + PlayerScript.my_state.ToString());
 
 		if (ChickenScript.my_state == ChickenScript.MyState.EastBank && WolfScript.my_state == WolfScript.MyState.EastBank && PlayerScript.inBoat) {
 			OnFailMet ("You left the chicken alone with the wolf");
@@ -47,7 +47,8 @@ public class GameManager_FailureChecker : MonoBehaviour {
 	public static void CheckSuccess(){
 		if (ChickenScript.my_state == ChickenScript.MyState.WestBank && WolfScript.my_state == WolfScript.MyState.WestBank 
 			&& CabbageScript.my_state == CabbageScript.MyState.WestBank && PlayerScript.my_state == PlayerScript.MyState.WestBank) {
-			OnSuccess("Success"); 
+			OnSuccess(); 
+			//Debug.Log ("Success = true");
 		}
 
 	}

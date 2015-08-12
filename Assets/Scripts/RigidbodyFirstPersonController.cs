@@ -130,10 +130,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
         {
             RotateView();
 
-            if (CrossPlatformInputManager.GetButtonDown("Jump") && !m_Jump)
-            {
-                m_Jump = true;
-            }
+//            if (CrossPlatformInputManager.GetButtonDown("Jump") && !m_Jump)
+//            {
+//                m_Jump = true;
+//            }
         }
 
 
@@ -211,15 +211,19 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private Vector2 GetInput()
         {
-            
-            Vector2 input = new Vector2
+			Vector2 input; 
+			if (!PlayerScript.beStill && !PlayerScript.inBoat) {
+				 input = new Vector2
                 {
                     x = CrossPlatformInputManager.GetAxis("Horizontal"),
                     y = CrossPlatformInputManager.GetAxis("Vertical")
                 };
-			movementSettings.UpdateDesiredTargetSpeed(input);
 
-            return input;
+			} else {
+				input = new Vector2(0,0);
+			}
+			movementSettings.UpdateDesiredTargetSpeed(input);
+			return input;
         }
 
 

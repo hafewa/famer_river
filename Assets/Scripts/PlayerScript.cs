@@ -45,6 +45,7 @@ public class PlayerScript : MonoBehaviour {
   public GameObject playerBoatSpot;
   public GameObject stareAtFrontOfBoat;
   public GameObject myExitSpotFromBoat;
+	private bool success;
 
   public float RotationSpeed;
   
@@ -89,40 +90,40 @@ public class PlayerScript : MonoBehaviour {
       case "Wolf":
       touchingWolf = true;
         if(!WolfScript.inBoat){ 
-          Debug.Log("Wolf (not in boat) Collider");
-          myText.text = "Press \"w\" to place the wolf in the boat";
+         // Debug.Log("Wolf (not in boat) Collider");
+          myText.text = "Press space to place the wolf in the boat";
         } else {
-          myText.text = "Press \"r\" to remove from boat";
-          Debug.Log("Wolf -- in boat -- Collider");
+          myText.text = "Press space to remove from boat";
+         // Debug.Log("Wolf -- in boat -- Collider");
         }
         break;
       case "Chicken":
       touchingChx = true;
         if(!ChickenScript.inBoat){
-          Debug.Log("Chicken Collider");        
-          myText.text = "Press \"c\" to place the chicken in the boat";
+        //  Debug.Log("Chicken Collider");        
+          myText.text = "Press space to place the chicken in the boat";
         }else {
-          myText.text = "Press \"r\" to remove from boat";
+          myText.text = "Press space to remove from boat";
         }
         break;
       case "Cabbage":
       touchingCab = true;
         if(!CabbageScript.inBoat){
-          Debug.Log("Cabbage Collider");
-          myText.text = "Press \"g\" to place the cabbage in the boat"; 
+        //  Debug.Log("Cabbage Collider");
+          myText.text = "Press space to place the cabbage in the boat"; 
         } else {
-          myText.text = "Press \"r\" to remove from boat";          
+          myText.text = "Press space to remove from boat";          
         }
         break;
       case "River_Wall":
-        Debug.Log("River Collider");
+        //Debug.Log("River Collider");
         if(!inBoat)
           myText.text = "The water is too deep to cross";
         break;
       case "Boat":
       touchingBoat = true;
-        Debug.Log("Boat Collider");
-        myText.text = "Press \"b\" to enter the boat";
+        //Debug.Log("Boat Collider");
+        myText.text = "Press space to enter the boat";
         break;
       default: 
         //Debug.Log("No collider identity");      
@@ -148,9 +149,9 @@ public class PlayerScript : MonoBehaviour {
       touchingWolf = true;
       if(!WolfScript.inBoat){ 
         //Debug.Log("Wolf (not in boat) Collider");
-        myText.text = "Press \"w\" to place the wolf in the boat";
+        myText.text = "Press space to place the wolf in the boat";
       } else {
-        myText.text = "Press \"r\" to remove from boat";
+        myText.text = "Press space to remove from boat";
         Debug.Log("Wolf -- in boat -- Collider");
       }
       break;
@@ -158,18 +159,18 @@ public class PlayerScript : MonoBehaviour {
       touchingChx = true;
       if(!ChickenScript.inBoat){
         //Debug.Log("Chicken Collider");        
-        myText.text = "Press \"c\" to place the chicken in the boat";
+        myText.text = "Press space to place the chicken in the boat";
       }else {
-        myText.text = "Press \"r\" to remove from boat";
+        myText.text = "Press space to remove from boat";
       }
       break;
     case "Cabbage":
       touchingCab = true;
       if(!CabbageScript.inBoat){
         //Debug.Log("Cabbage Collider");
-        myText.text = "Press \"g\" to place the cabbage in the boat"; 
+        myText.text = "Press space to place the cabbage in the boat"; 
       } else {
-        myText.text = "Press \"r\" to remove from boat";          
+        myText.text = "Press space to remove from boat";          
       }
       break;
     case "River_Wall":
@@ -179,7 +180,7 @@ public class PlayerScript : MonoBehaviour {
       break;
     case "Boat":
       //Debug.Log("Boat Collider");
-      myText.text = "Press \"b\" to enter the boat";
+      myText.text = "Press space to enter the boat";
       break;
     default: 
       //Debug.Log("No collider identity");      
@@ -197,6 +198,18 @@ public class PlayerScript : MonoBehaviour {
     touchingWolf = false;
     touchingBoat = false;
   }
+
+	public void OnTriggerExit(Collider other){
+		myText.text = ""; 
+		if(other.gameObject.tag == "Boat"){
+			inBoat = false;
+		}
+		touchingCab = false;
+		touchingChx = false;
+		touchingWolf = false;
+		touchingBoat = false;
+	}
+
   void Update(){
 
     if (startMounting) {
@@ -213,31 +226,31 @@ public class PlayerScript : MonoBehaviour {
       transform.rotation = Quaternion.Slerp(transform.rotation, _lookRotation, Time.deltaTime * RotationSpeed);
     }
 
-    if (Input.GetKeyUp ("w") && touchingWolf) {
+    if (Input.GetKeyUp ("space") && touchingWolf) {
 			myText.text = "";
 			OnPress_W (); 
 			OnPress_RC ();
 			OnPress_RG ();
-		} else if (Input.GetKeyUp ("c") && touchingChx) {
+		} else if (Input.GetKeyUp ("space") && touchingChx) {
 			myText.text = "";
 			OnPress_C ();
 			OnPress_RG ();
 			OnPress_RW ();
-		} else if (Input.GetKeyUp ("g") && touchingCab) {
+		} else if (Input.GetKeyUp ("space") && touchingCab) {
 			myText.text = "";
 			OnPress_G ();
 			OnPress_RW ();
 			OnPress_RC ();
-		} else if (Input.GetKeyUp ("r") && touchingWolf) {
+		} else if (Input.GetKeyUp ("space") && touchingWolf) {
 			myText.text = "";
 			OnPress_RW ();
-		} else if (Input.GetKeyUp ("r") && touchingChx) {
+		} else if (Input.GetKeyUp ("space") && touchingChx) {
 			myText.text = "";
 			OnPress_RC ();
-		} else if (Input.GetKeyUp ("r") && touchingCab) {
+		} else if (Input.GetKeyUp ("space") && touchingCab) {
 			myText.text = "";
 			OnPress_RG ();
-		} else if (Input.GetKeyUp ("b") && touchingBoat) {
+		} else if (Input.GetKeyUp ("space") && touchingBoat) {
 			myText.text = "";
 			if (OnPress_B != null) {
 				OnPress_B ();
@@ -253,6 +266,11 @@ public class PlayerScript : MonoBehaviour {
 			//if(BoatScript.
 			DismountBoat("");
 		}
+
+		if (success == true) {
+			GameObject.FindGameObjectWithTag ("Darkness_Warshing_Panel").GetComponent<CanvasGroup> ().alpha += 0.002f;
+			myEndText.GetComponent<CanvasGroup> ().alpha += 0.001f;
+		}
 	
   } 
 
@@ -262,12 +280,16 @@ public class PlayerScript : MonoBehaviour {
     startMounting = true;
     GetComponent<CapsuleCollider> ().isTrigger = true;
 		my_state = MyState.InBoat;
+	//	transform.position = new Vector3(transform.position.x, transform.position.y+5.0f, transform.position.z);
   }
 
   public void DismountBoat(string bank){
-    Debug.Log ("DISMOUNT FIRED");
+    //Debug.Log ("DISMOUNT FIRED");
 	  ResetPlayerFunctionality ();
-	  transform.position = new Vector3(transform.position.x+5, transform.position.y +5, transform.position.z);
+	  transform.position = new Vector3(transform.position.x+2, transform.position.y +2, transform.position.z);
+		//Debug.Log ("cabbage state = " +  CabbageScript.my_state.ToString () + "wolf state " + WolfScript.my_state.ToString () + " chx state " + ChickenScript.my_state.ToString () + " player state " + PlayerScript.my_state.ToString()+" boat state "+ BoatScript.boat_state.ToString());
+
+	  GameManager_FailureChecker.CheckSuccess();
 	}
 
 	public void EndScreen(string failString){
@@ -288,15 +310,19 @@ public class PlayerScript : MonoBehaviour {
 		noMouse = false;
 		if (BoatScript.boat_state == BoatState.EastBank) {
 			my_state = MyState.EastBank;
+			GameObject.FindGameObjectWithTag("EastBankBoatSpot").GetComponent<Collider>().enabled = false;
+			GameObject.FindGameObjectWithTag("WestBankBoatSpot").GetComponent<Collider>().enabled = true;
 		} else if (BoatScript.boat_state == BoatState.WestBank) {
 			my_state = MyState.WestBank;
+			GameObject.FindGameObjectWithTag("EastBankBoatSpot").GetComponent<Collider>().enabled = true;
+			GameObject.FindGameObjectWithTag("WestBankBoatSpot").GetComponent<Collider>().enabled = false;
 		}
 	}
 
-	public void DisplaySuccessMessage(string succMessage){
-		myEndText.text = succMessage;
-		GameObject.FindGameObjectWithTag ("Darkness_Warshing_Panel").GetComponent<CanvasGroup> ().alpha += 0.05f;
-		myEndText.GetComponent<CanvasGroup> ().alpha += 0.01f;
+	public void DisplaySuccessMessage(){
+		//Debug.Log ("SUCCESSS DISPLAY");
+		myEndText.text = "Success";
+		success = true;
 	}
 
 

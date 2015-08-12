@@ -41,13 +41,13 @@ public class CabbageScript : Animal {
   }
 
   public void PlaceInBoat(){
-	Debug.Log ("PLACE CABBAGE IN BOAT");
+	//Debug.Log ("PLACE CABBAGE IN BOAT");
     gameObject.transform.position = myMarkInBoat.transform.position;
     gameObject.transform.parent = GameObject.FindWithTag ("Boat").transform;
     inBoat = true;
 		//transform.parent = GameObject.FindWithTag ("Boat").transform;
 	my_state = MyState.InBoat;
-		Debug.Log ("Cabbage state = "+my_state.ToString());
+		//Debug.Log ("Cabbage state = "+my_state.ToString());
   }
 
   public void PlaceOnShore(){
@@ -57,9 +57,13 @@ public class CabbageScript : Animal {
 			if (BoatScript.boat_state == BoatState.EastBank) {
 				gameObject.transform.position = myMarkOnEastBank;
 				my_state = MyState.EastBank;
+				//Debug.Log ("cabbage state = " +  CabbageScript.my_state.ToString () + "wolf state " + WolfScript.my_state.ToString () + " chx state " + ChickenScript.my_state.ToString () + " player state " + PlayerScript.my_state.ToString() + "boat state" + BoatScript.boat_state.ToString());
+
 			} else if (BoatScript.boat_state == BoatState.WestBank) {
 				gameObject.transform.position = myMarkOnWestBank;
 				my_state = MyState.WestBank;
+				//Debug.Log ("cabbage state = " +  CabbageScript.my_state.ToString () + "wolf state " + WolfScript.my_state.ToString () + " chx state " + ChickenScript.my_state.ToString () + " player state " + PlayerScript.my_state.ToString() + "boat state" + BoatScript.boat_state.ToString());
+
 			}
 		}
   }
@@ -67,12 +71,13 @@ public class CabbageScript : Animal {
 	public void CheckBank(string bank){
 		if (bank == "west") {
 			if(inBoat){
-				my_state = MyState.WestBank;
+				//my_state = MyState.WestBank;
 				PlaceOnShore();
+
 			}
 		} else if( bank == "east") {
 			if(inBoat){
-				my_state = MyState.EastBank;
+				//my_state = MyState.EastBank;
 				PlaceOnShore();
 			}
 		}
