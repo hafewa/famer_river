@@ -17,7 +17,10 @@ SubstanceImporter:
   - serializedVersion: 16
     name: ground_006
     prototypeName: ground_006
+<<<<<<< HEAD
     shaderName: 
+=======
+>>>>>>> 79f94354465677b461ade197b7eea7671053b3c4
     shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
     shaderKeywords: 
     renderQueue: -1
@@ -255,6 +258,7 @@ SubstanceImporter:
       generateAllOutputs: 0
       animationUpdateRate: 42
     materialProperties:
+<<<<<<< HEAD
       serializedVersion: 3
       texEnvs:
       - _BumpMap:
@@ -313,6 +317,131 @@ SubstanceImporter:
       colors:
       - _Color: {r: 1, g: 1, b: 1, a: 1}
       - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+=======
+      serializedVersion: 2
+      texEnvs:
+        data:
+          first:
+            name: _MainTex
+          second:
+            texture: {instanceID: 0}
+            scale: {x: 1, y: 1}
+            offset: {x: 0, y: 0}
+        data:
+          first:
+            name: _BumpMap
+          second:
+            texture: {instanceID: 0}
+            scale: {x: 1, y: 1}
+            offset: {x: 0, y: 0}
+        data:
+          first:
+            name: _DetailNormalMap
+          second:
+            texture: {instanceID: 0}
+            scale: {x: 1, y: 1}
+            offset: {x: 0, y: 0}
+        data:
+          first:
+            name: _ParallaxMap
+          second:
+            texture: {instanceID: 0}
+            scale: {x: 1, y: 1}
+            offset: {x: 0, y: 0}
+        data:
+          first:
+            name: _OcclusionMap
+          second:
+            texture: {instanceID: 0}
+            scale: {x: 1, y: 1}
+            offset: {x: 0, y: 0}
+        data:
+          first:
+            name: _EmissionMap
+          second:
+            texture: {instanceID: 0}
+            scale: {x: 1, y: 1}
+            offset: {x: 0, y: 0}
+        data:
+          first:
+            name: _DetailMask
+          second:
+            texture: {instanceID: 0}
+            scale: {x: 1, y: 1}
+            offset: {x: 0, y: 0}
+        data:
+          first:
+            name: _DetailAlbedoMap
+          second:
+            texture: {instanceID: 0}
+            scale: {x: 1, y: 1}
+            offset: {x: 0, y: 0}
+        data:
+          first:
+            name: _MetallicGlossMap
+          second:
+            texture: {instanceID: 0}
+            scale: {x: 1, y: 1}
+            offset: {x: 0, y: 0}
+      floats:
+        data:
+          first:
+            name: _SrcBlend
+          second: 1
+        data:
+          first:
+            name: _DstBlend
+          second: 0
+        data:
+          first:
+            name: _Cutoff
+          second: .5
+        data:
+          first:
+            name: _Parallax
+          second: .0199999996
+        data:
+          first:
+            name: _ZWrite
+          second: 1
+        data:
+          first:
+            name: _Glossiness
+          second: .5
+        data:
+          first:
+            name: _BumpScale
+          second: 1
+        data:
+          first:
+            name: _OcclusionStrength
+          second: 1
+        data:
+          first:
+            name: _DetailNormalMapScale
+          second: 1
+        data:
+          first:
+            name: _UVSec
+          second: 0
+        data:
+          first:
+            name: _Mode
+          second: 0
+        data:
+          first:
+            name: _Metallic
+          second: 0
+      colors:
+        data:
+          first:
+            name: _EmissionColor
+          second: {r: 0, g: 0, b: 0, a: 1}
+        data:
+          first:
+            name: _Color
+          second: {r: 1, g: 1, b: 1, a: 1}
+>>>>>>> 79f94354465677b461ade197b7eea7671053b3c4
     textureParameters:
     - name: ground_006_Diffuse
       alphaSource: 5
@@ -345,6 +474,7 @@ SubstanceImporter:
       aniso: 1
       wrapMode: 0
     textureAssignments:
+<<<<<<< HEAD
     - shaderProp: _MainTex
       material: {instanceID: 0}
       baseUID: 148051919
@@ -352,6 +482,18 @@ SubstanceImporter:
       material: {instanceID: 0}
       baseUID: 148049391
     - shaderProp: _ParallaxMap
+=======
+    - shaderProp:
+        name: _MainTex
+      material: {instanceID: 0}
+      baseUID: 148051919
+    - shaderProp:
+        name: _BumpMap
+      material: {instanceID: 0}
+      baseUID: 148049391
+    - shaderProp:
+        name: _ParallaxMap
+>>>>>>> 79f94354465677b461ade197b7eea7671053b3c4
       material: {instanceID: 0}
       baseUID: 148048919
     buildTargetSettings:

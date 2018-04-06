@@ -70,7 +70,7 @@ public class BoatScript : MonoBehaviour {
 	void Start () {
 
 #if UNITY_EDITOR
-		speed = 20;
+		speed = 10;
 		#endif
 
 
