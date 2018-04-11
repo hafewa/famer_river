@@ -283,6 +283,15 @@
     <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
       <HintPath>/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/MonoDevelop.Unity/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
+    <Reference Include="VacuumShaders.DirectX11LowPolyShader_Editor">
+      <HintPath>Assets/VacuumShaders/DirectX 11 Low Poly Shader/Editor/VacuumShaders.DirectX11LowPolyShader_Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="VacuumShaders.DirectX11LowPolyShaderVC">
+      <HintPath>Assets/VacuumShaders/DirectX 11 Low Poly Shader/Editor/VacuumShaders.DirectX11LowPolyShaderVC.dll</HintPath>
+    </Reference>
+    <Reference Include="VacuumShaders">
+      <HintPath>Assets/VacuumShaders/Editor/VacuumShaders.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.Advertisements">
       <HintPath>/Users/ChaosCloud/Library/Unity/cache/packages/packages.unity.com/com.unity.ads@2.0.3/UnityEngine.Advertisements.dll</HintPath>
     </Reference>
@@ -304,15 +313,6 @@
     <Reference Include="UnityEngine.StandardEvents">
       <HintPath>/Users/ChaosCloud/Library/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.10/UnityEngine.StandardEvents.dll</HintPath>
     </Reference>
-    <Reference Include="VacuumShaders.DirectX11LowPolyShaderVC">
-      <HintPath>Assets/VacuumShaders/DirectX 11 Low Poly Shader/Editor/VacuumShaders.DirectX11LowPolyShaderVC.dll</HintPath>
-    </Reference>
-    <Reference Include="VacuumShaders.DirectX11LowPolyShader_Editor">
-      <HintPath>Assets/VacuumShaders/DirectX 11 Low Poly Shader/Editor/VacuumShaders.DirectX11LowPolyShader_Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="VacuumShaders">
-      <HintPath>Assets/VacuumShaders/Editor/VacuumShaders.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Farmer_River.Plugins.csproj">
@@ -332,6 +332,11 @@
     <Compile Include="Assets\Scripts\FirstPersonController.cs" />
     <Compile Include="Assets\Scripts\GameManager_FailureChecker.cs" />
     <Compile Include="Assets\Scripts\HeadBob.cs" />
+    <Compile Include="Assets\Scripts\LowPoly_vsn\Animal_LP.cs" />
+    <Compile Include="Assets\Scripts\LowPoly_vsn\Boat_LP.cs" />
+    <Compile Include="Assets\Scripts\LowPoly_vsn\GameManager_LP.cs" />
+    <Compile Include="Assets\Scripts\LowPoly_vsn\Player_LP.cs" />
+    <Compile Include="Assets\Scripts\LowPoly_vsn\PlayerGaze.cs" />
     <Compile Include="Assets\Scripts\MouseLook.cs" />
     <Compile Include="Assets\Scripts\PlayerScript.cs" />
     <Compile Include="Assets\Scripts\RigidbodyFirstPersonController.cs" />
@@ -357,6 +362,7 @@
     <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Simple.shader" />
     <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\WaterInclude.cginc" />
     <None Include="Assets\Standard Assets\Skyboxes\_skybox info.txt" />
+    <None Include="Assets\Standard Assets\shader\DifBumpSpecTransp.shader" />
     <None Include="Assets\VacuumShaders\DirectX 11 Low Poly Shader\Doc\Read Me.txt" />
     <None Include="Assets\VacuumShaders\DirectX 11 Low Poly Shader\Example Scenes\Files\Shaders\Fallback.shader" />
     <None Include="Assets\VacuumShaders\DirectX 11 Low Poly Shader\Example Scenes\Files\Shaders\GeometryShader_4.0.shader" />
@@ -436,6 +442,7 @@
     <None Include="Assets\VacuumShaders\DirectX 11 Low Poly Shader\Shaders\cginc\UnityBuiltin2xTreeLibrary.cginc" />
     <None Include="Assets\VacuumShaders\DirectX 11 Low Poly Shader\Shaders\cginc\UnityBuiltin3xTreeLibrary.cginc" />
     <None Include="Assets\VacuumShaders\DirectX 11 Low Poly Shader\Shaders\cginc\Variables.cginc" />
+    <None Include="Assets\dead_trees\dead_tree_notes.txt" />
     <None Include="Assets\sky5X\README.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,6 +1,20 @@
 ﻿<Properties StartupConfiguration="{435D2437-F887-1A08-9AD6-0C82E38BDEBA}|">
   <MonoDevelop.Ide.ItemProperties.Farmer__River PreferredExecutionTarget="Unity.Editor" />
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/LowPoly_vsn/PlayerGaze.cs">
+    <Files>
+      <File FileName="Assets/Scripts/WolfScript.cs" Line="10" Column="1" />
+      <File FileName="Assets/Scripts/Animal.cs" Line="7" Column="3" />
+      <File FileName="Assets/Scripts/GameManager_FailureChecker.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/BoatScript.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/UI_Buttons.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/UI_Intro.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/LowPoly_vsn/Animal_LP.cs" Line="37" Column="1" />
+      <File FileName="Assets/Scripts/LowPoly_vsn/Boat_LP.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/LowPoly_vsn/GameManager_LP.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/LowPoly_vsn/Player_LP.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/LowPoly_vsn/PlayerGaze.cs" Line="8" Column="20" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />

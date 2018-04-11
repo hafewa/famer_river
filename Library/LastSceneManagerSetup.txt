@@ -1,0 +1,4 @@
+sceneSetups:
+- path: Assets/LowPoly_REDO_JAMES/Puzzle_Redo_UsingDirectX.unity
+  isLoaded: 1
+  isActive: 1
