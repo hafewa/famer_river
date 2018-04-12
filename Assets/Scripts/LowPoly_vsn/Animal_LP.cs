@@ -12,8 +12,8 @@ public class Animal_LP : MonoBehaviour {
 
   [HideInInspector]
   public string myId; //ie "Wolf"
-  public enum MyStatus { RedBank, YellowBank, Boat, Dead };
-  public static MyStatus myStatus;
+  public enum MyStatus { None, RedBank, YellowBank, Boat, Dead };
+  public MyStatus myStatus;
 
   public Vector3 mySpotOnRedBank;
   public Vector3 mySpotOnYellowBank;
