@@ -53,30 +53,45 @@ public class PlayerGaze : MonoBehaviour
         switch (hit.collider.gameObject.name)
         {
           case "Wolf":
-            Debug.Log("Gaze hit wolf");
+            //Debug.Log("Gaze hit wolf");
             Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
             objectOfMyGaze = hit.collider.gameObject;
-            if (myGazeStatus != GazeStatus.Wolf && objectOfMyGaze.GetComponent<Animal_LP>().myStatus != Animal_LP.MyStatus.Boat)
+            if(Boat_LP.Instance.boatStatus != objectOfMyGaze.GetComponent<Animal_LP>().myStatus){
+              StartCoroutine(InstructionsTextIncoming(String.Format("Bring the Boat Closer First")));
+              break;
+            }
+
+            if (myGazeStatus != GazeStatus.Wolf && objectOfMyGaze.GetComponent<Animal_LP>().myStatus != BankStatus.Boat)
             {
               StartCoroutine(InstructionsTextIncoming(String.Format("Press Space to place the {0} in the boat", hit.collider.gameObject.name)));
               myGazeStatus = GazeStatus.Wolf;
             }
             break;
           case "Chicken":
-            Debug.Log("Gaze hit Chicken");
+            //Debug.Log("Gaze hit Chicken");
             Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
             objectOfMyGaze = hit.collider.gameObject;
-            if (myGazeStatus != GazeStatus.Chicken && objectOfMyGaze.GetComponent<Animal_LP>().myStatus != Animal_LP.MyStatus.Boat)
+            if (Boat_LP.Instance.boatStatus != objectOfMyGaze.GetComponent<Animal_LP>().myStatus)
+            {
+              StartCoroutine(InstructionsTextIncoming(String.Format("Bring the Boat Closer First")));
+              break;
+            }
+            if (myGazeStatus != GazeStatus.Chicken && objectOfMyGaze.GetComponent<Animal_LP>().myStatus != BankStatus.Boat)
             {
               StartCoroutine(InstructionsTextIncoming(String.Format("Press Space to place the {0} in the boat", hit.collider.gameObject.name)));
               myGazeStatus = GazeStatus.Chicken;
             }
             break;
           case "Cabbage":
-            Debug.Log("Gaze hit Cabbage");
+            //Debug.Log("Gaze hit Cabbage");
             Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
             objectOfMyGaze = hit.collider.gameObject;
-            if (myGazeStatus != GazeStatus.Cabbage && objectOfMyGaze.GetComponent<Animal_LP>().myStatus != Animal_LP.MyStatus.Boat)
+            if (Boat_LP.Instance.boatStatus != objectOfMyGaze.GetComponent<Animal_LP>().myStatus)
+            {
+              StartCoroutine(InstructionsTextIncoming(String.Format("Bring the Boat Closer First")));
+              break;
+            }
+            if (myGazeStatus != GazeStatus.Cabbage && objectOfMyGaze.GetComponent<Animal_LP>().myStatus != BankStatus.Boat)
             {
               StartCoroutine(InstructionsTextIncoming(String.Format("Press Space to place the {0} in the boat", hit.collider.gameObject.name)));
               myGazeStatus = GazeStatus.Cabbage;

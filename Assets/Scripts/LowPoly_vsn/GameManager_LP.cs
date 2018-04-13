@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+public enum BankStatus { None, RedBank, YellowBank, Boat};
+
 public class GameManager_LP : MonoBehaviour {
 
   public enum GameStatus { None, NeedBringBoat, BoatNear, Won, Lost};

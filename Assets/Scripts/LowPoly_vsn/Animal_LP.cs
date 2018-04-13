@@ -12,8 +12,8 @@ public class Animal_LP : MonoBehaviour {
 
   [HideInInspector]
   public string myId; //ie "Wolf"
-  public enum MyStatus { None, RedBank, YellowBank, Boat, Dead };
-  public MyStatus myStatus;
+
+  public BankStatus myStatus;
 
   public Vector3 mySpotOnRedBank;
   public Vector3 mySpotOnYellowBank;
@@ -26,7 +26,7 @@ public class Animal_LP : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
     myId = gameObject.name;
-    myStatus = MyStatus.YellowBank;
+    myStatus = BankStatus.YellowBank;
     switch(myId){
       case "Wolf":
         mySpotOnYellowBank = transform.position;
@@ -61,17 +61,17 @@ public class Animal_LP : MonoBehaviour {
     //transition the animal to the bank
     switch(whichBank){
       case "redBank":
-        myStatus = MyStatus.RedBank;
+        myStatus = BankStatus.RedBank;
 
         break;
       case "yellowBank":
-        myStatus = MyStatus.YellowBank;
+        myStatus = BankStatus.YellowBank;
         break;
     }
   }
 
   public void TransferToBoat(){
-    myStatus = MyStatus.Boat;
+    myStatus = BankStatus.Boat;
 
   }
 

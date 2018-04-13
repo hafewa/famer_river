@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Boat_LP : MonoBehaviour {
 
-  public enum BoatStatus { Idle, YellowBank, RedBank};
-  public static BoatStatus boatStatus;
+  //public enum BoatStatus { Idle, YellowBank, RedBank};
+  public BankStatus boatStatus;
 
   public GameObject playerBoatHolder;
 
@@ -19,7 +19,7 @@ public class Boat_LP : MonoBehaviour {
   }
 
   void Start(){
-    boatStatus = BoatStatus.Idle;
+    boatStatus = BankStatus.None;
   }
 
   void Update()
@@ -28,13 +28,13 @@ public class Boat_LP : MonoBehaviour {
     float distToYellowBank = Vector3.Distance(transform.position, GameManager_LP.Instance.YellowBankMarker.position);
     if (distToYellowBank < 7.0f)
     {
-      boatStatus = BoatStatus.YellowBank;
+      boatStatus = BankStatus.YellowBank;
       Debug.Log("Boat on Yellow Coast");
     }
 
     if (distToRedBank < 7.0f)
     {
-      boatStatus = BoatStatus.RedBank;
+      boatStatus = BankStatus.RedBank;
       Debug.Log("Boat on Red Coast");
     }
 
