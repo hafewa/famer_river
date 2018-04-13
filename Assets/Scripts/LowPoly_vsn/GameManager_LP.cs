@@ -34,6 +34,12 @@ public class GameManager_LP : MonoBehaviour {
   public Vector3 cabbageRotationYellowBank;
   public Vector3 cabbageRotationRedBank;
 
+  public List<Animal_LP> AnimalList;
+
+  public Animal_LP Wolf;
+  public Animal_LP Chicken;
+  public Animal_LP Cabbage;
+
 	// Use this for initialization
 	void Awake () {
     if (Instance == null)
