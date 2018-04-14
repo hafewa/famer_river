@@ -4,6 +4,17 @@ using UnityEngine;
 
 public class Cabbage_LP : Animal_LP {
 
+
+  void OnEnable()
+  {
+    PlayerGaze.OnGazeHitChicken += GazeOnCabbage;
+  }
+
+  void OnDisable()
+  {
+    PlayerGaze.OnGazeHitChicken -= GazeOnCabbage;
+  }
+
 	// Use this for initialization
   public override void Start()
   {
@@ -31,5 +42,12 @@ public class Cabbage_LP : Animal_LP {
         transform.position = GameManager_LP.Instance.cabbageSpotYellowBank;
         break;
     }
+  }
+
+
+  public void GazeOnCabbage()
+  {
+    Debug.Log("Cabbage stuff happening");
+
   }
 }

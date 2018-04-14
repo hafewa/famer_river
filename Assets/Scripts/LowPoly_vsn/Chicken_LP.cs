@@ -4,6 +4,16 @@ using UnityEngine;
 
 public class Chicken_LP : Animal_LP {
 
+  void OnEnable()
+  {
+    PlayerGaze.OnGazeHitChicken += GazeOnChicken;
+  }
+
+  void OnDisable()
+  {
+    PlayerGaze.OnGazeHitChicken -= GazeOnChicken;
+  }
+
 	// Use this for initialization
   public override void Start()
   {
@@ -30,6 +40,11 @@ public class Chicken_LP : Animal_LP {
         transform.position = GameManager_LP.Instance.chickenSpotYellowBank;
         break;
     }
+  }
+
+  public void GazeOnChicken()
+  {
+    Debug.Log("Chicken stuff happening");
   }
 
 }

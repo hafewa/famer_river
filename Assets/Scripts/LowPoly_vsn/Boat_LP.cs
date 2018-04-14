@@ -14,6 +14,16 @@ public class Boat_LP : MonoBehaviour {
 
   public static Boat_LP Instance;
 
+  void OnEnable()
+  {
+    PlayerGaze.OnGazeHitBoat += GazeOnBoat;
+  }
+
+  void OnDisable()
+  {
+    PlayerGaze.OnGazeHitBoat -= GazeOnBoat;
+  }
+
   void Awake(){
     if (Instance == null)
       Instance = this;
@@ -54,6 +64,12 @@ public class Boat_LP : MonoBehaviour {
 
   void UnloadTheBoat(string bankType){
     cargo.GetComponent<Animal_LP>().TransferToBank(bankType);
+  }
+
+  public void GazeOnBoat()
+  {
+    Debug.Log("Boat stuff happening");
+
   }
 
 }

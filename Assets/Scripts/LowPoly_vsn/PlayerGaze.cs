@@ -61,16 +61,20 @@ public class PlayerGaze : MonoBehaviour
       switch (hit.collider.gameObject.name)
       {
         case "Wolf":
-          OnGazeHitWolf();
+          if(OnGazeHitWolf!=null)
+            OnGazeHitWolf();
           break;
         case "Chicken":
-          OnGazeHitChicken();
+          if (OnGazeHitChicken != null)
+            OnGazeHitChicken();
           break;
         case "Cabbage":
-          OnGazeHitCabbage();
+          if (OnGazeHitCabbage != null)
+            OnGazeHitCabbage();
           break;
         case "Boat":
-          OnGazeHitBoat();
+          if (OnGazeHitBoat != null)
+            OnGazeHitBoat();
           break;
       }
     } else {

@@ -23,6 +23,7 @@ public class Animal_LP : MonoBehaviour {
 
   public bool gazeIsOnMe;
 
+
 	// Use this for initialization
 	public virtual void Start () {
     myId = gameObject.name;
@@ -51,5 +52,4 @@ public class Animal_LP : MonoBehaviour {
     transform.SetParent(Boat_LP.Instance.cargoPosition);
     Boat_LP.Instance.cargo = gameObject;
   }
-
 }

@@ -4,6 +4,15 @@ using UnityEngine;
 
 public class Wolf_LP : Animal_LP {
 
+
+  void OnEnable(){
+    PlayerGaze.OnGazeHitWolf += GazeOnWolf;
+  }
+
+  void OnDisable(){
+    PlayerGaze.OnGazeHitWolf -= GazeOnWolf;
+  }
+
 	// Use this for initialization
 	public override void Start () {
     base.Start();
@@ -31,4 +40,9 @@ public class Wolf_LP : Animal_LP {
         break;
     }
   }
+
+  public void GazeOnWolf(){
+    Debug.Log("Wolf stuff happening");
+  }
+
 }
