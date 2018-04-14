@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 
 public enum BankStatus { None, RedBank, YellowBank, Boat};
 
@@ -55,4 +55,13 @@ public class GameManager_LP : MonoBehaviour {
 	void Update () {
 		
 	}
+
+  public void ResetTheGame(){
+    Debug.Log("Button pressed");
+    int scene = SceneManager.GetActiveScene().buildIndex;
+    SceneManager.LoadScene(scene, LoadSceneMode.Single);
+    Debug.Log("Button pressed");
+  }
+
+
 }

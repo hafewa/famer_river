@@ -54,7 +54,7 @@ public class PlayerGaze : MonoBehaviour
   void FixedUpdate()
   {
 
-    RaycastHit hit;
+    RaycastHit hit = new RaycastHit();
     // Does the ray intersect any objects excluding the player layer
     if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 10.0f))
     {
