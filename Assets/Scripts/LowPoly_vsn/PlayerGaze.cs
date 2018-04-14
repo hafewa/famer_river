@@ -51,7 +51,7 @@ public class PlayerGaze : MonoBehaviour
 
 
   // Update is called once per frame
-  void FixedUpdate()
+  void Update()
   {
 
     RaycastHit hit = new RaycastHit();

@@ -334,9 +334,12 @@
     <Compile Include="Assets\Scripts\HeadBob.cs" />
     <Compile Include="Assets\Scripts\LowPoly_vsn\Animal_LP.cs" />
     <Compile Include="Assets\Scripts\LowPoly_vsn\Boat_LP.cs" />
+    <Compile Include="Assets\Scripts\LowPoly_vsn\Cabbage_LP.cs" />
+    <Compile Include="Assets\Scripts\LowPoly_vsn\Chicken_LP.cs" />
     <Compile Include="Assets\Scripts\LowPoly_vsn\GameManager_LP.cs" />
     <Compile Include="Assets\Scripts\LowPoly_vsn\Player_LP.cs" />
     <Compile Include="Assets\Scripts\LowPoly_vsn\PlayerGaze.cs" />
+    <Compile Include="Assets\Scripts\LowPoly_vsn\Wolf_LP.cs" />
     <Compile Include="Assets\Scripts\MouseLook.cs" />
     <Compile Include="Assets\Scripts\PlayerScript.cs" />
     <Compile Include="Assets\Scripts\RigidbodyFirstPersonController.cs" />
