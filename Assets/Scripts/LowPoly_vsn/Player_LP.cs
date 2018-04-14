@@ -31,20 +31,27 @@ public class Player_LP : MonoBehaviour {
       {
         thingToPull = null;
         playerStatus = PlayerStatus.None;
+        StartCoroutine(PlayerGaze.Instance.InstructionsTextOutgoing());
         Debug.Log("PlayerStatus is dragging the boat...");
-      }
+      } else {
+        switch (PlayerGaze.Instance.myGazeStatus)
+        {
+          case PlayerGaze.GazeStatus.Boat:
+            thingToPull = Boat_LP.Instance.gameObject;
+            playerStatus = PlayerStatus.DraggingBoat;
+            StartCoroutine(PlayerGaze.Instance.InstructionsTextIncoming(String.Format("Press Space to release the boat")));
+            break;
+          case PlayerGaze.GazeStatus.Wolf:
 
-      switch (PlayerGaze.Instance.myGazeStatus)
-      {
-        case PlayerGaze.GazeStatus.Boat:
-          thingToPull = Boat_LP.Instance.gameObject;
-          playerStatus = PlayerStatus.DraggingBoat;
-          StartCoroutine(PlayerGaze.Instance.InstructionsTextIncoming(String.Format("Press Space to release the boat")));
-          break;
-        case PlayerGaze.GazeStatus.Wolf:
-          
-          break;
+            break;
+          case PlayerGaze.GazeStatus.Chicken:
 
+            break;
+          case PlayerGaze.GazeStatus.Cabbage:
+
+            break;
+
+        }
       }
     }
 

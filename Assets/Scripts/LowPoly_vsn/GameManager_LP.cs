@@ -39,9 +39,9 @@ public class GameManager_LP : MonoBehaviour {
 
   public List<Animal_LP> AnimalList;
 
-  public Animal_LP Wolf;
-  public Animal_LP Chicken;
-  public Animal_LP Cabbage;
+  public Animal_LP wolf;
+  public Animal_LP chicken;
+  public Animal_LP cabbage;
 
 	// Use this for initialization
 	void Awake () {

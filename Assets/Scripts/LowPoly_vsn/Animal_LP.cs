@@ -24,55 +24,32 @@ public class Animal_LP : MonoBehaviour {
   public bool gazeIsOnMe;
 
 	// Use this for initialization
-	void Start () {
+	public virtual void Start () {
     myId = gameObject.name;
     myStatus = BankStatus.YellowBank;
-    switch(myId){
-      case "Wolf":
-        mySpotOnYellowBank = transform.position;
-        GameManager_LP.Instance.wolfSpotYellowBank = mySpotOnYellowBank;
-        mySpotOnRedBank = GameManager_LP.Instance.wolfSpotRedBank;
-        myRotYellowBank = transform.rotation.eulerAngles;
-        myRotRedBank = GameManager_LP.Instance.wolfRotationRedBank;
-        break;
-      case "Chicken":
-        mySpotOnYellowBank = transform.position;
-        GameManager_LP.Instance.chickenSpotYellowBank = mySpotOnYellowBank;
-        mySpotOnRedBank = GameManager_LP.Instance.chickenSpotRedBank;
-        myRotYellowBank = transform.rotation.eulerAngles;
-        myRotRedBank = GameManager_LP.Instance.chickenRotationRedBank;
-        break;
-      case "Cabbage":
-        mySpotOnYellowBank = transform.position;
-        GameManager_LP.Instance.cabbageSpotYellowBank = mySpotOnYellowBank;
-        mySpotOnRedBank = GameManager_LP.Instance.cabbageSpotRedBank;
-        myRotYellowBank = transform.rotation.eulerAngles;
-        myRotRedBank = GameManager_LP.Instance.cabbageRotationRedBank;
-        break;
-    }
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+    if(Input.GetKeyDown(KeyCode.Space) ){
+      if(PlayerGaze.Instance.objectOfMyGaze.Equals(gameObject)){
+        if(!myStatus.Equals(BankStatus.Boat)){
+          TransferToBoat();
+        }
+      }
+    }
 	}
 
-  public void TransferToBank(string whichBank){
-    //transition the animal to the bank
-    switch(whichBank){
-      case "redBank":
-        myStatus = BankStatus.RedBank;
+  public virtual void TransferToBank(string whichBank){
 
-        break;
-      case "yellowBank":
-        myStatus = BankStatus.YellowBank;
-        break;
-    }
   }
 
-  public void TransferToBoat(){
+  public virtual void TransferToBoat(){
     myStatus = BankStatus.Boat;
-
+    transform.position = Boat_LP.Instance.cargoPosition.position;
+    transform.SetParent(Boat_LP.Instance.cargoPosition);
+    Boat_LP.Instance.cargo = gameObject;
   }
 
 }
