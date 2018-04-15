@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class Boat_LP : MonoBehaviour {
 
@@ -45,7 +46,7 @@ public class Boat_LP : MonoBehaviour {
       Debug.Log("Boat on Yellow Coast");
       if (cargo)
       {
-        cargo.GetComponent<Animal_LP>().myStatus = boatStatus;
+        cargo.GetComponent<Animal_LP>().animalStatus = boatStatus;
         UnloadTheBoat("yellowBank");
       }
     }
@@ -55,11 +56,43 @@ public class Boat_LP : MonoBehaviour {
       boatStatus = BankStatus.RedBank;
       Debug.Log("Boat on Red Coast");
       if(cargo){
-        cargo.GetComponent<Animal_LP>().myStatus = boatStatus;
+        cargo.GetComponent<Animal_LP>().animalStatus = boatStatus;
         UnloadTheBoat("redBank");
-
       }
     }
+
+
+    if (Input.GetKeyDown(KeyCode.Space))
+    {
+      if (Player_LP.Instance.playerStatus == PlayerStatus.DraggingBoat)
+      {
+        DetachBoatFromPlayer();
+      }
+      //if we hit the space bar and we're looking at the boat...
+      if (PlayerGaze.Instance.myGazeStatus.Equals(GazeStatus.Boat) && Player_LP.Instance.playerStatus != PlayerStatus.DraggingBoat)
+      {
+        AttachBoatToPlayer();
+      }
+    }
+  }
+
+  void AttachBoatToPlayer(){
+    Debug.Log("Attaching boat to player");
+    //..and we're not dragging the boat...
+    //Make player drag the boat...
+    Player_LP.Instance.thingToPull = gameObject;
+    Player_LP.Instance.playerStatus = PlayerStatus.DraggingBoat;
+    ChooseTextToDisplay();
+    Player_LP.Instance.pullingBoat = true;
+    //PLAY PARTICLE EFFECTS HERE
+  }
+
+  void DetachBoatFromPlayer(){
+    //release the boat object from the player
+    Player_LP.Instance.thingToPull = null;
+    Player_LP.Instance.playerStatus = PlayerStatus.None;
+    PlayerGaze.Instance.ClearGaze();
+    Player_LP.Instance.pullingBoat = false;
   }
 
   void UnloadTheBoat(string bankType){
@@ -69,7 +102,21 @@ public class Boat_LP : MonoBehaviour {
   public void GazeOnBoat()
   {
     Debug.Log("Boat stuff happening");
+    if (PlayerGaze.Instance.myGazeStatus != GazeStatus.Boat)
+    {
+      ChooseTextToDisplay();
+      PlayerGaze.Instance.myGazeStatus = GazeStatus.Boat;
+    }
+  }
 
+  void ChooseTextToDisplay()
+  {
+    if (Player_LP.Instance.playerStatus != PlayerStatus.DraggingBoat)
+    {
+      StartCoroutine(UIManager_LP.Instance.InstructionsTextIncoming(String.Format("Press Space to pull the boat")));
+    } else if(Player_LP.Instance.playerStatus == PlayerStatus.DraggingBoat){
+      StartCoroutine(UIManager_LP.Instance.InstructionsTextIncoming(String.Format("Press Space to release the boat")));
+    }
   }
 
 }

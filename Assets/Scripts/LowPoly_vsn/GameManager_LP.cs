@@ -57,10 +57,8 @@ public class GameManager_LP : MonoBehaviour {
 	}
 
   public void ResetTheGame(){
-    Debug.Log("Button pressed");
-    int scene = SceneManager.GetActiveScene().buildIndex;
-    SceneManager.LoadScene(scene, LoadSceneMode.Single);
-    Debug.Log("Button pressed");
+    Debug.Log("Reset pressed");
+    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
   }
 
 

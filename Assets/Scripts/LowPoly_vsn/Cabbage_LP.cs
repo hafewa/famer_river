@@ -1,18 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class Cabbage_LP : Animal_LP {
 
 
   void OnEnable()
   {
-    PlayerGaze.OnGazeHitChicken += GazeOnCabbage;
+    PlayerGaze.OnGazeHitCabbage += GazeOnCabbage;
   }
 
   void OnDisable()
   {
-    PlayerGaze.OnGazeHitChicken -= GazeOnCabbage;
+    PlayerGaze.OnGazeHitCabbage -= GazeOnCabbage;
   }
 
 	// Use this for initialization
@@ -34,11 +35,11 @@ public class Cabbage_LP : Animal_LP {
     switch (whichBank)
     {
       case "redBank":
-        myStatus = BankStatus.RedBank;
+        animalStatus = BankStatus.RedBank;
         transform.position = GameManager_LP.Instance.cabbageSpotRedBank;
         break;
       case "yellowBank":
-        myStatus = BankStatus.YellowBank;
+        animalStatus = BankStatus.YellowBank;
         transform.position = GameManager_LP.Instance.cabbageSpotYellowBank;
         break;
     }
@@ -48,6 +49,10 @@ public class Cabbage_LP : Animal_LP {
   public void GazeOnCabbage()
   {
     Debug.Log("Cabbage stuff happening");
-
+    if (PlayerGaze.Instance.myGazeStatus != GazeStatus.Cabbage)
+    {
+      ChooseTextToDisplay();
+      PlayerGaze.Instance.myGazeStatus = GazeStatus.Cabbage;
+    }
   }
 }

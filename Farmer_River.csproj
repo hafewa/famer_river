@@ -339,6 +339,7 @@
     <Compile Include="Assets\Scripts\LowPoly_vsn\GameManager_LP.cs" />
     <Compile Include="Assets\Scripts\LowPoly_vsn\Player_LP.cs" />
     <Compile Include="Assets\Scripts\LowPoly_vsn\PlayerGaze.cs" />
+    <Compile Include="Assets\Scripts\LowPoly_vsn\UIManager_LP.cs" />
     <Compile Include="Assets\Scripts\LowPoly_vsn\Wolf_LP.cs" />
     <Compile Include="Assets\Scripts\MouseLook.cs" />
     <Compile Include="Assets\Scripts\PlayerScript.cs" />

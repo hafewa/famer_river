@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class Wolf_LP : Animal_LP {
 
@@ -30,19 +31,26 @@ public class Wolf_LP : Animal_LP {
     switch (whichBank)
     {
       case "redBank":
-        myStatus = BankStatus.RedBank;
-        //if()
+        animalStatus = BankStatus.RedBank;
         transform.position = GameManager_LP.Instance.wolfSpotRedBank;
         break;
       case "yellowBank":
-        myStatus = BankStatus.YellowBank;
+        animalStatus = BankStatus.YellowBank;
         transform.position = GameManager_LP.Instance.wolfSpotYellowBank;
         break;
     }
   }
 
-  public void GazeOnWolf(){
+  public void GazeOnWolf()
+  {
     Debug.Log("Wolf stuff happening");
+    if (PlayerGaze.Instance.myGazeStatus != GazeStatus.Wolf)
+    {
+      ChooseTextToDisplay();
+      PlayerGaze.Instance.myGazeStatus = GazeStatus.Wolf;
+    }
   }
+
+
 
 }

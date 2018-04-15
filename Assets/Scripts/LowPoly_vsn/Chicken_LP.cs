@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class Chicken_LP : Animal_LP {
 
@@ -31,12 +32,12 @@ public class Chicken_LP : Animal_LP {
     switch (whichBank)
     {
       case "redBank":
-        myStatus = BankStatus.RedBank;
+        animalStatus = BankStatus.RedBank;
         //if()
         transform.position = GameManager_LP.Instance.chickenSpotRedBank;
         break;
       case "yellowBank":
-        myStatus = BankStatus.YellowBank;
+        animalStatus = BankStatus.YellowBank;
         transform.position = GameManager_LP.Instance.chickenSpotYellowBank;
         break;
     }
@@ -45,6 +46,11 @@ public class Chicken_LP : Animal_LP {
   public void GazeOnChicken()
   {
     Debug.Log("Chicken stuff happening");
+    if (PlayerGaze.Instance.myGazeStatus != GazeStatus.Chicken)
+    {
+      ChooseTextToDisplay();
+      PlayerGaze.Instance.myGazeStatus = GazeStatus.Chicken;
+    }
   }
 
 }

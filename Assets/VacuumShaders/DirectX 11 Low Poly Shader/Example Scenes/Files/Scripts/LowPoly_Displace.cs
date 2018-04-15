@@ -67,7 +67,7 @@ namespace VacuumShaders
         Vector3 newPos = worldPos;
         newPos.y += displace;
 
-        if (Player_LP.Instance.playerStatus != Player_LP.PlayerStatus.DraggingBoat)
+        if (Player_LP.Instance.playerStatus != PlayerStatus.DraggingBoat)
         {
           transform.position = Vector3.Lerp(originalPosition, newPos, Mathf.SmoothStep(0f, 1f, Time.time));
         } else {

@@ -4,16 +4,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+public enum GazeStatus { None, Wolf, Chicken, Cabbage, Boat };
+
 public class PlayerGaze : MonoBehaviour
 {
-
-
   public GameObject objectOfMyGaze;
-  public enum GazeStatus { None, Wolf, Chicken, Cabbage, Boat };
   public GazeStatus myGazeStatus;
-
-  public Button instructionTextBottom;
-  public bool textInstructionsPresent;
 
   public static PlayerGaze Instance;
 
@@ -45,7 +41,7 @@ public class PlayerGaze : MonoBehaviour
   // Use this for initialization
   void Start()
   {
-    objectOfMyGaze = null;
+    //objectOfMyGaze = null;
     myGazeStatus = GazeStatus.None;
   }
 
@@ -58,61 +54,66 @@ public class PlayerGaze : MonoBehaviour
     // Does the ray intersect any objects excluding the player layer
     if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 10.0f))
     {
+      Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
       switch (hit.collider.gameObject.name)
       {
         case "Wolf":
-          if(OnGazeHitWolf!=null)
+          if (OnGazeHitWolf != null)
+          {
             OnGazeHitWolf();
+            objectOfMyGaze = hit.collider.gameObject;
+          }
           break;
         case "Chicken":
           if (OnGazeHitChicken != null)
+          {
             OnGazeHitChicken();
+            objectOfMyGaze = hit.collider.gameObject;
+          }
           break;
         case "Cabbage":
           if (OnGazeHitCabbage != null)
+          {
             OnGazeHitCabbage();
+            objectOfMyGaze = hit.collider.gameObject;
+          }
           break;
         case "Boat":
           if (OnGazeHitBoat != null)
+          {
             OnGazeHitBoat();
+            objectOfMyGaze = hit.collider.gameObject;
+          }
           break;
       }
+
+      //if(hit.collider.gameObject.name != "Wolf" && hit.collider.gameObject.name != "Chicken" && hit.collider.gameObject.name != "Cabbage" && hit.collider.gameObject.name != "Boat" ){
+      //  RemoveText();
+      //}
+
     } else {
       if (myGazeStatus != GazeStatus.None)
       {
-        myGazeStatus = GazeStatus.None;
-        StartCoroutine(InstructionsTextOutgoing());
+        ClearGaze();
       }
     }
   }
 
-  public IEnumerator InstructionsTextIncoming(string instr)
+  public void ClearGaze()
   {
-    if (textInstructionsPresent)
+    if (Player_LP.Instance.playerStatus != PlayerStatus.DraggingBoat)
     {
-      StartCoroutine(SwapInstructions(instr));
-      yield break;
+      if (UIManager_LP.Instance.textInstructionsPresent)
+      {
+        Debug.Log("Removing Text instructions");
+        myGazeStatus = GazeStatus.None;
+        StartCoroutine(UIManager_LP.Instance.InstructionsTextOutgoing());
+        objectOfMyGaze = null;
+      }
     }
-    instructionTextBottom.GetComponent<Animator>().SetTrigger("SlideInTrig");
-    textInstructionsPresent = true;
-    yield return new WaitForSeconds(0.15f);
-    instructionTextBottom.transform.Find("Text").GetComponent<Text>().text = instr;
   }
 
-  public IEnumerator InstructionsTextOutgoing()
-  {
-    instructionTextBottom.GetComponent<Animator>().SetTrigger("SlideOutTrig");
-    textInstructionsPresent = false;
-    yield return new WaitForSeconds(0.75f);
-    instructionTextBottom.transform.Find("Text").GetComponent<Text>().text = "";
-  }
 
-  public IEnumerator SwapInstructions(string instr){
-    instructionTextBottom.GetComponent<Animator>().SetTrigger("Swap");
-    textInstructionsPresent = true;
-    yield return new WaitForSeconds(0.75f);
-    instructionTextBottom.transform.Find("Text").GetComponent<Text>().text = instr;
-  }
 }
 
 
