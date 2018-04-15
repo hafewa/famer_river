@@ -1,17 +1,17 @@
 ﻿<Properties StartupConfiguration="{435D2437-F887-1A08-9AD6-0C82E38BDEBA}|">
   <MonoDevelop.Ide.ItemProperties.Farmer__River PreferredExecutionTarget="Unity.Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/VacuumShaders/DirectX 11 Low Poly Shader/Example Scenes/Files/Scripts/LowPoly_Displace.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/LowPoly_vsn/Cabbage_LP.cs">
     <Files>
-      <File FileName="Assets/Scripts/LowPoly_vsn/GameManager_LP.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/LowPoly_vsn/Player_LP.cs" Line="7" Column="68" />
-      <File FileName="Assets/Scripts/LowPoly_vsn/PlayerGaze.cs" Line="102" Column="10" />
-      <File FileName="Assets/Scripts/LowPoly_vsn/Animal_LP.cs" Line="39" Column="51" />
-      <File FileName="Assets/Scripts/LowPoly_vsn/Wolf_LP.cs" Line="51" Column="1" />
-      <File FileName="Assets/Scripts/LowPoly_vsn/Chicken_LP.cs" Line="54" Column="4" />
-      <File FileName="Assets/Scripts/LowPoly_vsn/Cabbage_LP.cs" Line="57" Column="4" />
-      <File FileName="Assets/Scripts/LowPoly_vsn/Boat_LP.cs" Line="89" Column="39" />
+      <File FileName="Assets/Scripts/LowPoly_vsn/GameManager_LP.cs" Line="61" Column="1" />
+      <File FileName="Assets/Scripts/LowPoly_vsn/Player_LP.cs" Line="51" Column="9" />
+      <File FileName="Assets/Scripts/LowPoly_vsn/PlayerGaze.cs" Line="104" Column="1" />
+      <File FileName="Assets/Scripts/LowPoly_vsn/Animal_LP.cs" Line="50" Column="10" />
+      <File FileName="Assets/Scripts/LowPoly_vsn/Wolf_LP.cs" Line="35" Column="70" />
+      <File FileName="Assets/Scripts/LowPoly_vsn/Chicken_LP.cs" Line="37" Column="35" />
+      <File FileName="Assets/Scripts/LowPoly_vsn/Cabbage_LP.cs" Line="45" Column="35" />
+      <File FileName="Assets/Scripts/LowPoly_vsn/Boat_LP.cs" Line="86" Column="6" />
       <File FileName="Assets/Scripts/LowPoly_vsn/UIManager_LP.cs" Line="4" Column="22" />
-      <File FileName="Assets/VacuumShaders/DirectX 11 Low Poly Shader/Example Scenes/Files/Scripts/LowPoly_Displace.cs" Line="70" Column="1" />
+      <File FileName="Assets/VacuumShaders/DirectX 11 Low Poly Shader/Example Scenes/Files/Scripts/LowPoly_Displace.cs" Line="79" Column="15" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

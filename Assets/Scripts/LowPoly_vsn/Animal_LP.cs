@@ -38,44 +38,55 @@ public class Animal_LP : MonoBehaviour {
     {
       if (Input.GetKeyDown(KeyCode.Space))
       {
-        if (PlayerGaze.Instance.objectOfMyGaze.Equals(gameObject))
+        if (PlayerGaze.Instance.objectOfMyGaze)
         {
-          if (!animalStatus.Equals(BankStatus.Boat))
+          if (PlayerGaze.Instance.objectOfMyGaze.Equals(gameObject))
           {
-            TransferToBoat();
+            if (!animalStatus.Equals(BankStatus.Boat))
+            {
+              TransferToBoat();
+            }
           }
         }
       }
     }
 	}
 
-  public virtual void TransferToBank(string whichBank){
+  public virtual void TransferToBank(){
 
   }
 
   public virtual void TransferToBoat(){
+    if(Boat_LP.Instance.cargo){
+      Boat_LP.Instance.UnloadTheBoat();
+    }
     animalStatus = BankStatus.Boat;
     transform.position = Boat_LP.Instance.cargoPosition.position;
-    transform.SetParent(Boat_LP.Instance.cargoPosition);
+    transform.SetParent(Boat_LP.Instance.transform.Find("Boat"));
     Boat_LP.Instance.cargo = gameObject;
+    PlayerGaze.Instance.ClearGaze();
   }
 
   protected void ChooseTextToDisplay()
   {
-    if (Player_LP.Instance.playerStatus != PlayerStatus.DraggingBoat)
+
+    if (animalStatus != BankStatus.Boat)
     {
-      //if the boat's too far away...we tell the player to get the boat...
-      if (Boat_LP.Instance.boatStatus != animalStatus)
+      if (Player_LP.Instance.playerStatus != PlayerStatus.DraggingBoat)
       {
-        StartCoroutine(UIManager_LP.Instance.InstructionsTextIncoming(String.Format("First bring the boat closer")));
-      }
-      //if the boat is close enough to the animal's bank...
-      else if (Boat_LP.Instance.boatStatus == animalStatus)
-      {
-        //if the animal is not in the boat...
-        if (animalStatus != BankStatus.Boat)
+        //if the boat's too far away...we tell the player to get the boat...
+        if (Boat_LP.Instance.boatStatus != animalStatus)
         {
-          StartCoroutine(UIManager_LP.Instance.InstructionsTextIncoming(String.Format("Press Space to place the {0} in the boat", myId)));
+          StartCoroutine(UIManager_LP.Instance.InstructionsTextIncoming(String.Format("First bring the boat closer")));
+        }
+        //if the boat is close enough to the animal's bank...
+        else if (Boat_LP.Instance.boatStatus == animalStatus)
+        {
+          //if the animal is not in the boat...
+          if (animalStatus != BankStatus.Boat)
+          {
+            StartCoroutine(UIManager_LP.Instance.InstructionsTextIncoming(String.Format("Press Space to place the {0} in the boat", myId)));
+          }
         }
       }
     }

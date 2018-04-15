@@ -15,6 +15,8 @@ public class Boat_LP : MonoBehaviour {
 
   public static Boat_LP Instance;
 
+  public bool originalPosNeedsSet;
+
   void OnEnable()
   {
     PlayerGaze.OnGazeHitBoat += GazeOnBoat;
@@ -47,7 +49,7 @@ public class Boat_LP : MonoBehaviour {
       if (cargo)
       {
         cargo.GetComponent<Animal_LP>().animalStatus = boatStatus;
-        UnloadTheBoat("yellowBank");
+        UnloadTheBoat();
       }
     }
 
@@ -57,7 +59,7 @@ public class Boat_LP : MonoBehaviour {
       Debug.Log("Boat on Red Coast");
       if(cargo){
         cargo.GetComponent<Animal_LP>().animalStatus = boatStatus;
-        UnloadTheBoat("redBank");
+        UnloadTheBoat();
       }
     }
 
@@ -78,13 +80,19 @@ public class Boat_LP : MonoBehaviour {
 
   void AttachBoatToPlayer(){
     Debug.Log("Attaching boat to player");
-    //..and we're not dragging the boat...
+    if (cargo)
+    {
+      cargo.transform.SetParent(transform);
+    }
     //Make player drag the boat...
     Player_LP.Instance.thingToPull = gameObject;
     Player_LP.Instance.playerStatus = PlayerStatus.DraggingBoat;
     ChooseTextToDisplay();
     Player_LP.Instance.pullingBoat = true;
     //PLAY PARTICLE EFFECTS HERE
+    transform.Find("Boat").transform.Find("Particle System").GetComponent<ParticleSystem>().Play();
+    //originalPosNeedsSet = true;
+
   }
 
   void DetachBoatFromPlayer(){
@@ -93,10 +101,15 @@ public class Boat_LP : MonoBehaviour {
     Player_LP.Instance.playerStatus = PlayerStatus.None;
     PlayerGaze.Instance.ClearGaze();
     Player_LP.Instance.pullingBoat = false;
+    transform.Find("Boat").transform.Find("Particle System").GetComponent<ParticleSystem>().Stop();
+    if (cargo)
+    {
+      cargo.transform.SetParent(transform.Find("Boat"));
+    }
   }
 
-  void UnloadTheBoat(string bankType){
-    cargo.GetComponent<Animal_LP>().TransferToBank(bankType);
+  public void UnloadTheBoat(){
+    cargo.GetComponent<Animal_LP>().TransferToBank();
   }
 
   public void GazeOnBoat()

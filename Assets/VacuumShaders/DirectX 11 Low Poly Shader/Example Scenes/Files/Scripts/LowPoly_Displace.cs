@@ -70,8 +70,14 @@ namespace VacuumShaders
         if (Player_LP.Instance.playerStatus != PlayerStatus.DraggingBoat)
         {
           transform.position = Vector3.Lerp(originalPosition, newPos, Mathf.SmoothStep(0f, 1f, Time.time));
-        } else {
-          originalPosition = transform.position;
+          //Boat_LP.Instance.originalPosNeedsSet = true;
+        } else if(Player_LP.Instance.playerStatus == PlayerStatus.DraggingBoat ) {
+          //if (Boat_LP.Instance.originalPosNeedsSet)
+          //{
+            //Debug.Log("New Original position is set.");
+            originalPosition = transform.position;
+            //Boat_LP.Instance.originalPosNeedsSet = false;
+          //}
         }
         #endregion
       }

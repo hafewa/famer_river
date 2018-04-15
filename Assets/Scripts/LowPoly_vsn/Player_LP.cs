@@ -36,6 +36,7 @@ public class Player_LP : MonoBehaviour {
   public void PullBoat(){
     if (thingToPull)
     {
+      Debug.Log("PULLING BOAT");
       Vector3 D = transform.position - thingToPull.transform.position; // line from crate to player
       float dist = D.magnitude;
       Vector3 pullDir = D.normalized; // short blue arrow from crate to player

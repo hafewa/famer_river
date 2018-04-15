@@ -26,21 +26,21 @@ public class Cabbage_LP : Animal_LP {
     myRotYellowBank = transform.rotation.eulerAngles;
     myRotRedBank = GameManager_LP.Instance.cabbageRotationRedBank;
 	}
-	
 
-
-  public override void TransferToBank(string whichBank)
+  public override void TransferToBank()
   {
     //transition the animal to the bank
-    switch (whichBank)
+    switch (Boat_LP.Instance.boatStatus)
     {
-      case "redBank":
+      case BankStatus.RedBank:
         animalStatus = BankStatus.RedBank;
         transform.position = GameManager_LP.Instance.cabbageSpotRedBank;
+        transform.SetParent(null);
         break;
-      case "yellowBank":
+      case BankStatus.YellowBank:
         animalStatus = BankStatus.YellowBank;
         transform.position = GameManager_LP.Instance.cabbageSpotYellowBank;
+        transform.SetParent(null);
         break;
     }
   }
