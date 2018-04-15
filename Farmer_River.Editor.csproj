@@ -338,6 +338,12 @@
   <ItemGroup>
     <None Include="Assets\Fonts\Nunito\OFL.txt" />
     <None Include="Assets\Forest Grounds - Terrain Texture Pack\Readme.txt" />
+    <None Include="Assets\LowPoly_REDO_JAMES\GlowingObjectOutlines-master\Assets\Resources\Blur.shader" />
+    <None Include="Assets\LowPoly_REDO_JAMES\GlowingObjectOutlines-master\Assets\Resources\GlowCmdShader.shader" />
+    <None Include="Assets\LowPoly_REDO_JAMES\GlowingObjectOutlines-master\Assets\Resources\GlowComposite.shader" />
+    <None Include="Assets\LowPoly_REDO_JAMES\GlowingObjectOutlines-master\Assets\Resources\GlowReplace.shader" />
+    <None Include="Assets\LowPoly_REDO_JAMES\GlowingObjectOutlines-master\Assets\Resources\Standard-Glow.shader" />
+    <None Include="Assets\LowPoly_REDO_JAMES\GlowingObjectOutlines-master\ProjectSettings\ProjectVersion.txt" />
     <None Include="Assets\Standard Assets\Characters\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />
     <None Include="Assets\Standard Assets\Characters\RollerBall\RollerBallGuidelines.txt" />
     <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
