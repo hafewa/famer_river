@@ -10,6 +10,9 @@ public class UIManager_LP : MonoBehaviour {
 
   public Button instructionTextBottom;
   public bool textInstructionsPresent;
+  public Transform fadeToBlackPanel;
+  public Text messageAtEnd;
+  //public Button optionsAtEnd;
 
   void Awake(){
     if (Instance == null)
@@ -57,4 +60,16 @@ public class UIManager_LP : MonoBehaviour {
     yield return new WaitForSeconds(0.75f);
     instructionTextBottom.transform.Find("Text").GetComponent<Text>().text = instr;
   }
+
+
+  //this will be the success failure screens that are activated by the game manager
+  public IEnumerator EndScreen(string messageToPlayer){
+    while(fadeToBlackPanel.GetComponent<CanvasGroup>().alpha < 1){
+      fadeToBlackPanel.GetComponent<CanvasGroup>().alpha += 0.01f;
+      messageAtEnd.text = messageToPlayer;
+      yield return null;
+    }
+  }
+
+
 }

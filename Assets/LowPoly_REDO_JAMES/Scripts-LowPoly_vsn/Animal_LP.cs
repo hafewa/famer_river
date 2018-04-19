@@ -65,11 +65,12 @@ public class Animal_LP : MonoBehaviour {
       Boat_LP.Instance.UnloadTheBoat();
     }
     animalStatus = BankStatus.Boat;
-    transform.position = Boat_LP.Instance.cargoPosition.position;
+    //transform.position = Boat_LP.Instance.cargoPosition.position;
     transform.SetParent(Boat_LP.Instance.transform.Find("Boat"));
     transform.GetComponent<Collider>().enabled = false;
     Boat_LP.Instance.cargo = gameObject;
     PlayerGaze.Instance.ClearGaze();
+    StartCoroutine(PlayerGaze.Instance.FieldOfViewEffect(transform));
   }
 
   protected void ChooseTextToDisplay()

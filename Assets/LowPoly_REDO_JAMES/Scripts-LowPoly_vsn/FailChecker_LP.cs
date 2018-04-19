@@ -23,8 +23,8 @@ public class FailChecker_LP : MonoBehaviour {
   }
 
   void CheckSuccessAndFailure(){
-    FailCheck();
     SuccessCheck();
+    FailCheck();
   }
 
   void FailCheck()
@@ -43,6 +43,7 @@ public class FailChecker_LP : MonoBehaviour {
       if (player.playerBank != chicken.animalStatus)
       {
         Debug.Log("FAIL STATE!");
+        StartCoroutine(UIManager_LP.Instance.EndScreen("You left the wolf alone with the chicken"));
         if (OnFail != null)
           OnFail("You left the chicken alone with the wolf");
       }
@@ -53,6 +54,7 @@ public class FailChecker_LP : MonoBehaviour {
       if (player.playerBank != cabbage.animalStatus)
       {
         Debug.Log("FAIL STATE!");
+        StartCoroutine(UIManager_LP.Instance.EndScreen("You left the chicken alone with the cabbage"));
         if(OnFail!=null)
           OnFail("You left the cabbage alone with the chicken");
       }
@@ -64,9 +66,10 @@ public class FailChecker_LP : MonoBehaviour {
   {
     if(wolf.animalStatus == BankStatus.RedBank && chicken.animalStatus == BankStatus.RedBank 
        && cabbage.animalStatus == BankStatus.RedBank && player.playerBank == BankStatus.RedBank){
+      Debug.Log("SUCCESS IN THE GAME!");
+      StartCoroutine(UIManager_LP.Instance.EndScreen("You successfully crossed a river with a wolf, a chicken and a head of cabbage"));
       if (OnSuccess!=null)
       {
-        Debug.Log("SUCCESS!");
         OnSuccess();
       }
     }
