@@ -28,18 +28,17 @@ public class Chicken_LP : Animal_LP {
 
   public override void TransferToBank()
   {
+    base.TransferToBank();
     //transition the animal to the bank
     switch (Boat_LP.Instance.boatStatus)
     {
       case BankStatus.RedBank:
         animalStatus = BankStatus.RedBank;
         transform.position = GameManager_LP.Instance.chickenSpotRedBank;
-        transform.SetParent(null);
         break;
       case BankStatus.YellowBank:
         animalStatus = BankStatus.YellowBank;
         transform.position = GameManager_LP.Instance.chickenSpotYellowBank;
-        transform.SetParent(null);
         break;
     }
   }
@@ -51,6 +50,8 @@ public class Chicken_LP : Animal_LP {
     {
       ChooseTextToDisplay();
       PlayerGaze.Instance.myGazeStatus = GazeStatus.Chicken;
+      //GetComponent<GlowObject>().GazeEnter();
+
     }
   }
 

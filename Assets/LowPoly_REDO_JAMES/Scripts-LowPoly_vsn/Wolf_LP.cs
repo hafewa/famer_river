@@ -27,18 +27,17 @@ public class Wolf_LP : Animal_LP {
 
   public override void TransferToBank()
   {
+    base.TransferToBank();
     //transition the animal to the bank
     switch (Boat_LP.Instance.boatStatus)
     {
       case BankStatus.RedBank:
         animalStatus = BankStatus.RedBank;
         transform.position = GameManager_LP.Instance.wolfSpotRedBank;
-        transform.SetParent(null);
         break;
       case BankStatus.YellowBank:
         animalStatus = BankStatus.YellowBank;
         transform.position = GameManager_LP.Instance.wolfSpotYellowBank;
-        transform.SetParent(null);
         break;
     }
   }
@@ -50,6 +49,7 @@ public class Wolf_LP : Animal_LP {
     {
       ChooseTextToDisplay();
       PlayerGaze.Instance.myGazeStatus = GazeStatus.Wolf;
+      //GetComponent<GlowObject>().GazeEnter();
     }
   }
 

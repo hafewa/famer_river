@@ -5,7 +5,7 @@ public class GameManager_FailureChecker : MonoBehaviour {
 
 
 
-	public delegate void FailureEvent(string failStringy);
+  public delegate void FailureEvent(string failMessage);
 	public static event FailureEvent OnFailMet;
 	public delegate void SuccessEvent();
 	public static event SuccessEvent OnSuccess;

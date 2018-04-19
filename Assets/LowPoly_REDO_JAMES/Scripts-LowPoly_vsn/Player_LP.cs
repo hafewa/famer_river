@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public enum PlayerStatus { None, DraggingBoat, EngagedWithAnimal };
+public enum PlayerStatus {None, DraggingBoat, EngagedWithAnimal};
 
 public class Player_LP : MonoBehaviour {
 
   public PlayerStatus playerStatus;
+  public BankStatus playerBank;
 
   public static Player_LP Instance;
 
@@ -29,6 +30,20 @@ public class Player_LP : MonoBehaviour {
   {
     if(pullingBoat){
       PullBoat();
+    }
+
+    float distToRedBank = Vector3.Distance(transform.position, GameManager_LP.Instance.RedBankMarker.position);
+    float distToYellowBank = Vector3.Distance(transform.position, GameManager_LP.Instance.YellowBankMarker.position);
+    if (distToYellowBank < 8.0f)
+    {
+      playerBank = BankStatus.YellowBank;
+      Debug.Log("Player on Yellow Coast");
+    }
+
+    if (distToRedBank < 8.0f)
+    {
+      playerBank = BankStatus.RedBank;
+      Debug.Log("Boat on Red Coast");
     }
 
   }

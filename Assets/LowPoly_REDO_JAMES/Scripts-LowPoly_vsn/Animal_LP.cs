@@ -38,9 +38,9 @@ public class Animal_LP : MonoBehaviour {
     {
       if (Input.GetKeyDown(KeyCode.Space))
       {
-        if (PlayerGaze.Instance.objectOfMyGaze)
+        if (PlayerGaze.Instance.lastGazeSelect)
         {
-          if (PlayerGaze.Instance.objectOfMyGaze.Equals(gameObject))
+          if (PlayerGaze.Instance.lastGazeSelect.Equals(gameObject))
           {
             if (!animalStatus.Equals(BankStatus.Boat))
             {
@@ -53,6 +53,8 @@ public class Animal_LP : MonoBehaviour {
 	}
 
   public virtual void TransferToBank(){
+    transform.GetComponent<Collider>().enabled = true;
+    transform.SetParent(null);
 
   }
 
@@ -63,6 +65,7 @@ public class Animal_LP : MonoBehaviour {
     animalStatus = BankStatus.Boat;
     transform.position = Boat_LP.Instance.cargoPosition.position;
     transform.SetParent(Boat_LP.Instance.transform.Find("Boat"));
+    transform.GetComponent<Collider>().enabled = false;
     Boat_LP.Instance.cargo = gameObject;
     PlayerGaze.Instance.ClearGaze();
   }

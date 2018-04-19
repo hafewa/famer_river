@@ -9,6 +9,7 @@ public enum GazeStatus { None, Wolf, Chicken, Cabbage, Boat };
 public class PlayerGaze : MonoBehaviour
 {
   public GameObject objectOfMyGaze;
+  public GameObject lastGazeSelect;
   public GazeStatus myGazeStatus;
 
   public static PlayerGaze Instance;
@@ -62,6 +63,7 @@ public class PlayerGaze : MonoBehaviour
           {
             OnGazeHitWolf();
             objectOfMyGaze = hit.collider.gameObject;
+            lastGazeSelect = hit.collider.gameObject;
           }
           break;
         case "Chicken":
@@ -69,6 +71,8 @@ public class PlayerGaze : MonoBehaviour
           {
             OnGazeHitChicken();
             objectOfMyGaze = hit.collider.gameObject;
+            lastGazeSelect = hit.collider.gameObject;
+
           }
           break;
         case "Cabbage":
@@ -76,6 +80,8 @@ public class PlayerGaze : MonoBehaviour
           {
             OnGazeHitCabbage();
             objectOfMyGaze = hit.collider.gameObject;
+            lastGazeSelect = hit.collider.gameObject;
+
           }
           break;
         case "Boat":
@@ -83,6 +89,8 @@ public class PlayerGaze : MonoBehaviour
           {
             OnGazeHitBoat();
             objectOfMyGaze = hit.collider.gameObject;
+            lastGazeSelect = hit.collider.gameObject;
+
           }
           break;
       }
@@ -103,12 +111,13 @@ public class PlayerGaze : MonoBehaviour
   {
     if (Player_LP.Instance.playerStatus != PlayerStatus.DraggingBoat)
     {
+      myGazeStatus = GazeStatus.None;
+      objectOfMyGaze = null;
+
       if (UIManager_LP.Instance.textInstructionsPresent)
       {
         Debug.Log("Removing Text instructions");
-        myGazeStatus = GazeStatus.None;
         StartCoroutine(UIManager_LP.Instance.InstructionsTextOutgoing());
-        objectOfMyGaze = null;
       }
     }
   }
