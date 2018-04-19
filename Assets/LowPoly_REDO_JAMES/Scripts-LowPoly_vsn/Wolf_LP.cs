@@ -27,7 +27,10 @@ public class Wolf_LP : Animal_LP {
 
   public override void TransferToBank()
   {
-    base.TransferToBank();
+    //base.TransferToBank();
+    transform.SetParent(null);
+//    Debug.Log("Wolf_LP PARENT SHOULD BE: "+transform.parent.name);
+    transform.GetComponent<Collider>().enabled = true;
     //transition the animal to the bank
     switch (Boat_LP.Instance.boatStatus)
     {

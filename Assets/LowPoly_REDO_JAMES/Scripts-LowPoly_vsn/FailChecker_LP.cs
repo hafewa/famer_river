@@ -15,9 +15,9 @@ public class FailChecker_LP : MonoBehaviour {
   Player_LP player;
 
   void Start(){
-    wolf = GameManager_LP.Instance.wolf.GetComponent<Wolf_LP>();
-    chicken = GameManager_LP.Instance.wolf.GetComponent<Chicken_LP>();
-    cabbage = GameManager_LP.Instance.wolf.GetComponent<Cabbage_LP>();
+    wolf = (Wolf_LP)GameManager_LP.Instance.wolf;
+    chicken = (Chicken_LP)GameManager_LP.Instance.chicken;
+    cabbage = (Cabbage_LP)GameManager_LP.Instance.cabbage;
     player = Player_LP.Instance;
     InvokeRepeating("CheckSuccessAndFailure", 20.0f, 20.0f);
   }
@@ -30,7 +30,7 @@ public class FailChecker_LP : MonoBehaviour {
   void FailCheck()
   {
 
-    if((wolf.animalStatus) == chicken.animalStatus){
+    if(wolf.animalStatus == chicken.animalStatus){
       if (wolf.animalStatus == cabbage.animalStatus)
       {
         //Game has not officially begun... so let the player explore...
@@ -38,19 +38,23 @@ public class FailChecker_LP : MonoBehaviour {
       }
     }
 
-    if ((chicken.animalStatus == wolf.animalStatus))
+    if (chicken.animalStatus == wolf.animalStatus)
     {
       if (player.playerBank != chicken.animalStatus)
       {
-        OnFail("You left the chicken alone with the wolf");
+        Debug.Log("FAIL STATE!");
+        if (OnFail != null)
+          OnFail("You left the chicken alone with the wolf");
       }
     }
 
-    if ((chicken.animalStatus == cabbage.animalStatus))
+    if (chicken.animalStatus == cabbage.animalStatus)
     {
       if (player.playerBank != cabbage.animalStatus)
       {
-        OnFail("You left the cabbage alone with the chicken");
+        Debug.Log("FAIL STATE!");
+        if(OnFail!=null)
+          OnFail("You left the cabbage alone with the chicken");
       }
     }
   }
@@ -60,7 +64,11 @@ public class FailChecker_LP : MonoBehaviour {
   {
     if(wolf.animalStatus == BankStatus.RedBank && chicken.animalStatus == BankStatus.RedBank 
        && cabbage.animalStatus == BankStatus.RedBank && player.playerBank == BankStatus.RedBank){
-      OnSuccess();
+      if (OnSuccess!=null)
+      {
+        Debug.Log("SUCCESS!");
+        OnSuccess();
+      }
     }
   }
 }

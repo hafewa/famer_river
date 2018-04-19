@@ -59,7 +59,7 @@ public class PlayerGaze : MonoBehaviour
       switch (hit.collider.gameObject.name)
       {
         case "Wolf":
-          if (OnGazeHitWolf != null)
+          if (OnGazeHitWolf != null && Player_LP.Instance.playerStatus != PlayerStatus.DraggingBoat)
           {
             OnGazeHitWolf();
             objectOfMyGaze = hit.collider.gameObject;
@@ -67,7 +67,7 @@ public class PlayerGaze : MonoBehaviour
           }
           break;
         case "Chicken":
-          if (OnGazeHitChicken != null)
+          if (OnGazeHitChicken != null && Player_LP.Instance.playerStatus != PlayerStatus.DraggingBoat)
           {
             OnGazeHitChicken();
             objectOfMyGaze = hit.collider.gameObject;
@@ -76,7 +76,7 @@ public class PlayerGaze : MonoBehaviour
           }
           break;
         case "Cabbage":
-          if (OnGazeHitCabbage != null)
+          if (OnGazeHitCabbage != null && Player_LP.Instance.playerStatus != PlayerStatus.DraggingBoat)
           {
             OnGazeHitCabbage();
             objectOfMyGaze = hit.collider.gameObject;
@@ -85,8 +85,10 @@ public class PlayerGaze : MonoBehaviour
           }
           break;
         case "Boat":
-          if (OnGazeHitBoat != null)
+          Debug.Log("SHould be looking at Boat ...still a few more checks...");
+          if (OnGazeHitBoat != null && Player_LP.Instance.playerStatus != PlayerStatus.DraggingBoat)
           {
+            Debug.Log("OnGazeHit Boat Event in PlayerGaze should be firing...");
             OnGazeHitBoat();
             objectOfMyGaze = hit.collider.gameObject;
             lastGazeSelect = hit.collider.gameObject;

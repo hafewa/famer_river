@@ -17,6 +17,8 @@ public class Boat_LP : MonoBehaviour {
 
   public bool originalPosNeedsSet;
 
+  float distToPlayer;
+
   void OnEnable()
   {
     PlayerGaze.OnGazeHitBoat += GazeOnBoat;
@@ -42,24 +44,36 @@ public class Boat_LP : MonoBehaviour {
   {
     float distToRedBank = Vector3.Distance(transform.position, GameManager_LP.Instance.RedBankMarker.position);
     float distToYellowBank = Vector3.Distance(transform.position, GameManager_LP.Instance.YellowBankMarker.position);
-    if (distToYellowBank < 8.0f)
+    distToPlayer = Vector3.Distance(transform.position, Player_LP.Instance.transform.position);
+    //Debug.Log("Dist to player is: " + distToPlayer);
+    if (Player_LP.Instance.playerStatus == PlayerStatus.DraggingBoat)
     {
-      boatStatus = BankStatus.YellowBank;
-      Debug.Log("Boat on Yellow Coast");
-      if (cargo)
+      if (boatStatus != BankStatus.YellowBank)
       {
-        cargo.GetComponent<Animal_LP>().animalStatus = boatStatus;
-        //UnloadTheBoat();
+        if (distToYellowBank < 8.0f)
+        {
+          boatStatus = BankStatus.YellowBank;
+          Debug.Log("BOAT Arrived on Yellow Coast!");
+          if (cargo)
+          {
+            cargo.GetComponent<Animal_LP>().animalStatus = boatStatus;
+            UnloadTheBoat();
+          }
+        }
       }
-    }
 
-    if (distToRedBank < 8.0f)
-    {
-      boatStatus = BankStatus.RedBank;
-      Debug.Log("Boat on Red Coast");
-      if(cargo){
-        cargo.GetComponent<Animal_LP>().animalStatus = boatStatus;
-        //UnloadTheBoat();
+      if (boatStatus != BankStatus.RedBank)
+      {
+        if (distToRedBank < 8.0f)
+        {
+          boatStatus = BankStatus.RedBank;
+          Debug.Log("BOAT Arrived on Red Coast!");
+          if (cargo)
+          {
+            cargo.GetComponent<Animal_LP>().animalStatus = boatStatus;
+            UnloadTheBoat();
+          }
+        }
       }
     }
 
@@ -87,18 +101,22 @@ public class Boat_LP : MonoBehaviour {
     //Make player drag the boat...
     Player_LP.Instance.thingToPull = gameObject;
     Player_LP.Instance.playerStatus = PlayerStatus.DraggingBoat;
+    PlayerGaze.Instance.myGazeStatus = GazeStatus.None;
+
     ChooseTextToDisplay();
     Player_LP.Instance.pullingBoat = true;
+    Debug.Log("Start PULL BOAT");
     //PLAY PARTICLE EFFECTS HERE
     transform.Find("Boat").transform.Find("Particle System").GetComponent<ParticleSystem>().Play();
     //originalPosNeedsSet = true;
-
   }
 
   void DetachBoatFromPlayer(){
     //release the boat object from the player
     Player_LP.Instance.thingToPull = null;
     Player_LP.Instance.playerStatus = PlayerStatus.None;
+    PlayerGaze.Instance.myGazeStatus = GazeStatus.None;
+
     PlayerGaze.Instance.ClearGaze();
     Player_LP.Instance.pullingBoat = false;
     transform.Find("Boat").transform.Find("Particle System").GetComponent<ParticleSystem>().Stop();
@@ -110,15 +128,22 @@ public class Boat_LP : MonoBehaviour {
 
   public void UnloadTheBoat(){
     cargo.GetComponent<Animal_LP>().TransferToBank();
+    Debug.Log("Cargo = " + cargo.name);
+    cargo = null;
   }
 
   public void GazeOnBoat()
   {
-    Debug.Log("Boat stuff happening");
-    if (PlayerGaze.Instance.myGazeStatus != GazeStatus.Boat)
+    Debug.Log("Boat subscribes to OnGazeHItBoat event...this is it firing...");
+    if (distToPlayer < 5.0f)
     {
-      ChooseTextToDisplay();
-      PlayerGaze.Instance.myGazeStatus = GazeStatus.Boat;
+      Debug.Log("Boat stuff happening");
+      if (PlayerGaze.Instance.myGazeStatus != GazeStatus.Boat)
+      {
+        ChooseTextToDisplay();
+        PlayerGaze.Instance.myGazeStatus = GazeStatus.Boat;
+        Debug.Log("Setting the player gaze status to Boat");
+      }
     }
   }
 

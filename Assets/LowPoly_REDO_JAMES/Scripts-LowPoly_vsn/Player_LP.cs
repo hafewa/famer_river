@@ -37,13 +37,13 @@ public class Player_LP : MonoBehaviour {
     if (distToYellowBank < 8.0f)
     {
       playerBank = BankStatus.YellowBank;
-      Debug.Log("Player on Yellow Coast");
+      //Debug.Log("Player on Yellow Coast");
     }
 
     if (distToRedBank < 8.0f)
     {
       playerBank = BankStatus.RedBank;
-      Debug.Log("Boat on Red Coast");
+      //Debug.Log("Player on Red Coast");
     }
 
   }
@@ -51,7 +51,7 @@ public class Player_LP : MonoBehaviour {
   public void PullBoat(){
     if (thingToPull)
     {
-      Debug.Log("PULLING BOAT");
+      //Debug.Log("PULLING BOAT");
       Vector3 D = transform.position - thingToPull.transform.position; // line from crate to player
       float dist = D.magnitude;
       Vector3 pullDir = D.normalized; // short blue arrow from crate to player

@@ -44,7 +44,10 @@ public class Animal_LP : MonoBehaviour {
           {
             if (!animalStatus.Equals(BankStatus.Boat))
             {
-              TransferToBoat();
+              if (Boat_LP.Instance.boatStatus == animalStatus)
+              {
+                TransferToBoat();
+              }
             }
           }
         }
@@ -53,9 +56,8 @@ public class Animal_LP : MonoBehaviour {
 	}
 
   public virtual void TransferToBank(){
-    transform.GetComponent<Collider>().enabled = true;
-    transform.SetParent(null);
 
+    Debug.Log("SET PARENT TO NULL");
   }
 
   public virtual void TransferToBoat(){

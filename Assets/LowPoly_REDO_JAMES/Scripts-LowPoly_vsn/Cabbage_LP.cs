@@ -29,8 +29,10 @@ public class Cabbage_LP : Animal_LP {
 
   public override void TransferToBank()
   {
-    base.TransferToBank();
+    //base.TransferToBank();
     //transition the animal to the bank
+    transform.SetParent(null);
+    transform.GetComponent<Collider>().enabled = true;
     switch (Boat_LP.Instance.boatStatus)
     {
       case BankStatus.RedBank:
