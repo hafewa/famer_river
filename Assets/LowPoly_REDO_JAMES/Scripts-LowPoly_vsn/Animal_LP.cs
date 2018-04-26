@@ -34,6 +34,7 @@ public class Animal_LP : MonoBehaviour {
 	public virtual void Start () {
     myId = gameObject.name;
     animalStatus = BankStatus.YellowBank;
+    //transform.Find("ParticleHolder").GetComponent<ParticleSystem>().Play();
 
 	}
 	
@@ -85,6 +86,7 @@ public class Animal_LP : MonoBehaviour {
 
   IEnumerator TransferToBankParabola(Vector3 startPos, Vector3 endPos){
     float dist = 0;
+    transform.Find("ParticleHolder").GetComponent<ParticleSystem>().Play();
     Debug.Log("Parabolizzzzzzzzing to BANK");
     dist = Vector3.Distance(transform.position, endPos);
     while (dist > 0.1f)
@@ -96,6 +98,7 @@ public class Animal_LP : MonoBehaviour {
       transform.position = MathParabola.Parabola(startPos, endPos, 1.2f, parabolaAnimation / 5f);
       yield return null;
     }
+    transform.Find("ParticleHolder").GetComponent<ParticleSystem>().Stop();
     transform.position = FindMyBankPosition(Boat_LP.Instance.boatStatus);
     transform.SetParent(null);
     transform.GetComponent<Collider>().enabled = true;
@@ -105,6 +108,7 @@ public class Animal_LP : MonoBehaviour {
 
   IEnumerator TransferToBoatParabola(Vector3 startPos, Vector3 endPos){
     float dist = 0;
+    transform.Find("ParticleHolder").GetComponent<ParticleSystem>().Play();
     Debug.Log("Moving into Boat");
     dist = Vector3.Distance(transform.position, endPos);
     while(dist > 0.1f){
@@ -124,6 +128,7 @@ public class Animal_LP : MonoBehaviour {
       }
       yield return null;
     }
+    transform.Find("ParticleHolder").GetComponent<ParticleSystem>().Stop();
 
     if(canceledParabola){
       Debug.Log("Canceled Parabola so we're returning to start position.");
