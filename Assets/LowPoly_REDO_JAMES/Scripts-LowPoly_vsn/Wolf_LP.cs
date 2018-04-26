@@ -25,25 +25,10 @@ public class Wolf_LP : Animal_LP {
 	}
 
 
-  public override void TransferToBank()
-  {
-    //base.TransferToBank();
-    transform.SetParent(null);
-//    Debug.Log("Wolf_LP PARENT SHOULD BE: "+transform.parent.name);
-    transform.GetComponent<Collider>().enabled = true;
-    //transition the animal to the bank
-    switch (Boat_LP.Instance.boatStatus)
-    {
-      case BankStatus.RedBank:
-        animalStatus = BankStatus.RedBank;
-        transform.position = GameManager_LP.Instance.wolfSpotRedBank;
-        break;
-      case BankStatus.YellowBank:
-        animalStatus = BankStatus.YellowBank;
-        transform.position = GameManager_LP.Instance.wolfSpotYellowBank;
-        break;
-    }
-  }
+  //public override void TransferToBank()
+  //{
+
+  //}
 
   public void GazeOnWolf()
   {

@@ -54,8 +54,9 @@ public class Boat_LP : MonoBehaviour {
         {
           boatStatus = BankStatus.YellowBank;
           Debug.Log("BOAT Arrived on Yellow Coast!");
-          if (cargo)
+          if (cargo && distToYellowBank < 7.0f)
           {
+            Debug.Log("UNLOADING BOAT ON THE YELLOW COAST");
             cargo.GetComponent<Animal_LP>().animalStatus = boatStatus;
             UnloadTheBoat();
           }
@@ -68,8 +69,9 @@ public class Boat_LP : MonoBehaviour {
         {
           boatStatus = BankStatus.RedBank;
           Debug.Log("BOAT Arrived on Red Coast!");
-          if (cargo)
+          if (cargo && distToRedBank < 7.0f)
           {
+            Debug.Log("UNLOADING BOAT ON THE RED COAST");
             cargo.GetComponent<Animal_LP>().animalStatus = boatStatus;
             UnloadTheBoat();
           }
@@ -128,8 +130,9 @@ public class Boat_LP : MonoBehaviour {
 
   public void UnloadTheBoat(){
     cargo.GetComponent<Animal_LP>().TransferToBank();
-    Debug.Log("Cargo = " + cargo.name);
+    Debug.Log("Cargo wasss.... = " + cargo.name);
     cargo = null;
+
   }
 
   public void GazeOnBoat()

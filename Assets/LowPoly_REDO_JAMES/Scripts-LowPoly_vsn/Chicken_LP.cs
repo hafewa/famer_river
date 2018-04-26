@@ -26,24 +26,24 @@ public class Chicken_LP : Animal_LP {
     myRotRedBank = GameManager_LP.Instance.chickenRotationRedBank;
 	}
 
-  public override void TransferToBank()
-  {
-    //base.TransferToBank();
-    //transition the animal to the bank
-    transform.SetParent(null);
-    transform.GetComponent<Collider>().enabled = true;
-    switch (Boat_LP.Instance.boatStatus)
-    {
-      case BankStatus.RedBank:
-        animalStatus = BankStatus.RedBank;
-        transform.position = GameManager_LP.Instance.chickenSpotRedBank;
-        break;
-      case BankStatus.YellowBank:
-        animalStatus = BankStatus.YellowBank;
-        transform.position = GameManager_LP.Instance.chickenSpotYellowBank;
-        break;
-    }
-  }
+  //public override void TransferToBank()
+  //{
+  //  //base.TransferToBank();
+  //  //transition the animal to the bank
+  //  transform.SetParent(null);
+  //  transform.GetComponent<Collider>().enabled = true;
+  //  switch (Boat_LP.Instance.boatStatus)
+  //  {
+  //    case BankStatus.RedBank:
+  //      animalStatus = BankStatus.RedBank;
+  //      transform.position = GameManager_LP.Instance.chickenSpotRedBank;
+  //      break;
+  //    case BankStatus.YellowBank:
+  //      animalStatus = BankStatus.YellowBank;
+  //      transform.position = GameManager_LP.Instance.chickenSpotYellowBank;
+  //      break;
+  //  }
+  //}
 
   public void GazeOnChicken()
   {

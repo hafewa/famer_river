@@ -127,24 +127,30 @@ public class PlayerGaze : MonoBehaviour
   }
 
   public IEnumerator FieldOfViewEffect(Transform t){
-    Debug.Log("Field of view should be playing");
-    float f = 1;
-    while(f > 0.1f){
-      //Camera.main.fieldOfView -= 2f;
-      f -= 0.15f;
-      Camera.main.fieldOfView = cameraFOVFX.Evaluate(f) * 60;
-      yield return null;
-    }
-    t.position = Boat_LP.Instance.cargoPosition.position;
-    f = 0;
-    while (f < 1)
+    //Debug.Log("Field of view should be playing");
+    //float f = 1;
+    //while(f > 0.1f){
+    //  //Camera.main.fieldOfView -= 2f;
+    //  f -= 0.15f;
+    //  Camera.main.fieldOfView = cameraFOVFX.Evaluate(f) * 60;
+    //  yield return null;
+    //}
+   // t.position = Boat_LP.Instance.cargoPosition.position;
+    //f = 0;
+    //while (f < 1)
+    //{
+    //  f += 0.15f;
+    //  //Camera.main.fieldOfView += 2f;
+    //  Camera.main.fieldOfView = cameraFOVFX.Evaluate(f)*60;
+    //  yield return null;
+    //}
+    if (ScreenFade_LP.instance)
     {
-      f += 0.15f;
-      //Camera.main.fieldOfView += 2f;
-      Camera.main.fieldOfView = cameraFOVFX.Evaluate(f)*60;
-      yield return null;
+      ScreenFade_LP.instance.StartFade(Color.black, 1.0f);
+    } else {
+      Debug.Log("Doesn't Exxxxist"); 
     }
-
+    yield return null;
 
   }
 
