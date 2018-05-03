@@ -88,7 +88,7 @@ public class Animal_LP : MonoBehaviour {
     float dist = 0;
     transform.Find("ParticleHolder").GetComponent<ParticleSystem>().Play();
     Debug.Log("Parabolizzzzzzzzing to BANK");
-    dist = Vector3.Distance(transform.position, endPos);
+    dist = Vector3.Distance(startPos, endPos);
     while (dist > 0.1f)
     {
       Debug.Log("Inside the while lOOP -- attempting to transfer to bank...");
@@ -165,7 +165,7 @@ public class Animal_LP : MonoBehaviour {
           //if the animal is not in the boat...
           if (animalStatus != BankStatus.Boat)
           {
-            StartCoroutine(UIManager_LP.Instance.InstructionsTextIncoming(String.Format("Press Space to place the {0} in the boat", myId)));
+            StartCoroutine(UIManager_LP.Instance.InstructionsTextIncoming(String.Format("Hold Space to place the {0} in the boat", myId)));
           }
         }
       }

@@ -50,32 +50,37 @@ public class Boat_LP : MonoBehaviour {
     {
       if (boatStatus != BankStatus.YellowBank)
       {
-        if (distToYellowBank < 8.0f)
+        if (distToYellowBank < 2.65f)
         {
           boatStatus = BankStatus.YellowBank;
           Debug.Log("BOAT Arrived on Yellow Coast!");
-          if (cargo && distToYellowBank < 7.0f)
+          if (cargo)
           {
             Debug.Log("UNLOADING BOAT ON THE YELLOW COAST");
             cargo.GetComponent<Animal_LP>().animalStatus = boatStatus;
             UnloadTheBoat();
           }
+          DetachBoatFromPlayer();
+
+          //StartCoroutine(UIManager_LP.Instance.InstructionsTextIncoming(String.Format("The boat has been released.")));
         }
       }
 
       if (boatStatus != BankStatus.RedBank)
       {
-        if (distToRedBank < 8.0f)
+        if (distToRedBank < 4.5f)
         {
           boatStatus = BankStatus.RedBank;
           Debug.Log("BOAT Arrived on Red Coast!");
-          if (cargo && distToRedBank < 7.0f)
+          if (cargo)
           {
             Debug.Log("UNLOADING BOAT ON THE RED COAST");
             cargo.GetComponent<Animal_LP>().animalStatus = boatStatus;
             UnloadTheBoat();
           }
+          DetachBoatFromPlayer();
         }
+        //StartCoroutine(UIManager_LP.Instance.InstructionsTextIncoming(String.Format("The boat has been released.")));
       }
     }
 
@@ -126,6 +131,7 @@ public class Boat_LP : MonoBehaviour {
     {
       cargo.transform.SetParent(transform.Find("Boat"));
     }
+    //////////StartCoroutine(UIManager_LP.Instance.InstructionsTextIncoming(String.Format("The boat has been released.")));
   }
 
   public void UnloadTheBoat(){
